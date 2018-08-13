@@ -136,6 +136,12 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  }
 
+public function editprogress() {
+  $this->load->view('element/header');
+  $this->load->view('form_edit_progress');
+  $this->load->view('element/footer');
+ }
+
 }
 
 ?>

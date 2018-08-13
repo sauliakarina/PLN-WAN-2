@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Tambah Progress</h4>
+                    <h4 class="page-head-line">Edit Progress</h4>
                 </div>
             </div>
             <div class="row">
@@ -35,7 +35,7 @@
                         
                         <br>
 
-                          <button type="submit" class="btn btn-default btn-lg"> Tambah Progress </button>
+                          <button type="submit" class="btn btn-default btn-lg"> Edit Progress </button>
                         </label></div></form>
                         
                         </div>
