@@ -20,8 +20,8 @@
                                             <th>Lokasi Gangguan</th>
                                             <th>Penyebab</th>
                                             <th>Solusi</th>
-                                            <th>Waktu Gangguan</th>
                                             <th>Progress</th>
+                                            <th>Waktu Gangguan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -33,9 +33,9 @@
                                             <td>Lastmile</td>
                                             <td>Penyebab</td>
                                             <td>Solusi</td>
+                <td><a class="" href="<?php echo base_url();?>c_form/progress">Penanganan</a></td>
                                             <td> 
                 <a class="btn btn-primary" href="<?php echo base_url();?>c_main/waktu">Lihat</button></a>
-                <td><a class="" href="<?php echo base_url();?>c_form/progress">Penanganan</a></td>
                                             <td><center>
                 <a class="btn btn-default" href="<?php echo base_url();?>c_form/edit_data_gangguan">Edit</a>
         <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
