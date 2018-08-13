@@ -31,7 +31,7 @@
                                             <td>Putus Kabel</td>
                                             <td></td>
                                             <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/edit_data_gangguan">Edit</a>
+                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
         <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
             </td>
                                         </tr>

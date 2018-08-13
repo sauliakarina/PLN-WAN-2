@@ -42,7 +42,12 @@ public function area() {
   $this->load->view('searchuser');
  }
 
-
+ public function searchkeluhan() {
+  $this->load->view('element/header');
+  $this->load->view('searchkeluhan');
+  $this->load->view('element/footer');
+ }
+ 
 public function contoh() {
   $this->load->view('contoh/contoh1');
   $this->load->view('contoh/ui');

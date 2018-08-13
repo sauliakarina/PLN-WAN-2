@@ -32,6 +32,12 @@ class c_form extends CI_Controller {
   $this->load->view('element/footer');
  } 
 
+ public function edit_data_keluhan() {
+  $this->load->view('element/header');
+  $this->load->view('edit_data_keluhan');
+  $this->load->view('element/footer');
+ } 
+
 
  public function form_layanan(){
   $this->load->view('element/header');
@@ -110,7 +116,13 @@ public function form_edit_layanan(){
   $this->load->view('element/header');
   $this->load->view('tambahkeluhan');
   $this->load->view('element/footer');
- } 
+ }
+
+ public function editgangguan() {
+  $this->load->view('element/header');
+  $this->load->view('editgangguan');
+  $this->load->view('element/footer');
+ }  
 
  public function register() {
   $this->load->view('element/header');

@@ -65,7 +65,7 @@
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pencarian <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="<?php echo base_url();?>c_main/search" style="color: black">Data Gangguan</a></li>
-                                  <li><a href="" style="color: black">Data Keluhan</a></li>
+                                  <li><a href="<?php echo base_url();?>c_main/searchkeluhan" style="color: black">Data Keluhan</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Kelola <span class="caret"></span></a>
