@@ -13,16 +13,16 @@
 
 <div class="row">
     <div class="col-md-6" align="center">
-        <a href="<?php echo base_url();?>c_form/form_tambah_data_gangguan">
-            <img style="" src="<?php echo base_url();?>/assets/img/list (1).png ?>"  width="200" height="200">
-            <h4>Masukkan Data</h4>
+        <a href="<?php echo base_url();?>c_form/form_data_gangguan">
+            <img style="" src="<?php echo base_url();?>/assets/img/light-bulb.png ?>"  width="300" height="300">
+            <h4>Data Gangguan</h4>
         </a> 
     </div>
     
     <div class="col-md-6" align="center">
-        <a href="<?php echo base_url();?>c_main/v2" data-toggle="collapse">
-        <img style="" src="<?php echo base_url();?>/assets/img/notepad.png ?>"  width="200" height="200">
-        <h4>Data</h4>
+        <a href="<?php echo base_url();?>c_form/form_data_keluhan">
+        <img style="" src="<?php echo base_url();?>/assets/img/wifi-signal.png ?>"  width="300" height="300">
+        <h4>Data Keluhan</h4>
     </a>
     </div>
      
