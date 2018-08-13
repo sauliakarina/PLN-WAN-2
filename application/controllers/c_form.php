@@ -142,6 +142,13 @@ public function editprogress() {
   $this->load->view('element/footer');
  }
 
+ public function progress() {
+  $this->load->view('element/header');
+  $this->load->view('progress');
+  $this->load->view('element/footer');
+ }
+
+
 }
 
 ?>
