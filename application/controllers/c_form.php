@@ -130,6 +130,12 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  }
 
+ public function tambahprogress() {
+  $this->load->view('element/header');
+  $this->load->view('form_tambah_progress');
+  $this->load->view('element/footer');
+ }
+
 }
 
 ?>
