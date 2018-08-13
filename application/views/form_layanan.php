@@ -10,8 +10,7 @@
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
                          <a href="<?php echo base_url();?>c_form/form_tambah_layanan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
-                            <div class="table-responsive" style="margin-top: 20px">
-                                <table class="table table-striped table-bordered table-hover">
+                          <table class="table table-striped table-bordered table-hover" style="margin-top: 20px">
                                     <thead>
                                         <tr>
                                             <th>No</th>
