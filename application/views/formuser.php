@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
 
-                  <a href="<?php echo base_url();?>c_main/register" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
+                  <a href="<?php echo base_url();?>c_form/register" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
 
                   <br>
                   <br>
