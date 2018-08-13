@@ -75,7 +75,7 @@
                                   <li><a href="<?php echo base_url();?>c_form/jenislayanan" style="color: black">Jenis Layanan</a></li>
                                   <li><a href="<?php echo base_url();?>c_form/form_layanan" style="color: black">Layanan</a></li>
                                   <li class="divider"></li>
-                                  <li><a href="<?php echo base_url();?>c_form/register" style="color: black">Akun</a></li>
+                                  <li><a href="<?php echo base_url();?>c_form/formuser" style="color: black">Akun</a></li>
                                 </ul>
                             </li>
                             <li><a href="<?php echo base_url();?>c_main/index">Keluar</a></li>
