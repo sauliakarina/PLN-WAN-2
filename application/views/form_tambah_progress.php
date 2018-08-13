@@ -35,7 +35,7 @@
                         
                         <br>
 
-                          <button type="submit" class="btn btn-default btn-lg"> Tambah Progress </button>
+                          <button type="submit" class="btn btn-default btn-lg"> Tambah </button>
                         </label></div></form>
                         
                         </div>

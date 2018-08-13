@@ -35,7 +35,7 @@
                         
                         <br>
 
-                          <button type="submit" class="btn btn-default btn-lg"> Edit Progress </button>
+                          <button type="submit" class="btn btn-default btn-lg"> Simpan </button>
                         </label></div></form>
                         
                         </div>
