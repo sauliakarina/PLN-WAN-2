@@ -13,16 +13,16 @@
 
 <div class="row">
     <div class="col-md-6" align="center">
-        <a href="<?php echo base_url();?>c_form/form_data_gangguan">
+        <a href="<?php echo base_url();?>c_form/form_tambah_data_gangguan">
             <img style="" src="<?php echo base_url();?>/assets/img/light-bulb.png ?>"  width="300" height="300">
-            <h4>Data Gangguan</h4>
+            <h4>Input Data Gangguan</h4>
         </a> 
     </div>
     
     <div class="col-md-6" align="center">
-        <a href="<?php echo base_url();?>c_form/form_data_keluhan">
+        <a href="<?php echo base_url();?>c_form/form_tambah_data_keluhan">
         <img style="" src="<?php echo base_url();?>/assets/img/wifi-signal.png ?>"  width="300" height="300">
-        <h4>Data Keluhan</h4>
+        <h4>Input Data Keluhan</h4>
     </a>
     </div>
      
