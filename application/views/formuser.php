@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
 
-                  <a href="<?php echo base_url();?>c_form/register" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
+                  <a href="<?php echo base_url();?>c_user/tambah_user" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
 
                   <br>
                   <br>
@@ -28,44 +28,22 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Saulia </td>
-                                            <td>1234</td>
-                                            <td>User</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/form_edit_user">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-                                        </tr>
-                                         <tr>
-                                            <td>2</td>
-                                            <td> Karina </td>
-                                            <td>asdfghj </td>
-                                            <td>Admin </td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-                                        </tr>
+                                            <?php 
+                                        $no=1;
+                                        foreach($user as $u ) {
+
+                                        ?>
                                         <tr>
-                                            <td>3</td>
-                                            <td>Monica </td>
-                                            <td>yuijh </td>
-                                            <td>User </td>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $u->nama ?></td>
+                                            <td><?php echo $u->password ?></td>
+                                            <td><?php echo $u->status_user ?></td>
                                             <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
+                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
+                                                <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Tiwi </td>
-                                            <td>yuyyu8 </td>
-                                            <td>User </td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
+                                        <?php } ?>
                                         </tr>
                                     
     
