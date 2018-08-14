@@ -101,11 +101,6 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  } 
 
- /* public function tambahgangguan() {
-  $this->load->view('element/header');
-  $this->load->view('tambahgangguan');
-  $this->load->view('element/footer');
- } */
 
   public function tambahkeluhan() {
   $this->load->view('element/header');
@@ -113,11 +108,11 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  }
 
- public function editgangguan() {
+/* public function editgangguan() {
   $this->load->view('element/header');
   $this->load->view('editgangguan');
   $this->load->view('element/footer');
- }  
+ }  */
 
  public function register() {
   $this->load->view('element/header');

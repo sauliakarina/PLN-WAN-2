@@ -8,23 +8,22 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <br />
-                    <form onsubmit="return validasi()" action="<?php echo base_url();?>c_add/tambah_u" method="post">
+                    <br/>
+                    <?php foreach($jenisgangguan as $jg){ ?>
+                    <form action="<?php echo base_url();?>c_gangguan/update_jenisgangguan" method="post">
                         <div class="form-group">
-                          <label for="ID"> No </label>
-                          <input style="width:500px" class="form-control" id="ID" type="text" name="NoIjazah">
-                        </div>
-                        <div class="form-group">
-                          <label for="nama">Jenis Gangguan</label>
-                          <input id="nama" type="text" style="width:500px" class="form-control" name="nama">
+                          <label>Jenis Gangguan</label>
+                           <input type="hidden" style="width:500px" class="form-control" name="id_jenisgangguan" value="<?php echo $jg->id_jenisgangguan ?>">
+                          <input type="text" style="width:500px" class="form-control" name="jenis_gangguan" value="<?php echo $jg->jenis_gangguan ?>">
                         </div>
                         <div class="form-group">
                           <label for="password">Keterangan</label>
-                          <input id="password" type="password" style="width:500px" class="form-control" name="email">
+                          <textarea rows="3" class="form-control" name="ket_gangguan"><?php echo $jg->ket_gangguan ?></textarea>
                         </div>
                         
-                          <button type="submit" class="btn btn-default btn-lg">Edit </button>
+                          <button type="submit" class="btn btn-default btn-lg">Simpan</button>
                         </label></div></form>
+                      <?php } ?>
                         
                         </div>
                         </div>  
