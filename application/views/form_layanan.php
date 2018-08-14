@@ -20,6 +20,7 @@
                                             <th>Kapasitas</th>
                                             <th>Nama PIC</th>
                                             <th>No HP</th>
+                                            <th>E-mail</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -32,6 +33,7 @@
                                             <td>2 MB</td>
                                             <td>Mulyono</td>
                                             <td>081234567</td>
+                                            <td>email@gmail.com</td>
                                             <td><center> <a class="btn btn-default" href="<?php echo base_url();?>c_form/form_edit_layanan">Edit</a> <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button></td>
                                         </tr>
                                     </tbody>
