@@ -21,7 +21,7 @@
                     </div>
                         <div class="form-group">
                           <label for="nama">Keterangan </label>
-                          <input id="nama" type="text" class="form-control" name="nama">
+                          <textarea rows="3" class="form-control"></textarea>
                         </div>
 
                        <div class="form-group">
