@@ -19,7 +19,6 @@
                                             <th>Penyebab</th>
                                             <th>Solusi</th>
                                             <th>Waktu Keluhan</th>
-                                            <th>Progress</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -32,7 +31,6 @@
                                             <td>Solusi</td>
                                             <td> 
                 <a class="btn btn-primary" href="<?php echo base_url();?>c_main/waktu">Lihat</button></a></td>
-                <td>Petugas Sampai</td>
                                             <td><center>
                 <a class="btn btn-default" href="<?php echo base_url();?>c_form/edit_data_keluhan">Edit</a>
         <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>

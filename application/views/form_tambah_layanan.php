@@ -30,6 +30,10 @@
                           <label for="comfirmpassword">No. HP PIC<font color="red">*</font></td>
                           <input type="password" id="confirmpassword" name="password" style="width:500px" class="form-control">
                         </div>
+                        <div class="form-group">
+                          <label for="comfirmpassword">E-mail PIC<font color="red">*</font></td>
+                          <input type="password" id="confirmpassword" name="password" style="width:500px" class="form-control">
+                        </div>
                         <hr/>
                           <button type="submit" class="btn btn-default btn-lg">Tambah </button>
                         </label></div></form>
