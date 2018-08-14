@@ -63,17 +63,17 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  }
 
- public function jenislayanan() {
+ /*public function jenislayanan() {
   $this->load->view('element/header');
   $this->load->view('jenislayanan');
   $this->load->view('element/footer');
- } 
+ } */
 
- public function form_tambah_jenis_layanan(){
-  $this->load->view('element/header');
-  $this->load->view('form_tambah_jenis_layanan');
-  $this->load->view('element/footer');
- }
+ // public function form_tambah_jenis_layanan(){
+ //  $this->load->view('element/header');
+ //  $this->load->view('form_tambah_jenis_layanan');
+ //  $this->load->view('element/footer');
+ // }
 
  public function form_edit_jenis_layanan(){
   $this->load->view('element/header');
@@ -82,11 +82,11 @@ public function form_edit_layanan(){
  }
 
 
- public function formuser() {
-  $this->load->view('element/header');
-  $this->load->view('formuser');
-  $this->load->view('element/footer');
- } 
+ // public function formuser() {
+ //  $this->load->view('element/header');
+ //  $this->load->view('formuser');
+ //  $this->load->view('element/footer');
+ // } 
 
 
  public function jeniskeluhan() {
@@ -114,11 +114,11 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  }  */
 
- public function register() {
-  $this->load->view('element/header');
-  $this->load->view('registerpage');
-  $this->load->view('element/footer');
- }
+ // public function register() {
+ //  $this->load->view('element/header');
+ //  $this->load->view('registerpage');
+ //  $this->load->view('element/footer');
+ // }
 
  public function tambahprogress() {
   $this->load->view('element/header');

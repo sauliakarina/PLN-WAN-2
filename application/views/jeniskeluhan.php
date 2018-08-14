@@ -26,26 +26,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                        $no=1;
+                                        foreach($jeniskeluhan as $jk ) {
+
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Listrik Setempat Padam</td>
-                                            <td></td>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $jk->jenis_keluhan ?></td>
+                                            <td><?php echo $jk->ket_keluhan ?></td>
                                             <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editkeluhan">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
+                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
+                                                <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>IP yg di tunjuk monitoring down</td>
-                                            <td></td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editkeluhan">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-                                      </tr>
-                                       
-                                        </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

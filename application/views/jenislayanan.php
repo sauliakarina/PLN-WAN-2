@@ -11,7 +11,7 @@
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
 
-                  <a href="<?php echo base_url();?>c_form/form_tambah_jenis_layanan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
+                  <a href="<?php echo base_url();?>c_layanan/tambah_jenislayanan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
 
                   <br>
                   <br>
@@ -26,37 +26,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                        $no=1;
+                                        foreach($jenislayanan as $jl ) {
+
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td> IPVPN</td>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $jl->nama_layanan ?></td>
                                             <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/form_edit_jenis_layanan">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
+                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editlayanan">Edit</a>
+                                                <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td> Internet</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-                                      </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td> Etronet</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-            <tr>
-                                            <td>4</td>
-                                            <td>Chanel</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-                                        </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
