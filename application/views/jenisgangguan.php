@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
 
-                  <a href="<?php echo base_url();?>c_form/tambahgangguan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
+                  <a href="<?php echo base_url();?>c_gangguan/tambah_jenisgangguan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
 
                   <br>
                   <br>
@@ -26,58 +26,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                        $no=1;
+                                        foreach($jenisgangguan as $jg ) {
+
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Putus Kabel</td>
-                                            <td></td>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $jg->jenis_gangguan ?></td>
+                                            <td><?php echo $jg->ket_gangguan ?></td>
                                             <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
+                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
+                                                <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Perangkat</td>
-                                            <td>Switch, router</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-                                      </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Modul</td>
-                                            <td>Software/konfig/Catalys</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-            <tr>
-                                            <td>4</td>
-                                            <td>Wiring</td>
-                                            <td>Kabel non fo</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-            <tr>
-                                            <td>5</td>
-                                            <td>Patchord</td>
-                                            <td>Fo Indor</td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-               <tr>
-                                            <td>6</td>
-                                            <td>Power Supply</td>
-                                            <td></td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_main/edit">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
-                                      </tr>
-                                        </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

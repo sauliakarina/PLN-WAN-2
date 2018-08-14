@@ -88,11 +88,6 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  } 
 
-  public function jenisgangguan() {
-  $this->load->view('element/header');
-  $this->load->view('jenisgangguan');
-  $this->load->view('element/footer');
- } 
 
  public function jeniskeluhan() {
   $this->load->view('element/header');
@@ -106,11 +101,11 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  } 
 
-  public function tambahgangguan() {
+ /* public function tambahgangguan() {
   $this->load->view('element/header');
   $this->load->view('tambahgangguan');
   $this->load->view('element/footer');
- } 
+ } */
 
   public function tambahkeluhan() {
   $this->load->view('element/header');

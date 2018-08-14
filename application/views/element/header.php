@@ -70,7 +70,7 @@
                             </li>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Kelola <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                  <li><a href="<?php echo base_url();?>c_form/jenisgangguan" style="color: black">Jenis Gangguan</a></li>
+                                  <li><a href="<?php echo base_url();?>c_gangguan/jenisgangguan" style="color: black">Jenis Gangguan</a></li>
                                   <li><a href="<?php echo base_url();?>c_form/jeniskeluhan" style="color: black">Jenis Keluhan</a></li>
                                   <li><a href="<?php echo base_url();?>c_form/jenislayanan" style="color: black">Jenis Layanan</a></li>
                                   <li><a href="<?php echo base_url();?>c_form/form_layanan" style="color: black">Layanan</a></li>
