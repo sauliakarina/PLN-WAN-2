@@ -29,6 +29,35 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/jeniskeluhan');
 	}
 
+<<<<<<< HEAD
+	function edit_jeniskeluhan($id){
+		$where = array('id_jeniskeluhan' => $id);
+		$data=array (
+        	'jeniskeluhan' => $this->m_data_keluhan->edit_data($where,'tb_jeniskeluhan')->result()
+        	);
+		$this->load->view('element/header');
+		$this->load->view('editkeluhan',$data);
+		$this->load->view('element/footer');
+	}
+
+	function update_jeniskeluhan(){
+		$id_jeniskeluhan = $this->input->post('id_jeniskeluhan');
+		$jenis_keluhan = $this->input->post('jenis_keluhan');
+		$ket_keluhan = $this->input->post('ket_keluhan');
+		
+		$data = array(
+			'jenis_keluhan' => $jenis_keluhan,
+			'ket_keluhan' => $ket_keluhan
+		);
+
+		$where = array(
+			'id_jeniskeluhan' => $id_jeniskeluhan
+		);
+
+		$this->m_data_keluhan->update_data($where,$data,'tb_jeniskeluhan');
+		redirect('c_keluhan/jeniskeluhan');
+	}
+=======
 
 	function hapus_jeniskeluhan($id){
 		$where = array('id_jeniskeluhan' => $id);
@@ -36,5 +65,6 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/jeniskeluhan');
 	}
 
+>>>>>>> 32469c54de33dbdb28e7a2a7bf8a0e3434784c83
 }
 ?>

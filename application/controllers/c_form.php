@@ -75,11 +75,11 @@ public function form_edit_layanan(){
  //  $this->load->view('element/footer');
  // }
 
- public function form_edit_jenis_layanan(){
+/* public function form_edit_jenis_layanan(){
   $this->load->view('element/header');
   $this->load->view('form_edit_jenis_layanan');
   $this->load->view('element/footer');
- }
+ }*/
 
 
  // public function formuser() {
@@ -95,11 +95,11 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  } 
 
- public function editkeluhan() {
+ /*public function editkeluhan() {
   $this->load->view('element/header');
   $this->load->view('editkeluhan');
   $this->load->view('element/footer');
- } 
+ } */
 
 
   public function tambahkeluhan() {
