@@ -39,8 +39,6 @@
                                                <form method='' action="<?php echo base_url('c_layanan/edit_jenislayanan/'.$jl->id_jenislayanan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
-                                                <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editlayanan">Edit</a>
                                                 <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jl->id_jenislayanan ?>)" class="btn btn-danger">Hapus</button>
                                             </td>
                                         </tr>
@@ -98,6 +96,5 @@
         window.location.href =  "<?php echo base_url();?>c_layanan/hapus_jenislayanan/"+p_id;
     }
 </script>
->>>>>>> 32469c54de33dbdb28e7a2a7bf8a0e3434784c83
 
  </main>
