@@ -33,6 +33,7 @@ class c_user extends CI_Controller{
 
 		$data=array(
 			'nama' => $nama,
+			'id_karyawan' => $id_karyawan,
 			'password' => $password,
 			'status_user' => $status_user
 
