@@ -8,6 +8,15 @@ class c_layanan extends CI_Controller{
         $this->load->helper('url');
 	}
 
+	public function form_tambah_layanan(){
+	  $data = array(
+	  	'get_jenislayanan' => $this->m_data_layanan->get_jenislayanan()
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('form_tambah_layanan');
+	  $this->load->view('element/footer');
+	 }
+
 	function jenislayanan(){
 		$data=array(
 			'jenislayanan' => $this->m_data_layanan->tampil_jenislayanan()

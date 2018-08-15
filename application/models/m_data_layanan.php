@@ -31,4 +31,17 @@ class M_data_layanan extends CI_Model{
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+
+
+    function get_jenislayanan() {
+    	$this->db->distinct();
+		$this->db->select('*');
+		$query = $this->db->get('tb_jenislayanan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else {
+			return $query->result();
+		}
+    }
 }
