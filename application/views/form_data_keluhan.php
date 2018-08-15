@@ -23,19 +23,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                        $no=1;
+                                        foreach($keluhan as $k ) {
+
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td> <a class="" href="<?php echo base_url();?>c_main/area">Jatinegara</a></td>
-                                            <td><a class="" href="" data-toggle="modal" data-target="#myModal"></a></td>
-                                            <td>Penyebab</td>
-                                            <td>Solusi</td>
-                                            <td> 
-                <a class="btn btn-primary" href="<?php echo base_url();?>c_main/waktu">Lihat</button></a></td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/edit_data_keluhan">Edit</a>
-        <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-            </td>
+                                            <td><?php echo $no++ ?></td>
+                                            <td>Area</td>
+                                            <td>jenis keluhan</td>
+                                            <td><?php echo $l->penyebab_keluhan ?></td>
+                                            <td><?php echo $l->solusi_keluhan ?></td>
+                                            <td><a class="btn btn-primary" href="<?php echo base_url();?>c_main/waktu">Lihat</button></a></td>
+                                            <td>
+
+                                                 <form method='' action="<?php echo base_url('c_layanan/edit_layanan/'.$l->sid) ?>">
+                                                    <button class='btn btn-default' type='submit'>Edit</button>
+                                                </form>
+                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $l->sid ?>)" class="btn btn-danger">Hapus</button>
+                                            </td>
                                         </tr>
+                                        <?php } ?>
+                                       
                                     </tbody>
                                 </table>
                             </div>

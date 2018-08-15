@@ -66,6 +66,4 @@ class c_keluhan extends CI_Controller{
 	}
 
 
-}
-
 ?>
