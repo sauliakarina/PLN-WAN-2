@@ -31,8 +31,8 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $no++ ?></td>
-                                            <td>Area</td>
-                                            <td>jenis keluhan</td>
+                                            <td> <a class="" href="<?php echo base_url();?>c_main/area">area <?php echo $this->m_data_keluhan->tampil_layanan($k->sid)->lokasi ?></a></td>
+                                            <td><?php echo $this->m_data_keluhan->tampil_jeniskeluhan_byid($k->id_jeniskeluhan)->jenis_keluhan ?></td>
                                             <td><?php echo $k->penyebab_keluhan ?></td>
                                             <td><?php echo $k ->solusi_keluhan ?></td>
                                             <td><a class="btn btn-primary" href="<?php echo base_url();?>c_main/waktu">Lihat</button></a></td>

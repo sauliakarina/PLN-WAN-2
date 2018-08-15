@@ -64,4 +64,6 @@ class M_data_layanan extends CI_Model{
 		return $query->row();
 	}
 
+	
+
 }
