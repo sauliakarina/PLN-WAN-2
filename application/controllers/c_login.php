@@ -7,10 +7,12 @@ class c_login extends CI_Controller{
         $this->load->model('m_login');
          $this->load->library(array('form_validation'));
     if (isset($_SESSION['id_karyawan'])){
-        redirect ('home');
+        redirect ('c_main/home');
     }
 
     }
+
+
 
     function index(){
         $data=array(
@@ -26,11 +28,11 @@ class c_login extends CI_Controller{
     }
 
     function aksi_login(){
-        $username = $this->input->post('id_karyawan');
+        $id_karyawan = $this->input->post('id_karyawan');
         $password = $this->input->post('password');
         $where = array(
             'id_karyawan' => $id_karyawan,
-            'password' => md5($password)
+            'password' => $password
 
             );
         $cek2 = $this->m_login->cek_login("tb_user",$where);
@@ -45,7 +47,7 @@ class c_login extends CI_Controller{
                     $sess_data['status_user'] = $sess->status_user;
                 }
                 $this->session->set_userdata($sess_data); 
-                 redirect(base_url("home"));
+                 redirect(base_url("c_main/home"));
                /*
                if($this->session->userdata('status')=='admin') 
                {
@@ -62,10 +64,11 @@ class c_login extends CI_Controller{
                         </script>";
             }
         }
-    }
+    
 
     function logout(){
-        unset($_SESSION["id"]);
+        unset($_SESSION["id_karyawan"]);
         $this->session->sess_destroy();
-        redirect('c_login');
+        redirect('c_main/index');
     }
+}
