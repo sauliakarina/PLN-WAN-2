@@ -57,11 +57,11 @@ public function form_edit_layanan(){
   $this->load->view('element/footer');
  }
 
- public function form_edit_user(){
+ /*public function form_edit_user(){
   $this->load->view('element/header');
   $this->load->view('form_edit_user');
   $this->load->view('element/footer');
- }
+ }*/
 
  /*public function jenislayanan() {
   $this->load->view('element/header');
