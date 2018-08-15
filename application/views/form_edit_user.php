@@ -13,15 +13,15 @@
                     <form action="<?php echo base_url();?>c_user/update_user" method="post">
                         <div class="form-group">
                           <label for="ID">ID Karyawan<font color="red">*</font></label>
-                          <input style="width:500px" class="form-control" type="text" name="id_karyawan" value="<?php echo $u->id_karyawan ?>" disabled>
+                          <input  class="form-control" type="text" name="id_karyawan" value="<?php echo $u->id_karyawan ?>" disabled>
                         </div>
                         <div class="form-group">
                           <label for="nama">Nama:<font color="red">*</font></label>
-                          <input id="nama" type="text" style="width:500px" class="form-control" name="nama" value="<?php echo $u->nama ?>">
+                          <input id="nama" type="text"  class="form-control" name="nama" value="<?php echo $u->nama ?>">
                         </div>
                         <div class="form-group">
                           <label for="password">Password:<font color="red">*</font></label>
-                          <input id="password" type="password" style="width:500px" class="form-control" name="password" value="<?php echo $u->password ?>">
+                          <input id="password" type="password"  class="form-control" name="password" value="<?php echo $u->password ?>">
                         </div>
                         <!-- <div class="form-group">
                           <label for="comfirmpassword">Konfirmasi Password:<font color="red">*</font></td>

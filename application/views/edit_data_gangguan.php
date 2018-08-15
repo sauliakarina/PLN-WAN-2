@@ -55,7 +55,7 @@
   </div>
   <div class="form-group">
                           <label for="prodi">Jenis Gangguan :</label>
-                          <select class="form-control" style="width:500px" id="jenis gangguan" name="jenis gangguan">
+                          <select class="form-control"  id="jenis gangguan" name="jenis gangguan">
                             <option value="_">_____Pilih Gangguan_____</option>
                             <option value="Putus Kabel">Putus Kabel</option>
                             <option value="Perangkat">Perangkat (Switch,Router)</option>
@@ -68,7 +68,7 @@
 
   <div class="form-group">
                           <label for="prodi">Layanan :</label>
-                          <select class="form-control" style="width:500px" id="jenis gangguan" name="jenis gangguan">
+                          <select class="form-control"  id="jenis gangguan" name="jenis gangguan">
                             <option value="_">_____Pilih Gangguan_____</option>
                             <option value="IPVPN">IPVPN</option>
                             <option value="Akses Internet">Akses Internet</option>

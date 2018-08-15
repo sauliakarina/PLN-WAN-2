@@ -13,8 +13,8 @@
                     <form action="<?php echo base_url();?>c_keluhan/update_jeniskeluhan" method="post">
                         <div class="form-group">
                           <label>Jenis Keluhan</label>
-                          <input type="hidden" style="width:500px" class="form-control" name="id_jeniskeluhan" value="<?php echo $jk->id_jeniskeluhan ?>">
-                          <input type="text" style="width:500px" class="form-control" name="jenis_keluhan" value="<?php echo $jk->jenis_keluhan ?>">
+                          <input type="hidden" class="form-control" name="id_jeniskeluhan" value="<?php echo $jk->id_jeniskeluhan ?>">
+                          <input type="text" class="form-control" name="jenis_keluhan" value="<?php echo $jk->jenis_keluhan ?>">
                         </div>
                         <div class="form-group">
                           <label for="password">Keterangan</label>

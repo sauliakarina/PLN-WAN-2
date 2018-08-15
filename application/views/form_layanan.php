@@ -21,7 +21,8 @@
                                             <th>Nama PIC</th>
                                             <th>No HP</th>
                                             <th>E-mail</th>
-                                            <th></th>
+                                            <th style="width:50px"></th>
+                                            <th style="width:50px"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -39,12 +40,15 @@
                                             <td><?php echo $l->nama_pic ?></td>
                                             <td><?php echo $l->no_hp_pic ?></td>
                                             <td><?php echo $l->email ?></td>
-                                            <td>
-
+                                            <td><center>
                                                  <form method='' action="<?php echo base_url('c_layanan/edit_layanan/'.$l->sid) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
                                                 </form>
+                                              </center>
+                                            </td>
+                                            <td><center>
                                                 <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $l->sid ?>)" class="btn btn-danger">Hapus</button>
+                                              </center>
                                             </td>
                                         </tr>
                                         <?php } ?>

@@ -12,7 +12,7 @@
                     <form action="<?php echo base_url();?>c_keluhan/tambah_aksi_jeniskeluhan" method="post">
                         <div class="form-group">
                           <label for="nama">Jenis Keluhan</label>
-                          <input id="nama" type="text" style="width:500px" class="form-control" name="jenis_keluhan">
+                          <input id="nama" type="text"  class="form-control" name="jenis_keluhan">
                         </div>
                         <div class="form-group">
                           <label for="password">Keterangan</label>
