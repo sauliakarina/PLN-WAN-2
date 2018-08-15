@@ -21,6 +21,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
+                                            <th>Id karyawan</th>
                                              <th>Password</th>
                                               <th>Status</th>
                                             <th>Aksi</th>
@@ -36,6 +37,7 @@
                                         <tr>
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $u->nama ?></td>
+                                            <td><?php echo $u->id_karyawan ?></td>
                                             <td><?php echo $u->password ?></td>
                                             <td><?php echo $u->status_user ?></td>
                                             <td><center>

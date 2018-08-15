@@ -23,9 +23,13 @@
                           <label for="comfirmpassword">Konfirmasi Password:<font color="red">*</font></td>
                           <input type="password" id="confirmpassword" name="password" style="width:500px" class="form-control">
                         </div> -->
-                        <div class="form-group">
-                          <label for="statususer">Status User<font color="red">*</font></td>
-                          <input type="text" id="statususer" name="status_user" style="width:500px" class="form-control">
+                     <div class="form-group">
+                          <label for="prodi">Status :</label>
+                          <select class="form-control" id="jenis gangguan" name="status_user">
+                            <option value="_">_____Pilih Status_____</option>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                          </select>
                         </div>
                         <hr/>
                           <button type="submit" class="btn btn-default btn-lg">Daftar </button>
