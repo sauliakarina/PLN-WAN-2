@@ -19,6 +19,17 @@
                           <input id="nama" type="text" style="width:500px" class="form-control" name="nama">
                         </div>
                         <div class="form-group">
+                           <label><b>Jenis Layanan</b></label>
+                            <select class="form-control" id="prodi" name="id_jenislayanan">
+                              <option>__Pilih Jenis Layanan__</option>
+                                <?php 
+                                  foreach($get_jenislayanan as $jl){ 
+                                  echo "<option  value='$jl->id_jenislayanan'>$jl->nama_layanan</option>";
+                                }
+                              ?>
+                  </select>
+                        </div>
+                        <div class="form-group">
                           <label for="password">Kapasitas<font color="red">*</font></label>
                           <input id="password" type="password" style="width:500px" class="form-control" name="email">
                         </div>
