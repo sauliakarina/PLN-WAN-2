@@ -65,10 +65,4 @@ class c_login extends CI_Controller{
             }
         }
     
-
-    function logout(){
-        unset($_SESSION["id_karyawan"]);
-        $this->session->sess_destroy();
-        redirect('c_main/index');
-    }
 }

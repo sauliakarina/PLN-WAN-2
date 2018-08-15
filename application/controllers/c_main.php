@@ -57,4 +57,11 @@ public function contoh() {
   $this->load->view('contoh/blank');
   $this->load->view('contoh/login');
  }
+
+ public function logout(){
+  unset($_SESSION["id_karyawan"]);
+  $this->session->sess_destroy();
+  redirect('c_main/index');
+}
+
 }
