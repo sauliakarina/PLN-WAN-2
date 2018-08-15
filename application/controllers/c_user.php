@@ -40,4 +40,11 @@ class c_user extends CI_Controller{
 		$this->m_data_user->input_user($data, 'tb_user');
 		redirect('c_user/user');
 	}
+
+	function hapus_user($id){
+		$where = array('id_karyawan' => $id);
+		$this->m_data_user->hapus_user($where,'tb_user');
+		redirect('c_user/user');
+	}
+
 }

@@ -36,4 +36,11 @@ class c_layanan extends CI_Controller{
 		redirect('c_layanan/jenislayanan');
 	}
 
+	function hapus_jenislayanan($id){
+		$where = array('id_jenislayanan' => $id);
+		$this->m_data_keluhan->hapus_data($where,'tb_jeniskeluhan');
+		redirect('c_layanan/jenislayanan');
+	}
+
+
 }
