@@ -9,7 +9,7 @@
                 <div class="row">
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
-                         <a href="<?php echo base_url();?>c_layanan/form_tambah_layanan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
+                         <a href="<?php echo base_url();?>c_layanan/form_layanan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
                           <table class="table table-striped table-bordered table-hover" style="margin-top: 20px">
                                     <thead>
                                         <tr>
@@ -25,16 +25,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                        $no=1;
+                                        foreach($layanan as $l ) {
+
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>170000268240020</td>
-                                            <td>Jatinegara</td>
-                                            <td>IPVPN</td>
-                                            <td>2 MB</td>
-                                            <td>Mulyono</td>
-                                            <td>081234567</td>
-                                            <td>email@gmail.com</td>
-                                            <td><center> <a class="btn btn-default" href="<?php echo base_url();?>c_form/form_edit_layanan">Edit</a> <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button></td>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $l->sid ?></td>
+                                            <td><?php echo $l->lokasi ?></td>
+                                            <td><?php echo $l->id_jenislayanan ?></td>
+                                            <td><?php echo $l->kapasitas ?></td>
+                                            <td><?php echo $l->nama_pic ?></td>
+                                            <td><?php echo $l->no_hp_pic ?></td>
+                                            <td><?php echo $l->email ?></td>
+                                            <td><center>
+<!-- 
+                                                <form method='' action="<?php //echo base_url('c_keluhan/edit_jeniskeluhan/'.$jk->id_jeniskeluhan) ?>">
+                                                 <button class='btn btn-default' type='submit'>Edit</button>
+                                               </form>
+                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php //echo $l->id_layanan ?>)" class="btn btn-danger">Hapus</button>
+ -->                                            </td>
+                                        </tr>
+                                        <?php } ?>
                                         </tr>
                                     </tbody>
                                 </table>

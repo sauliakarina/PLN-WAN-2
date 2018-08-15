@@ -9,8 +9,11 @@ class c_layanan extends CI_Controller{
 	}
 
 	 public function form_layanan(){
+		$data=array(
+			'layanan' => $this->m_data_layanan->tampil_layanan()
+		);
 	  $this->load->view('element/header');
-	  $this->load->view('form_layanan');
+	  $this->load->view('form_layanan', $data);
 	  $this->load->view('element/footer');
 	 }
 
