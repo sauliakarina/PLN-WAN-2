@@ -36,7 +36,9 @@
                                             <td><?php echo $jk->jenis_keluhan ?></td>
                                             <td><?php echo $jk->ket_keluhan ?></td>
                                             <td><center>
-                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
+                                                <form method='' action="<?php echo base_url('c_keluhan/edit_jeniskeluhan/'.$jk->id_jeniskeluhan) ?>">
+                                                 <button class='btn btn-default' type='submit'>Edit</button>
+                                               </form>
                                                 <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
                                             </td>
                                         </tr>

@@ -35,7 +35,9 @@
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $jl->nama_layanan ?></td>
                                             <td><center>
-                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editlayanan">Edit</a>
+                                               <form method='' action="<?php echo base_url('c_layanan/edit_jenislayanan/'.$jl->id_jenislayanan) ?>">
+                                                 <button class='btn btn-default' type='submit'>Edit</button>
+                                               </form>
                                                 <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
                                             </td>
                                         </tr>
@@ -51,25 +53,5 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title" align="center">Keterangan Jenis Gangguan</h4>
-          </div>
-          <div class="modal-body">
-            <p align="center">CABLE : PUTUS KABEL FO tipe F8</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-          </div>
-        </div>
-
-      </div>
-    </div> <!-- MODAL -->
 
  </main>
