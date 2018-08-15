@@ -41,7 +41,9 @@
                                             <td><?php echo $u->password ?></td>
                                             <td><?php echo $u->status_user ?></td>
                                             <td><center>
-                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
+                                                 <form method='' action="<?php echo base_url('c_user/edit_user/'.$u->id_karyawan) ?>">
+                                                 <button class='btn btn-default' type='submit'>Edit</button>
+                                               </form>
                                                 <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $u->id_karyawan ?>)" class="btn btn-danger">Hapus</button>
                                             </td>
                                         </tr>
