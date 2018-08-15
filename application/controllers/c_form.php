@@ -20,17 +20,13 @@ class c_form extends CI_Controller {
   $this->load->view('element/footer');
  } 
 
- public function form_data_keluhan() {
+ /*public function form_data_keluhan() {
   $this->load->view('element/header');
   $this->load->view('form_data_keluhan');
   $this->load->view('element/footer');
- } 
+ } */
 
- public function form_tambah_data_keluhan() {
-  $this->load->view('element/header');
-  $this->load->view('form_tambah_keluhan');
-  $this->load->view('element/footer');
- } 
+ 
 
  public function edit_data_keluhan() {
   $this->load->view('element/header');
