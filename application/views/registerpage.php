@@ -16,6 +16,10 @@
                           <input id="nama" type="text" style="width:500px" class="form-control" name="nama">
                         </div>
                         <div class="form-group">
+                          <label for="id_karyawan">ID Karyawan:<font color="red">*</font></label>
+                          <input id="id_karyawan" type="text" style="width:500px" class="form-control" name="id_karyawan">
+                        </div>
+                        <div class="form-group">
                           <label for="password">Password:<font color="red">*</font></label>
                           <input id="password" type="password" style="width:500px" class="form-control" name="password">
                         </div>
