@@ -36,15 +36,11 @@
                                             <td><?php echo $jk->jenis_keluhan ?></td>
                                             <td><?php echo $jk->ket_keluhan ?></td>
                                             <td><center>
-<<<<<<< HEAD
+
                                                 <form method='' action="<?php echo base_url('c_keluhan/edit_jeniskeluhan/'.$jk->id_jeniskeluhan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
-                                                <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
-=======
-                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editgangguan">Edit</a>
                                                 <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jk->id_jeniskeluhan ?>)" class="btn btn-danger">Hapus</button>
->>>>>>> 32469c54de33dbdb28e7a2a7bf8a0e3434784c83
                                             </td>
                                         </tr>
                                         <?php } ?>
