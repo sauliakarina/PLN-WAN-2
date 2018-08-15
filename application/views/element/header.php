@@ -78,7 +78,7 @@
                                   <li><a href="<?php echo base_url();?>c_user/user" style="color: black">Akun</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url();?>c_main/index">Keluar</a></li>
+                            <li><a href="<?php echo base_url();?>c_login/logout">Keluar</a></li>
                         </ul>
                     </div>
                 </div>

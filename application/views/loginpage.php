@@ -70,7 +70,7 @@
             <div class="row">
                 
             </div>
-            <form method="POST">
+            <form method="POST" action="<?php echo base_url('c_login/aksi_login'); ?>">
                 <div class="col-md-3"></div>
             <div class="col-md-6 col-sm-6" style="margin-right:200 ; margin-left:200 ">
                     <div class="panel panel-primary" style="box-shadow: 8px 8px 5px #888888">
@@ -80,7 +80,7 @@
                         <div class="panel-body">
                         <div style="width: 320px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input placeholder="Username" type="text" name="noreg" id="noreg" class="form-control" />
+                        <input placeholder="ID Karyawan" type="text" name="id_karyawan" id="id_karyawan" class="form-control" />
                         </div>
                         <p>
                         <div style="width: 320px" class="input-group">
@@ -89,10 +89,9 @@
                         </div>
                         <hr />
                       
-                        <a style="box-shadow: 8px 8px 5px #888888;" href="<?php echo base_url();?>c_main/home" class="btn btn-info" ><span class="glyphicon glyphicon-user"></span> &nbsp;Masuk </a>&nbsp;
+                        <button style="box-shadow: 8px 8px 5px #888888;" class="btn btn-info" type="submit"> <span class="glyphicon glyphicon-user"></span> &nbsp;Masuk </button>&nbsp;
                     </p>
                     <hr />
-                    
                       <!--   <a style="box-shadow: 8px 8px 5px #888888;" href="<?php echo base_url();?>c_main/register" class="btn btn-info" ><span class="fa fa-pencil"></span> &nbsp; Daftar </a>&nbsp; -->
                     
 
@@ -107,7 +106,6 @@
               </div>
                        </div>
 </div>
-  </form>
     <!-- CONTENT-WRAPPER SECTION END-->
     <footer>
         <div class="container">
