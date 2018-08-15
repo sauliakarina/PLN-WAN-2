@@ -8,68 +8,38 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    
-      <div class="form-group">
-      <label for="area">Area: </label>
-      <select id="area" name="area" class="form-control">
-      <option value="_">_____Pilih Area_____</option>
-      <option value="Akses Internet Corporate PLN Disjaya (50 Mb)">Akses Internet Corporate PLN Disjaya (50 Mb)</option>
-      <option value="APL Bandengan">Bandengan</option>
-      <option value="APL Bintaro">Bintaro</option>
-      <option value="APL Bulungan/AJ Kebayoran">Bulungan/Kebayoran</option>
-      <option value="APL Cempaka Putih">Cempaka Putih</option>
-      <option value="APL Cengkareng">Cengkareng</option>
-      <option value="APL Ciledug">Ciledug</option>
-      <option value="APL Ciputat">Ciputat</option>
-      <option value="APL Ciracas">Ciracas</option>
-      <option value="Command Center (IPVPN)">Command Center</option>
-      <option value="Command Center (IPVPN)">Command Center 2</option>
-      <option value="APL Condet (APL Kramat Jati)">Condet (Kramat Jati)</option>
-      <option value="APL Grogol">Grogol</option>
-      <option value="Gudang Jatirangon">Gudang Jatirangon</option>
-      <option value="AJ Jatinegara">Jatinegara</option>
-      <option value="APL Kalideres">Kalideres</option>
-      <option value="APL Kalimalang">Kalimalang</option>      
-      <option value="Kantor Distribusi PLN Distribusi Jaya">Kantor Distribusi PLN Distribusi Jaya</option>
-      <option value="Kantor Distribusi PLN Distribusi Jaya (2)">Kantor Distribusi PLN Distribusi Jaya (2)</option>
-      <option value="kebayoran">Kebayoran (Bulungan) </option>
-      <option value="APL Kebon Jeruk">Kebon Jeruk</option>
-      <option value="Kelapa Gading">Kelapa Gading</option>
-      <option value="APL Lenteng Agung">Lenteng Agung</option>
-      <option value="APL Marunda">Marunda</option>
-      <option value="APL Pamulang">Pamulang</option>
-      <option value="APL Pasar Minggu/Lenteng Agung">Pasar Minggu/Lenteng Agung</option>
-      <option value="PLN Net Disjaya">PLN Net Disjaya</option>
-      <option value="APL Pondok Gede">Pondok Gede</option>
-      <option value="APL Pondok Kopi">Pondok Kopi</option>
-      <option value="Posko Istana Negara">Posko Istana Negara</option>
-      <option value="Posko MGT Gunung Sahari">Posko MGT Gunung Sahari</option>
-      <option value="Posko Satelit Mega Kuningan">Posko Satelit Mega Kuningan</option>
-      <option value="Gudang Klender">Gudang Klender</option>  
-      <option value="Gudang Tanjung Priok">Gudang Tanjung Priok</option>
-      <option value="AJ Tanjung Priok ex Bukopin">Tanjung Priok ex Bukopin</option>
-      <option value="Vicon PLN Disjaya">Vicon PLN Disjaya</option>
-      <option value="WAN Disjaya Backhaul">WAN Disjaya Backhaul</option>
-      <option value="Wisma Cipayung">Wisma Cipayung </option>
-    </select>
-  </div>
+                <form action="<?php echo base_url();?>c_keluhan/tambah_aksi_keluhan" method="post">
+                <div class="form-group">
+                <label for="area">Lokasi </label>
+                <select id="area" name="sid" class="form-control">
+                <option value="_">_____Pilih Area_____</option>
+                 <?php 
+                   foreach($get_layanan as $gl){ 
+                   echo "<option  value='$gl->sid'>$gl->lokasi</option>";
+                   }
+                ?>
+              </select>
+            </div>
       
   
-  <div class="form-group">
-                          <label for="prodi">Jenis Keluhan :</label>
-                          <select class="form-control" id="jenis keluan" name="jenis keluhan">
+                  <div class="form-group">
+                          <label for="prodi">Jenis Keluhan </label>
+                          <select class="form-control" id="jenis keluan" name="id_jeniskeluhan">
                             <option value="_">_____Pilih Jenis Keluhan_____</option>
-                            <option value="Putus Kabel">Listrik setempat padam</option>
-                            <option value="Perangkat">IP yang ditunjuk monitoring down</option>
-                          </select>
+                            <?php 
+                               foreach($get_jeniskeluhan as $jk){ 
+                               echo "<option  value='$jk->id_jeniskeluhan'>$jk->jenis_keluhan</option>";
+                               }
+                            ?>
+                           </select>
                         </div>
 
                          <div class="row">
         <div class='col-md-12'>
             <div class="form-group">
               <label for="date">Keterangan :  </label>
-                    <textarea rows="3" class="form-control"></textarea>
-                
+                    <textarea rows="3" class="form-control" name="deskripsi_jeniskeluhan"></textarea>
+                    <input style="width:500px" class="form-control" type="hidden" name="isDelete" value="yes">
                 </div>
             </div>
         </div>
@@ -79,7 +49,7 @@
             <div class="form-group">
               <label for="date">Penyebab :  </label>
                     
-                    <textarea rows="5" class="form-control"></textarea>
+                    <textarea rows="5" class="form-control" name="penyebab"></textarea>
                 </div>
             </div>
         </div>
@@ -88,7 +58,7 @@
         <div class='col-md-12'>
             <div class="form-group">
               <label for="date">Solusi :  </label>
-                    <textarea rows="5" class="form-control"></textarea>
+                    <textarea rows="5" class="form-control" name="solusi"></textarea>
                 
                 </div>
             </div>
@@ -97,7 +67,7 @@
         <div class='col-md-6'>
             <div class="form-group">
               <label for="date">Open Date :  </label>
-                    <input type='date' class="form-control" />
+                    <input type='date' class="form-control" name="open_date" />
                 
                 </div>
             </div>
@@ -108,7 +78,7 @@
         <div class='col-md-6'>
             <div class="form-group">
               <label for="date">Open Time :  </label>
-                    <input type='time' class="form-control" />
+                    <input type='time' class="form-control" name="open_time" />
                 
                 </div>
             </div>
@@ -118,7 +88,7 @@
         <div class='col-md-6'>
             <div class="form-group">
               <label for="date">Close Date :  </label>
-                    <input type='date' class="form-control" />
+                    <input type='date' class="form-control" name="close_date" />
                 
                 </div>
             </div>
@@ -129,25 +99,25 @@
         <div class='col-md-6'>
             <div class="form-group">
               <label for="date">Close Time :  </label>
-                    <input type='time' class="form-control" />
+                    <input type='time' class="form-control" name="close_time" />
                 
                 </div>
             </div>
+ 
+        </div>
+        </div>
         
-    
-                        
+<<<<<<< HEAD
+=======
 
-        </div>
-        </div>
-        
+
+>>>>>>> e578b1bb4025dbf9b6a2c3922eadf63b0e7d186c
           <br>
                        
+               <button type="submit" class="btn btn-default btn-lg">Simpan </button>
+        </label></div>
+      </form>
                         
-                          <button type="submit" class="btn btn-default btn-lg">Simpan </button>
-                        </label></div></form>
-                        
-                          
-                    </form>
   </div>
   </div>
 </div>
