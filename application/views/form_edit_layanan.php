@@ -17,7 +17,7 @@
                         </div>
                         <div class="form-group">
                           <label for="nama">Lokasi<font color="red">*</font></label>
-                          <input id="nama" type="text" style="width:500px" class="form-control" name="lokasi" value="<?php echo $l->lokasi ?>">
+                          <input id="nama" type="text"  class="form-control" name="lokasi" value="<?php echo $l->lokasi ?>">
                         </div>
                         <div class="form-group">
                            <label><b>Jenis Layanan</b></label>
@@ -32,19 +32,19 @@
                         </div>
                         <div class="form-group">
                           <label for="password">Kapasitas<font color="red">*</font></label>
-                          <input id="password" type="text" style="width:500px" class="form-control" name="kapasitas" value="<?php echo $l->kapasitas ?>">
+                          <input id="password" type="text" class="form-control" name="kapasitas" value="<?php echo $l->kapasitas ?>">
                         </div>
                         <div class="form-group">
                           <label for="comfirmpassword">Nama PIC<font color="red">*</font></td>
-                          <input type="text"  name="nama_pic" style="width:500px" class="form-control" value="<?php echo $l->nama_pic ?>">
+                          <input type="text"  name="nama_pic"  class="form-control" value="<?php echo $l->nama_pic ?>">
                         </div>
                         <div class="form-group">
                           <label for="comfirmpassword">No. HP PIC<font color="red">*</font></td>
-                          <input type="text" name="no_hp_pic" style="width:500px" class="form-control" value="<?php echo $l->no_hp_pic ?>">
+                          <input type="text" name="no_hp_pic"  class="form-control" value="<?php echo $l->no_hp_pic ?>">
                         </div>
                         <div class="form-group">
                           <label for="comfirmpassword">E-mail PIC<font color="red">*</font></td>
-                          <input type="text" name="email" style="width:500px" class="form-control" value="<?php echo $l->email ?>" >
+                          <input type="text" name="email"  class="form-control" value="<?php echo $l->email ?>" >
                         </div>
                         <hr/>
                           <button type="submit" class="btn btn-default btn-lg">Simpan </button>

@@ -12,11 +12,11 @@
                     <form action="<?php echo base_url();?>c_layanan/tambah_aksi_layanan" method="post">
                         <div class="form-group">
                           <label for="ID">SID <font color="red">*</font></label>
-                          <input style="width:500px" class="form-control" id="ID" type="text" name="sid">
+                          <input class="form-control" id="ID" type="text" name="sid">
                         </div>
                         <div class="form-group">
                           <label for="nama">Lokasi<font color="red">*</font></label>
-                          <input id="nama" type="text" style="width:500px" class="form-control" name="lokasi">
+                          <input id="nama" type="text" class="form-control" name="lokasi">
                         </div>
                         <div class="form-group">
                            <label><b>Jenis Layanan</b></label>
@@ -31,19 +31,19 @@
                         </div>
                         <div class="form-group">
                           <label for="password">Kapasitas<font color="red">*</font></label>
-                          <input type="text" style="width:500px" class="form-control" name="kapasitas">
+                          <input type="text" class="form-control" name="kapasitas">
                         </div>
                         <div class="form-group">
-                          <label for="comfirmpassword">Nama PIC<font color="red">*</font></td>
-                          <input type="text" name="nama_pic" style="width:500px" class="form-control">
+                          <label for="comfirmpassword">Nama PIC<font color="red">*</font></td></label>
+                          <input type="text" name="nama_pic"  class="form-control">
                         </div>
                         <div class="form-group">
-                          <label for="comfirmpassword">No. HP PIC<font color="red">*</font></td>
-                          <input type="text" name="no_hp_pic" style="width:500px" class="form-control">
+                          <label for="comfirmpassword">No. HP PIC<font color="red">*</font></td></label>
+                          <input type="text" name="no_hp_pic" class="form-control">
                         </div>
                         <div class="form-group">
-                          <label for="comfirmpassword">E-mail PIC<font color="red">*</font></td>
-                          <input type="text" name="email" style="width:500px" class="form-control">
+                          <label for="comfirmpassword">E-mail PIC<font color="red">*</font></td></label>
+                          <input type="text" name="email" class="form-control">
                         </div>
                         <hr/>
                           <button type="submit" class="btn btn-default btn-lg">Tambah </button>

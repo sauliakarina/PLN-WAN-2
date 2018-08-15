@@ -12,7 +12,7 @@
                     <form action="<?php echo base_url();?>c_gangguan/tambah_aksi_jenisgangguan" method="post">
                         <div class="form-group">
                           <label for="nama">Jenis Gangguan</label>
-                          <input id="nama" type="text" style="width:500px" class="form-control" name="jenis_gangguan">
+                          <input id="nama" type="text"  class="form-control" name="jenis_gangguan">
                         </div>
                         <div class="form-group">
                           <label for="">Keterangan</label>

@@ -22,7 +22,8 @@
                                             <th>No</th>
                                             <th>Jenis Keluhan</th>
                                             <th>Keterangan</th>
-                                            <th>Aksi</th>
+                                            <th style="width:50px"></th>
+                                            <th style="width:50px"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -40,7 +41,10 @@
                                                 <form method='' action="<?php echo base_url('c_keluhan/edit_jeniskeluhan/'.$jk->id_jeniskeluhan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
-                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jk->id_jeniskeluhan ?>)" class="btn btn-danger">Hapus</button>
+                                             </center>
+                                           </td>
+                                           <td><center>
+                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jk->id_jeniskeluhan ?>)" class="btn btn-danger">Hapus</button></center>
                                             </td>
                                         </tr>
                                         <?php } ?>

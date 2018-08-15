@@ -13,8 +13,8 @@
                     <form action="<?php echo base_url();?>c_gangguan/update_jenisgangguan" method="post">
                         <div class="form-group">
                           <label>Jenis Gangguan</label>
-                           <input type="hidden" style="width:500px" class="form-control" name="id_jenisgangguan" value="<?php echo $jg->id_jenisgangguan ?>">
-                          <input type="text" style="width:500px" class="form-control" name="jenis_gangguan" value="<?php echo $jg->jenis_gangguan ?>">
+                           <input type="hidden"  class="form-control" name="id_jenisgangguan" value="<?php echo $jg->id_jenisgangguan ?>">
+                          <input type="text"  class="form-control" name="jenis_gangguan" value="<?php echo $jg->jenis_gangguan ?>">
                         </div>
                         <div class="form-group">
                           <label for="password">Keterangan</label>

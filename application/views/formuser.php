@@ -22,9 +22,10 @@
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>ID Karyawan</th>
-                                             <th>Password</th>
-                                              <th>Status</th>
-                                            <th>Aksi</th>
+                                            <th>Password</th>
+                                            <th>Status</th>
+                                            <th style="width:50px"></th>
+                                            <th style="width:50px"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -44,7 +45,11 @@
                                                  <form method='' action="<?php echo base_url('c_user/edit_user/'.$u->id_karyawan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
+                                             </center>
+                                           </td>
+                                           <td><center>
                                                 <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $u->id_karyawan ?>)" class="btn btn-danger">Hapus</button>
+                                              </center>
                                             </td>
                                         </tr>
                                         <?php } ?>
