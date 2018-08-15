@@ -55,4 +55,13 @@ class M_data_layanan extends CI_Model{
 			return $query->result();
 		}
     }
+
+    public function tambah_jenislayanan($id_jenislayanan)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenislayanan',$id_jenislayanan);
+		$query = $this->db->get('tb_jenislayanan');
+		return $query->row();
+	}
+
 }

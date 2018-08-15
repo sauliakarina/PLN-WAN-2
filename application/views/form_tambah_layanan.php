@@ -27,7 +27,7 @@
                                   echo "<option  value='$jl->id_jenislayanan'>$jl->nama_layanan</option>";
                                 }
                               ?>
-                  </select>
+                            </select>
                         </div>
                         <div class="form-group">
                           <label for="password">Kapasitas<font color="red">*</font></label>

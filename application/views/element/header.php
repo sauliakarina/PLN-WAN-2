@@ -73,7 +73,7 @@
                                   <li><a href="<?php echo base_url();?>c_gangguan/jenisgangguan" style="color: black">Jenis Gangguan</a></li>
                                   <li><a href="<?php echo base_url();?>c_keluhan/jeniskeluhan" style="color: black">Jenis Keluhan</a></li>
                                   <li><a href="<?php echo base_url();?>c_layanan/jenislayanan" style="color: black">Jenis Layanan</a></li>
-                                  <li><a href="<?php echo base_url();?>c_form/form_layanan" style="color: black">Layanan</a></li>
+                                  <li><a href="<?php echo base_url();?>c_layanan/form_layanan" style="color: black">Layanan</a></li>
                                   <li class="divider"></li>
                                   <li><a href="<?php echo base_url();?>c_user/user" style="color: black">Akun</a></li>
                                 </ul>

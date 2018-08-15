@@ -46,11 +46,11 @@ class c_form extends CI_Controller {
   $this->load->view('element/footer');
  }*/
 
-public function form_edit_layanan(){
+/*public function form_edit_layanan(){
   $this->load->view('element/header');
   $this->load->view('form_edit_layanan');
   $this->load->view('element/footer');
- }
+ }*/
 
  /*public function form_edit_user(){
   $this->load->view('element/header');

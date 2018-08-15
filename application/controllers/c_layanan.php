@@ -27,6 +27,53 @@ class c_layanan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 }
 
+	 function hapus_layanan($id){
+		$where = array('sid' => $id);
+		$this->m_data_layanan->hapus_data($where,'tb_layanan');
+		redirect('c_layanan/form_layanan');
+	}
+
+
+	 function edit_layanan($id){
+		$where = array('sid' => $id);
+		$data=array (
+        	'layanan' => $this->m_data_layanan->edit_data($where,'tb_layanan')->result(),
+        	'get_jenislayanan' => $this->m_data_layanan->get_jenislayanan()
+        	);
+		$this->load->view('element/header');
+		$this->load->view('form_edit_layanan',$data);
+		$this->load->view('element/footer');
+	}
+
+	function update_layanan(){
+		$sid = $this->input->post('sid');
+		$lokasi = $this->input->post('lokasi'); 
+		$kapasitas = $this->input->post('kapasitas'); 
+		$nama_pic = $this->input->post('nama_pic');
+		$no_hp_pic = $this->input->post('no_hp_pic');
+		$email = $this->input->post('email');
+		$id_jenislayanan = $this->input->post('id_jenislayanan');
+
+
+		$data=array(
+			'lokasi' => $lokasi,
+			'kapasitas' => $kapasitas,
+			'nama_pic' => $nama_pic,
+			'no_hp_pic' => $no_hp_pic,
+			'email' => $email,
+			'id_jenislayanan' => $id_jenislayanan,
+
+		);
+
+		$where = array(
+			'sid' => $sid
+		);
+
+		$this->m_data_layanan->update_data($where,$data,'tb_layanan');
+		redirect('c_layanan/form_layanan');
+	}
+
+
 	function jenislayanan(){
 		$data=array(
 			'jenislayanan' => $this->m_data_layanan->tampil_jenislayanan()
