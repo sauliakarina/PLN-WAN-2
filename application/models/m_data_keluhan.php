@@ -56,4 +56,17 @@ class M_data_keluhan extends CI_Model{
 			return $query->result();
 		}
     }
+
+   	function tampil_keluhan(){
+		$this->db->select('*');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+
+	}
+
 }

@@ -9,8 +9,12 @@ class c_keluhan extends CI_Controller{
 	}
 
 	public function form_data_keluhan() {
+	$data=array (
+   	'keluhan' => $this->m_data_keluhan->tampil_keluhan()
+   	);
+
 	  $this->load->view('element/header');
-	  $this->load->view('form_data_keluhan');
+	  $this->load->view('form_data_keluhan', $data);
 	  $this->load->view('element/footer');
 	 } 
 
@@ -111,5 +115,5 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/jeniskeluhan');
 	}
 
-
+}
 ?>

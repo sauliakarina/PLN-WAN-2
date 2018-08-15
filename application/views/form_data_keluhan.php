@@ -32,8 +32,8 @@
                                             <td><?php echo $no++ ?></td>
                                             <td>Area</td>
                                             <td>jenis keluhan</td>
-                                            <td><?php echo $l->penyebab_keluhan ?></td>
-                                            <td><?php echo $l->solusi_keluhan ?></td>
+                                            <td><?php echo $k->penyebab_keluhan ?></td>
+                                            <td><?php echo $k ->solusi_keluhan ?></td>
                                             <td><a class="btn btn-primary" href="<?php echo base_url();?>c_main/waktu">Lihat</button></a></td>
                                             <td>
 
