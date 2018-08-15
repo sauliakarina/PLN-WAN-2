@@ -29,6 +29,7 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/jeniskeluhan');
 	}
 
+<<<<<<< HEAD
 	function edit_jeniskeluhan($id){
 		$where = array('id_jeniskeluhan' => $id);
 		$data=array (
@@ -56,5 +57,14 @@ class c_keluhan extends CI_Controller{
 		$this->m_data_keluhan->update_data($where,$data,'tb_jeniskeluhan');
 		redirect('c_keluhan/jeniskeluhan');
 	}
+=======
+
+	function hapus_jeniskeluhan($id){
+		$where = array('id_jeniskeluhan' => $id);
+		$this->m_data_keluhan->hapus_data($where,'tb_jeniskeluhan');
+		redirect('c_keluhan/jeniskeluhan');
+	}
+
+>>>>>>> 32469c54de33dbdb28e7a2a7bf8a0e3434784c83
 }
 ?>

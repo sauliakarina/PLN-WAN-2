@@ -17,4 +17,10 @@ class M_data_user extends CI_Model{
 	function input_user($data,$table) {
 		$this->db->insert($table, $data);
 	}
+
+	function hapus_user($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
 }

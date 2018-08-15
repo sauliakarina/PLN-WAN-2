@@ -35,10 +35,15 @@
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $jl->nama_layanan ?></td>
                                             <td><center>
+<<<<<<< HEAD
                                                <form method='' action="<?php echo base_url('c_layanan/edit_jenislayanan/'.$jl->id_jenislayanan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
                                                 <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
+=======
+                                                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editlayanan">Edit</a>
+                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jl->id_jenislayanan ?>)" class="btn btn-danger">Hapus</button>
+>>>>>>> 32469c54de33dbdb28e7a2a7bf8a0e3434784c83
                                             </td>
                                         </tr>
                                         <?php } ?>
@@ -53,5 +58,49 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+<!-- Modal Hapus -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Hapus Jenis Layanan</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="text-center">
+                              <i class="fa fa-trash fa-4x mb-3 animated bounce"></i>
+                              <p style="font-size: 15px">Apakah anda yakin ingin menghapus jenis layanan ini?</p>
+                            </div>
+
+                          </div> <!-- modal body -->
+                          <div class="modal-footer">
+                              <button class="btn btn-default" type="submit" onclick='deletep()'>Ya</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- modal -->
+
+    <script>
+    // popovers Initialization
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+
+    var p_id;
+    function set_id(id) {
+        p_id = id;
+
+    }
+
+    function deletep(){
+        window.location.href =  "<?php echo base_url();?>c_layanan/hapus_jenislayanan/"+p_id;
+    }
+</script>
+>>>>>>> 32469c54de33dbdb28e7a2a7bf8a0e3434784c83
 
  </main>
