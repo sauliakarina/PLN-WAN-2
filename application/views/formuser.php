@@ -21,7 +21,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Id Karyawan</th>
+                                            <th>ID Karyawan</th>
                                              <th>Password</th>
                                               <th>Status</th>
                                             <th>Aksi</th>
