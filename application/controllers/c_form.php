@@ -39,11 +39,6 @@ class c_form extends CI_Controller {
  } 
 
 
- public function form_layanan(){
-  $this->load->view('element/header');
-  $this->load->view('form_layanan');
-  $this->load->view('element/footer');
- }
 
  /*public function form_tambah_layanan(){
   $this->load->view('element/header');
