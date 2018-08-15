@@ -8,6 +8,52 @@ class c_keluhan extends CI_Controller{
         $this->load->helper('url');
 	}
 
+	public function form_data_keluhan() {
+	  $this->load->view('element/header');
+	  $this->load->view('form_data_keluhan');
+	  $this->load->view('element/footer');
+	 } 
+
+	public function form_tambah_keluhan() {
+		$data = array(
+	  	'get_layanan' => $this->m_data_keluhan->get_layanan(),
+	  	'get_jeniskeluhan' => $this->m_data_keluhan->get_jeniskeluhan()
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('form_tambah_keluhan', $data);
+	  $this->load->view('element/footer');
+	 } 
+
+	 function tambah_aksi_keluhan(){
+		$sid = $this->input->post('sid');
+		$id_jeniskeluhan = $this->input->post('id_jeniskeluhan');
+		$deskripsi_jeniskeluhan = $this->input->post('deskripsi_jeniskeluhan');
+		$solusi = $this->input->post('solusi');
+		$penyebab = $this->input->post('penyebab');
+		$open_time = $this->input->post('open_time');
+		$close_time = $this->input->post('close_time');
+		$open_date = $this->input->post('open_date');
+		$close_date = $this->input->post('close_date');
+		$isDelete = $this->input->post('isDelete');
+
+
+		$data=array(
+			'sid' => $sid,
+			'id_jeniskeluhan' => $id_jeniskeluhan,
+			'deskripsi_jeniskeluhan' => $deskripsi_jeniskeluhan,
+			'solusi_keluhan' => $solusi,
+			'penyebab_keluhan' => $penyebab,
+			'open_time' => $open_time,
+			'close_time' => $close_time,
+			'open_date' => $open_date,
+			'close_date' => $close_date,
+			'isDelete' => $isDelete
+			
+		);
+		$this->m_data_keluhan->input_keluhan($data, 'tb_keluhan');
+		redirect('c_keluhan/form_data_keluhan');
+	}
+
 	function jeniskeluhan(){
 		$data=array(
 			'jeniskeluhan' => $this->m_data_keluhan->tampil_jeniskeluhan()

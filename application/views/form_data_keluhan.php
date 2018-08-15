@@ -8,13 +8,13 @@
                 <div class="row">
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
-                            <a href="<?php echo base_url();?>c_form/form_tambah_data_keluhan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
+                            <a href="<?php echo base_url();?>c_keluhan/form_tambah_keluhan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
                             <div class="table-responsive" style="margin-top: 20px">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Area</th>
+                                            <th>Lokasi</th>
                                             <th>Jenis Keluhan</th>
                                             <th>Penyebab</th>
                                             <th>Solusi</th>
