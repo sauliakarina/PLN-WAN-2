@@ -28,5 +28,13 @@ class c_keluhan extends CI_Controller{
 		$this->m_data_keluhan->input_keluhan($data, 'tb_jeniskeluhan');
 		redirect('c_keluhan/jeniskeluhan');
 	}
+
+
+	function hapus_jeniskeluhan($id){
+		$where = array('id_jeniskeluhan' => $id);
+		$this->m_data_keluhan->hapus_data($where,'tb_jeniskeluhan');
+		redirect('c_keluhan/jeniskeluhan');
+	}
+
 }
 ?>
