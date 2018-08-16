@@ -43,7 +43,7 @@
                                                 </form>
                                             </td>
                                             <td><center>
-                                                 <form method='' action="<?php //echo base_url('c_layanan/edit_layanan/'.$l->sid) ?>">
+                                                 <form method='' action="<?php echo base_url('c_keluhan/edit_keluhan/'.$k->id_keluhan) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
                                                 </form>
                                             </center>

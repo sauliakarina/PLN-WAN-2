@@ -15,6 +15,8 @@
     <link href="<?php echo base_url('assets/css/font-awesome.css')?>" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="<?php echo base_url('assets/css/style.css')?>" rel="stylesheet" />
+    <script src="<?php echo base_url('assets/js/jquery-1.11.1.js')?>"></script>
+     <script src="<?php echo base_url();?>assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script> -->
    <link rel="stylesheet" href="<?php echo base_url();?>assets/datatables/jquery.dataTables.min.css" type="text/css" />
