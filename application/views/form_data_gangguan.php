@@ -9,7 +9,7 @@
                 <div class="row">
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
-                            <a href="<?php echo base_url();?>c_form/form_tambah_data_gangguan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
+                            <a href="<?php echo base_url();?>c_gangguan/form_tambah_gangguan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
                             <div class="table-responsive" style="margin-top: 20px">
                                 <table id="example" class="table table-striped table-bordered table-hover">
                                     <thead>

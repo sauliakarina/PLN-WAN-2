@@ -2,11 +2,11 @@
 
 class c_form extends CI_Controller {
 
- public function form_tambah_data_gangguan() {
+ /*public function form_tambah_data_gangguan() {
   $this->load->view('element/header');
   $this->load->view('form_tambah_data_gangguan');
   $this->load->view('element/footer');
- } 
+ } */
 
  public function edit_data_gangguan() {
   $this->load->view('element/header');
@@ -14,11 +14,11 @@ class c_form extends CI_Controller {
   $this->load->view('element/footer');
  } 
 
- public function form_data_gangguan() {
+ /*public function form_data_gangguan() {
   $this->load->view('element/header');
   $this->load->view('form_data_gangguan');
   $this->load->view('element/footer');
- } 
+ } */
 
  /*public function form_data_keluhan() {
   $this->load->view('element/header');

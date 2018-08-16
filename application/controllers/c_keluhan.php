@@ -59,7 +59,6 @@ class c_keluhan extends CI_Controller{
 		$close_time = $this->input->post('close_time');
 		$open_date = $this->input->post('open_date');
 		$close_date = $this->input->post('close_date');
-		/*$isDelete = $this->input->post('isDelete');*/
 
 
 		$data=array(
@@ -72,7 +71,7 @@ class c_keluhan extends CI_Controller{
 			'close_time' => $close_time,
 			'open_date' => $open_date,
 			'close_date' => $close_date,
-			/*'isDelete' => $isDelete*/
+
 			
 		);
 		$this->m_data_keluhan->input_keluhan($data, 'tb_keluhan');
