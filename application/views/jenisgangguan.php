@@ -16,7 +16,7 @@
                   <br>
                     
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
+                                <table id="example" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -100,6 +100,14 @@
     function deletep(){
         window.location.href =  "<?php echo base_url();?>c_gangguan/hapus_jenisgangguan/"+p_id;
     }
+
+
+    $(document).ready(function(){
+    $('#example').DataTable();
+    });
+
+   $('#example').dataTable({
+    });
 </script>
 
 
