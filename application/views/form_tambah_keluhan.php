@@ -107,11 +107,6 @@
         </div>
         </div>
         
-<<<<<<< HEAD
-=======
-
-
->>>>>>> e578b1bb4025dbf9b6a2c3922eadf63b0e7d186c
           <br>
                        
                <button type="submit" class="btn btn-default btn-lg">Simpan </button>
