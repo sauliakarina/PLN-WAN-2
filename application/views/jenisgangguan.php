@@ -107,7 +107,6 @@
     $('#example').DataTable();
 } );
     $('#example').dataTable({
-    "ordering": false
   });
 </script>
 
