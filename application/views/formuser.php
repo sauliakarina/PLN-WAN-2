@@ -16,7 +16,7 @@
                   <br>
                     
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
+                                <table id="example" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -91,6 +91,14 @@
                       </div>
                   </div>
               </div><!-- modal -->
+
+<script type="text/javascript">
+    $(document).ready( function () {
+    $('#example').DataTable();
+} );
+    $('#example').dataTable({
+  });
+</script>
 
     <script>
     // popovers Initialization

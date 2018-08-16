@@ -11,7 +11,7 @@
                   <!--   Kitchen Sink -->
                             <a href="<?php echo base_url();?>c_form/form_tambah_data_gangguan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
                             <div class="table-responsive" style="margin-top: 20px">
-                                <table class="table table-striped table-bordered table-hover">
+                                <table id="example" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -76,5 +76,14 @@
 
       </div>
     </div> <!-- MODAL -->
+
+    <script type="text/javascript">
+        $(document).ready( function () {
+        $('#example').DataTable();
+    } );
+        $('#example').dataTable({
+      });
+    </script>
+
 
 </main>
