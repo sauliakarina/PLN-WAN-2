@@ -147,6 +147,54 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/form_data_keluhan');
 	}
 
+	function edit_keluhan($id){
+		$where = array('id_keluhan' => $id);
+		$data=array (
+        	'keluhan' => $this->m_data_keluhan->edit_data($where,'tb_keluhan')->result(),
+        	'get_layanan' => $this->m_data_keluhan->get_layanan(),
+	  		'get_jeniskeluhan' => $this->m_data_keluhan->get_jeniskeluhan()
+        	);
+		$this->load->view('element/header');
+		$this->load->view('edit_data_keluhan',$data);
+		$this->load->view('element/footer');
+	}
+
+	function update_keluhan(){
+		$sid = $this->input->post('sid');
+		$id_jeniskeluhan = $this->input->post('id_jeniskeluhan');
+		$deskripsi_jeniskeluhan = $this->input->post('deskripsi_jeniskeluhan');
+		$solusi_keluhan = $this->input->post('solusi_keluhan');
+		$penyebab_keluhan = $this->input->post('penyebab_keluhan');
+		$open_time = $this->input->post('open_time');
+		$close_time = $this->input->post('close_time');
+		$open_date = $this->input->post('open_date');
+		$close_date = $this->input->post('close_date');
+		$id_keluhan = $this->input->post('id_keluhan');
+		$isDelete = $this->input->post('isDelete');
+		
+		$data=array(
+			'sid' => $sid,
+			'id_jeniskeluhan' => $id_jeniskeluhan,
+			'deskripsi_jeniskeluhan' => $deskripsi_jeniskeluhan,
+			'solusi_keluhan' => $solusi_keluhan,
+			'penyebab_keluhan' => $penyebab_keluhan,
+			'open_time' => $open_time,
+			'close_time' => $close_time,
+			'open_date' => $open_date,
+			'close_date' => $close_date,
+			'isDelete' => $isDelete
+			
+		);
+
+		$where = array(
+			'id_keluhan' => $id_keluhan
+		);
+
+		$this->m_data_keluhan->update_data($where,$data,'tb_keluhan');
+		redirect('c_keluhan/form_data_keluhan');
+	}
+
+
 
 }
 ?>
