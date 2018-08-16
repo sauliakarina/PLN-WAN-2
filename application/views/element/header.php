@@ -15,6 +15,7 @@
     <link href="<?php echo base_url('assets/css/font-awesome.css')?>" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="<?php echo base_url('assets/css/style.css')?>" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/datatables/jquery.dataTables.min.css" type="text/css" >
     <script src="<?php echo base_url();?>/assets/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
      <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
