@@ -39,7 +39,7 @@
             <div class="form-group">
               <label for="date">Keterangan :  </label>
                     <textarea rows="3" class="form-control" name="deskripsi_jeniskeluhan"></textarea>
-                    <input style="width:500px" class="form-control" type="hidden" name="isDelete" value="yes">
+                    <!-- <input style="width:500px" class="form-control" type="hidden" name="isDelete" value="yes"> -->
                 </div>
             </div>
         </div>
