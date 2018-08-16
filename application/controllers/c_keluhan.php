@@ -8,6 +8,26 @@ class c_keluhan extends CI_Controller{
         $this->load->helper('url');
 	}
 
+	public function tampil_lokasi($id) {
+	  $where = array('sid' => $id);
+	  $data = array(
+	  	'tampil_layanan' => $this->m_data_keluhan->edit_data($where, 'tb_layanan')->result()
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('area_keluhan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
+	 public function tampil_waktu($id) {
+	  $where = array('id_keluhan' => $id);
+	  $data = array(
+	  	'tampil_waktu' => $this->m_data_keluhan->edit_data($where, 'tb_keluhan')->result()
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('waktu_keluhan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
 	public function form_data_keluhan() {
 	$data=array (
    	'keluhan' => $this->m_data_keluhan->tampil_keluhan()
@@ -17,6 +37,7 @@ class c_keluhan extends CI_Controller{
 	  $this->load->view('form_data_keluhan', $data);
 	  $this->load->view('element/footer');
 	 } 
+
 
 	public function form_tambah_keluhan() {
 		$data = array(

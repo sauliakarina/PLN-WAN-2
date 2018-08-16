@@ -19,18 +19,18 @@ public function home() {
  }
 
 
-public function waktu() {
+/*public function waktu() {
   $this->load->view('element/header');
   $this->load->view('waktu');
   $this->load->view('element/footer');
- } 
+ } */
 
-public function area() {
+/*public function area() {
   $this->load->view('element/header');
   $this->load->view('area');
   $this->load->view('element/footer');
  } 
-
+*/
 
  public function search() {
   $this->load->view('element/header');

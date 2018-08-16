@@ -9,7 +9,7 @@
                 <div class="row">
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
-                    
+                            <?php foreach($tampil_waktu as $tw){ ?>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
@@ -23,17 +23,18 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>06/06/2018</a> </td>
-                                            <td>3:51:00</a> </td>
-                                            <td>06/06/2018</td>
-                                            <td>5:58:00</td>
-                                            <td>2:07:00</td>
+                                            <td><?php echo $tw->open_date ?></td>
+                                            <td><?php echo $tw->open_time ?></td>
+                                            <td><?php echo $tw->close_date ?></td>
+                                            <td><?php echo $tw->close_time ?></td>
+                                            <td><?php echo $tw->durasi ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
+                            <?php } ?>
                                 <!-- back -->
                                 <br>
-                                <a href="<?php echo base_url();?>c_form/form_data_gangguan" class="btn btn-default"><span class="glyphicon glyphicon-hand-left"></span> &nbsp; KEMBALI </a>&nbsp;
+                                <a href="<?php echo base_url();?>c_keluhan/form_data_keluhan" class="btn btn-default"><span class="glyphicon glyphicon-hand-left"></span> &nbsp; KEMBALI </a>&nbsp;
                                 <br>
                                 
                             </div>

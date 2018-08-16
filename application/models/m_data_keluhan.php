@@ -77,6 +77,14 @@ class M_data_keluhan extends CI_Model{
 		return $query->row();
 	}
 
+	public function tampil_jenislayanan($id)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenislayanan',$id);
+		$query = $this->db->get('tb_jenislayanan');
+		return $query->row();
+	}
+
 	public function tampil_jeniskeluhan_byid($id)
 	{
 		$this->db->select('*');

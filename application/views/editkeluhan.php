@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <br />
-                     <?php foreach($jeniskeluhan as $jk){ ?>
+                     
                     <form action="<?php echo base_url();?>c_keluhan/update_jeniskeluhan" method="post">
                         <div class="form-group">
                           <label>Jenis Keluhan</label>
@@ -24,7 +24,7 @@
                           <button type="submit" class="btn btn-default btn-lg">Simpan </button>
                         </label></div>
                       </form>
-                    <?php } ?>
+                   
                         
                         </div>
                         </div>  
