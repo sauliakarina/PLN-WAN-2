@@ -136,5 +136,17 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/jeniskeluhan');
 	}
 
+	function hapus_keluhan($id){
+		$data = array(
+		'isDelete' => 'yes'
+		);
+		$where = array(
+		'id_keluhan' => $id
+		);
+		$this->m_data_keluhan->update_data($where,$data,'tb_keluhan');
+		redirect('c_keluhan/form_data_keluhan');
+	}
+
+
 }
 ?>

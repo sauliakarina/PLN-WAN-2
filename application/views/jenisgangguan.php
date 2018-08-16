@@ -100,14 +100,15 @@
     function deletep(){
         window.location.href =  "<?php echo base_url();?>c_gangguan/hapus_jenisgangguan/"+p_id;
     }
+</script>
 
-
-    $(document).ready(function(){
+<script type="text/javascript">
+    $(document).ready( function () {
     $('#example').DataTable();
-    });
-
-   $('#example').dataTable({
-    });
+} );
+    $('#example').dataTable({
+    "ordering": false
+  });
 </script>
 
 

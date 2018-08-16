@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
                          <a href="<?php echo base_url();?>c_layanan/form_tambah_layanan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus-sign"></span> <b>TAMBAH</b> </a>
-                          <table class="table table-striped table-bordered table-hover" style="margin-top: 20px">
+                          <table id="example"  class="table table-striped table-bordered table-hover" style="margin-top: 20px">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -104,6 +104,15 @@
     function deletep(){
         window.location.href =  "<?php echo base_url();?>c_layanan/hapus_layanan/"+p_id;
     }
+</script>
+
+<script type="text/javascript">
+      $(document).ready( function () {
+      $('#example').DataTable();
+  } );
+      $('#example').dataTable({
+      "ordering": false
+    });
 </script>
 
 

@@ -59,6 +59,7 @@ class M_data_keluhan extends CI_Model{
 
    	function tampil_keluhan(){
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_keluhan');
 		if($query->num_rows()>0)
 		{
