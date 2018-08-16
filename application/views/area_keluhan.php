@@ -17,7 +17,7 @@
                                             <th>SID</th>
                                             <th>Lokasi</th>
                                             <th>Jenis Layanan</th>
-                                            <th>kapasitas</th>
+                                            <th>Kapasitas</th>
                                             <th>Nama PIC</th>
                                             <th>Nomer Telpon</th>
                                         </tr>
