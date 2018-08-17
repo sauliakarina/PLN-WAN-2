@@ -28,17 +28,36 @@ class M_data_gangguan extends CI_Model{
 
 	}
 
-	function tampil_progress(){
-		$this->db->select('*');
-		//tambah sort by open date and open time
-		$query = $this->db->get('tb_progress');
-		if($query->num_rows()>0)
-		{
-			return $query->result();
-		} else{
-			return $query->result();
-		}
+	function tampil_progress($id=null){
+		if (isset($id)) {
+			$this->db->select('*');
+			//tambah sort by open date and open time
+			$query = $this->db->get_where('tb_progress',array('id_gangguan'=>$id));
+			if($query->num_rows()>0)
+			{
+				return $query->result();
+			} else{
+				return $query->result();
+			}
+		} else {
+			$this->db->select('*');
+			//tambah sort by open date and open time
+			$query = $this->db->get('tb_progress');
+			if($query->num_rows()>0)
+			{
+				return $query->result();
+			} else{
+				return $query->result();
+			}
+		}	
 
+	}
+
+	public function get_last_progress($id)
+	{
+		$this->db->order_by('id_progress','DESC');
+		$this->db->limit(1); 
+		return $this->db->get_where('tb_progress',array('id_gangguan'=>$id))->row_array();
 	}
 
 

@@ -16,7 +16,7 @@
                   <br>
                     
                             <div class="table-responsive">
-                                <table id="example" class="table table-striped table-bordered table-hover">
+                                <table id="example" class="table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>

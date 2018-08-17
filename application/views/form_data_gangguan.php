@@ -41,9 +41,18 @@
                                             <td><?php echo $g->penyebab_gangguan ?></td>
                                             <td><?php echo $g->solusi_gangguan ?></td>
                                             <td><!-- <a class="" href="<?php //echo base_url();?>c_form/progress">Penanganan</a> -->
+                                              <?php if($this->m_data_gangguan->get_last_progress($g->id_gangguan)== false):  ?>
                                               <form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
                                                      <button class='btn btn-default' type='submit'>Isi</button>
                                                 </form>
+                                              <?php else: ?>
+                                                <?php if ($this->m_data_gangguan->get_last_progress($g->id_gangguan)['status_progress'] == 1): ?>
+                                                    <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Penanganan</a>
+                                                    <?php else: ?>
+                                                      <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Selesai</a>
+                                                <?php endif ?>
+                                                
+                                              <?php endif; ?>
                                             </td>
                                             <td> 
                                                 <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">

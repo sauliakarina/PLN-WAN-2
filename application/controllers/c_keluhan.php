@@ -60,6 +60,12 @@ class c_keluhan extends CI_Controller{
 		$open_date = $this->input->post('open_date');
 		$close_date = $this->input->post('close_date');
 
+		$start_date = new DateTime($open_date.' '.$open_time);
+		$end_date = new DateTime($close_date.' '.$close_time);
+
+		$durasi = date_diff($end_date, $start_date);
+		$durasi_jam = $durasi->d*24;
+
 
 		$data=array(
 			'sid' => $sid,
@@ -71,8 +77,8 @@ class c_keluhan extends CI_Controller{
 			'close_time' => $close_time,
 			'open_date' => $open_date,
 			'close_date' => $close_date,
+			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
 
-			
 		);
 		$this->m_data_keluhan->input_keluhan($data, 'tb_keluhan');
 		redirect('c_keluhan/form_data_keluhan');
@@ -170,6 +176,11 @@ class c_keluhan extends CI_Controller{
 		$close_date = $this->input->post('close_date');
 		$id_keluhan = $this->input->post('id_keluhan');
 		$isDelete = $this->input->post('isDelete');
+
+		$start_date = new DateTime($open_date.' '.$open_time);
+		$end_date = new DateTime($close_date.' '.$close_time);
+		$durasi = date_diff($end_date, $start_date);
+		$durasi_jam = $durasi->d*24;
 		
 		$data=array(
 			'sid' => $sid,
@@ -181,7 +192,8 @@ class c_keluhan extends CI_Controller{
 			'close_time' => $close_time,
 			'open_date' => $open_date,
 			'close_date' => $close_date,
-			'isDelete' => $isDelete
+			'isDelete' => $isDelete,
+			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
 			
 		);
 

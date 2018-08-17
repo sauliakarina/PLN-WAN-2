@@ -59,6 +59,10 @@ class c_gangguan extends CI_Controller{
 		$close_date = $this->input->post('close_date');
 		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
 
+		$start_date = new DateTime($open_date.' '.$open_time);
+		$end_date = new DateTime($close_date.' '.$close_time);
+		$durasi = date_diff($end_date, $start_date);
+		$durasi_jam = $durasi->d*24;
 
 		$data=array(
 			'sid' => $sid,
@@ -70,7 +74,8 @@ class c_gangguan extends CI_Controller{
 			'close_time' => $close_time,
 			'open_date' => $open_date,
 			'close_date' => $close_date,
-			'lokasi_gangguan' => $lokasi_gangguan
+			'lokasi_gangguan' => $lokasi_gangguan,
+			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
 			
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_gangguan');
@@ -118,6 +123,11 @@ class c_gangguan extends CI_Controller{
 		$id_gangguan = $this->input->post('id_gangguan');
 		$isDelete = $this->input->post('isDelete');
 		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
+
+		$start_date = new DateTime($open_date.' '.$open_time);
+		$end_date = new DateTime($close_date.' '.$close_time);
+		$durasi = date_diff($end_date, $start_date);
+		$durasi_jam = $durasi->d*24;
 		
 		$data=array(
 			'sid' => $sid,
@@ -131,7 +141,8 @@ class c_gangguan extends CI_Controller{
 			'close_date' => $close_date,
 			'lokasi_gangguan' => $lokasi_gangguan,
 			'isDelete' => $isDelete,
-			'lokasi_gangguan' => $lokasi_gangguan
+			'lokasi_gangguan' => $lokasi_gangguan,
+			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
 			
 		);
 
@@ -207,16 +218,17 @@ class c_gangguan extends CI_Controller{
 	}
 
 	//tampil progress by id
-	public function progress() {
+	public function progress($id) {
 		$data=array(
-			'progress' => $this->m_data_gangguan->tampil_progress()
+			'progress' => $this->m_data_gangguan->tampil_progress($id),
+			'id' => $id
 		);
 	  $this->load->view('element/header');
 	  $this->load->view('progress',$data);
 	  $this->load->view('element/footer');
 	 }
 
-	 	function tambah_progress($id){
+	function tambah_progress($id){
 		$where = array('id_gangguan' => $id);
 		$data=array (
         	'gangguan' => $this->m_data_gangguan->edit_data($where,'tb_gangguan')->result(),
@@ -241,6 +253,14 @@ class c_gangguan extends CI_Controller{
 			'status_progress' => $status_progress
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_progress');
+		redirect('c_gangguan/progress/'.$id_gangguan);
+	}
+
+	function hapus_progress($id){
+		$where = array('id_progress' => $id);
+		$this->m_data_gangguan->hapus_data($where,'tb_progress');
 		redirect('c_gangguan/progress');
 	}
+
+
 }
