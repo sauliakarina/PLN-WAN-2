@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Waktu Keluhan</h1>
+                        <h1 class="page-head-line">Waktu Gangguan</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -34,7 +34,7 @@
                             <?php } ?>
                                 <!-- back -->
                                 <br>
-                                <a href="<?php echo base_url();?>c_keluhan/form_data_keluhan" class="btn btn-default"><span class="glyphicon glyphicon-hand-left"></span> &nbsp; KEMBALI </a>&nbsp;
+                                <a href="<?php echo base_url();?>c_gangguan/form_data_gangguan" class="btn btn-default"><span class="glyphicon glyphicon-hand-left"></span> &nbsp; KEMBALI </a>&nbsp;
                                 <br>
                                 
                             </div>

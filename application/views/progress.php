@@ -20,15 +20,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                            $no=1;
+                                            foreach($progress as $p ) {
+
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>5:58:00</td>
-                                            <td>Tim menuju lokasi</td>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $p->waktu ?></td>
+                                            <td><?php echo $p->ket_progress ?></td>
                                             <td><center>
                 <a class="btn btn-default" href="<?php echo base_url();?>c_form/editprogress">Edit</a>
         <button class="btn btn-danger" onclick='delete_user(<?php echo $u->id ?>)' data-toggle="modal" data-target="#myModal">Hapus</button>
             </td>
                                         </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -11,7 +11,7 @@
       <?php foreach($keluhan as $k){ ?>
       <form action="<?php echo base_url();?>c_keluhan/update_keluhan" method="post">
       <div class="form-group">
-      <label for="area">Lokasi: </label>
+      <label for="area">Area : </label>
       <select id="area" name="sid" class="form-control">
         <option value="<?php echo $k->sid ?>">--<?php echo $this->m_data_keluhan->tampil_layanan($k->sid)->lokasi ?>--</option>
         <?php 
@@ -78,7 +78,7 @@
         <div class='col-md-6'>
             <div class="form-group">
               <label for="date">Open Time :  </label>
-                    <input type='time' class="form-control" name="open_time" value="<?php echo $k->open_time ?>" />
+                    <input type='text' class="form-control" name="open_time" value="<?php echo $k->open_time ?>" />
                     <input type='hidden' class="form-control" name="id_keluhan" value="<?php echo $k->id_keluhan ?>" />
                     <input type='hidden' class="form-control" name="isDelete" value="<?php echo $k->isDelete ?>" />
                 
@@ -101,7 +101,7 @@
         <div class='col-md-6'>
             <div class="form-group">
               <label for="date">Close Time :  </label>
-                    <input type='time' class="form-control" name="close_time" value="<?php echo $k->close_time ?>" />
+                    <input type='text' class="form-control" name="close_time" value="<?php echo $k->close_time ?>" />
                 
                 </div>
             </div>

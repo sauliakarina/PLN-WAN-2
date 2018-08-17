@@ -33,8 +33,17 @@
                             ?>
                           </select>
                         </div>
+    <div class="row">
+        <div class='col-md-12'>
+            <div class="form-group">
+              <label for="date">Lokasi Gangguan :  </label>
+                    <input type="text" name="lokasi_gangguan" class="form-control">
+                
+                </div>
+            </div>
+        </div>
 
-                         <div class="row">
+    <div class="row">
         <div class='col-md-12'>
             <div class="form-group">
               <label for="date">Keterangan :  </label>

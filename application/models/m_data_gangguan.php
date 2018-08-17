@@ -14,6 +14,34 @@ class M_data_gangguan extends CI_Model{
 
 	}
 
+	function tampil_gangguan(){
+		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
+		//tambah sort by open date and open time
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+
+	}
+
+	function tampil_progress(){
+		$this->db->select('*');
+		//tambah sort by open date and open time
+		$query = $this->db->get('tb_progress');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+
+	}
+
+
 	function input_gangguan($data,$table) {
 		$this->db->insert($table, $data);
 	}
@@ -65,6 +93,30 @@ class M_data_gangguan extends CI_Model{
 		$this->db->select('*');
 		$this->db->where('id_gangguan',$id);
 		$query = $this->db->get('tb_gangguan');
+		return $query->row();
+	}
+
+	public function tampil_jenislayanan($id)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenislayanan',$id);
+		$query = $this->db->get('tb_jenislayanan');
+		return $query->row();
+	}
+
+	public function tampil_layanan($id)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$id);
+		$query = $this->db->get('tb_layanan');
+		return $query->row();
+	}
+
+	public function tampil_jenisgangguan_byid($id)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$id);
+		$query = $this->db->get('tb_jenisgangguan');
 		return $query->row();
 	}
 

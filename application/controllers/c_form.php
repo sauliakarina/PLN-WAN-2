@@ -8,11 +8,11 @@ class c_form extends CI_Controller {
   $this->load->view('element/footer');
  } */
 
- public function edit_data_gangguan() {
+ /*public function edit_data_gangguan() {
   $this->load->view('element/header');
   $this->load->view('edit_data_gangguan');
   $this->load->view('element/footer');
- } 
+ } */
 
  /*public function form_data_gangguan() {
   $this->load->view('element/header');
@@ -111,11 +111,11 @@ class c_form extends CI_Controller {
  //  $this->load->view('element/footer');
  // }
 
- public function tambahprogress() {
+/* public function tambahprogress() {
   $this->load->view('element/header');
   $this->load->view('form_tambah_progress');
   $this->load->view('element/footer');
- }
+ }*/
 
 public function editprogress() {
   $this->load->view('element/header');
@@ -123,11 +123,11 @@ public function editprogress() {
   $this->load->view('element/footer');
  }
 
- public function progress() {
+ /*public function tampil_progress() {
   $this->load->view('element/header');
   $this->load->view('progress');
   $this->load->view('element/footer');
- }
+ }*/
 
 
 }

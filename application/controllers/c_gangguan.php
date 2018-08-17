@@ -9,8 +9,31 @@ class c_gangguan extends CI_Controller{
 	}
 
 	public function form_data_gangguan() {
+		$data=array (
+	   	'gangguan' => $this->m_data_gangguan->tampil_gangguan()
+	   	);
 	  $this->load->view('element/header');
-	  $this->load->view('form_data_gangguan');
+	  $this->load->view('form_data_gangguan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
+	 public function tampil_lokasi($id) {
+	  $where = array('sid' => $id);
+	  $data = array(
+	  	'tampil_layanan' => $this->m_data_gangguan->edit_data($where, 'tb_layanan')->result()
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('area_gangguan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
+	 public function tampil_waktu($id) {
+	  $where = array('id_gangguan' => $id);
+	  $data = array(
+	  	'tampil_waktu' => $this->m_data_gangguan->edit_data($where, 'tb_gangguan')->result()
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('waktu_gangguan',$data);
 	  $this->load->view('element/footer');
 	 } 
 
@@ -34,6 +57,7 @@ class c_gangguan extends CI_Controller{
 		$close_time = $this->input->post('close_time');
 		$open_date = $this->input->post('open_date');
 		$close_date = $this->input->post('close_date');
+		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
 
 
 		$data=array(
@@ -46,17 +70,79 @@ class c_gangguan extends CI_Controller{
 			'close_time' => $close_time,
 			'open_date' => $open_date,
 			'close_date' => $close_date,
+			'lokasi_gangguan' => $lokasi_gangguan
 			
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_gangguan');
-
-		$id_gangguan = $this->m_data_gangguan->get_id($id_gangguan)->id_gangguan;
+		/*$id_gangguan = $this->m_data_gangguan->get_id($id_gangguan)->id_gangguan;
 		$data=array(
 			'id_gangguan' => $id_gangguan
 		);
-		$this->m_data_gangguan->input_progress($data, 'tb_progress');
+		$this->m_data_gangguan->input_progress($data, 'tb_progress');*/
 		redirect('c_gangguan/form_data_gangguan');
 	}
+
+	function hapus_gangguan($id){
+		$data = array(
+		'isDelete' => 'yes'
+		);
+		$where = array(
+		'id_gangguan' => $id
+		);
+		$this->m_data_gangguan->update_data($where,$data,'tb_gangguan');
+		redirect('c_gangguan/form_data_gangguan');
+	}
+
+	function edit_gangguan($id){
+		$where = array('id_gangguan' => $id);
+		$data=array (
+        	'gangguan' => $this->m_data_gangguan->edit_data($where,'tb_gangguan')->result(),
+        	'get_layanan' => $this->m_data_gangguan->get_layanan(),
+	  		'get_jenisgangguan' => $this->m_data_gangguan->get_jenisgangguan()
+        	);
+		$this->load->view('element/header');
+		$this->load->view('edit_data_gangguan',$data);
+		$this->load->view('element/footer');
+	}
+
+	function update_gangguan(){
+		$sid = $this->input->post('sid');
+		$id_jenisgangguan = $this->input->post('id_jenisgangguan');
+		$deskripsi_jenisgangguan = $this->input->post('deskripsi_jenisgangguan');
+		$solusi_gangguan = $this->input->post('solusi_gangguan');
+		$penyebab_gangguan = $this->input->post('penyebab_gangguan');
+		$open_time = $this->input->post('open_time');
+		$close_time = $this->input->post('close_time');
+		$open_date = $this->input->post('open_date');
+		$close_date = $this->input->post('close_date');
+		$id_gangguan = $this->input->post('id_gangguan');
+		$isDelete = $this->input->post('isDelete');
+		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
+		
+		$data=array(
+			'sid' => $sid,
+			'id_jenisgangguan' => $id_jenisgangguan,
+			'deskripsi_jenisgangguan' => $deskripsi_jenisgangguan,
+			'solusi_gangguan' => $solusi_gangguan,
+			'penyebab_gangguan' => $penyebab_gangguan,
+			'open_time' => $open_time,
+			'close_time' => $close_time,
+			'open_date' => $open_date,
+			'close_date' => $close_date,
+			'lokasi_gangguan' => $lokasi_gangguan,
+			'isDelete' => $isDelete,
+			'lokasi_gangguan' => $lokasi_gangguan
+			
+		);
+
+		$where = array(
+			'id_gangguan' => $id_gangguan
+		);
+
+		$this->m_data_gangguan->update_data($where,$data,'tb_gangguan');
+		redirect('c_gangguan/form_data_gangguan');
+	}
+
 
 
 	function jenisgangguan(){
@@ -118,5 +204,43 @@ class c_gangguan extends CI_Controller{
 
 		$this->m_data_gangguan->update_data($where,$data,'tb_jenisgangguan');
 		redirect('c_gangguan/jenisgangguan');
+	}
+
+	//tampil progress by id
+	public function progress() {
+		$data=array(
+			'progress' => $this->m_data_gangguan->tampil_progress()
+		);
+	  $this->load->view('element/header');
+	  $this->load->view('progress',$data);
+	  $this->load->view('element/footer');
+	 }
+
+	 	function tambah_progress($id){
+		$where = array('id_gangguan' => $id);
+		$data=array (
+        	'gangguan' => $this->m_data_gangguan->edit_data($where,'tb_gangguan')->result(),
+        	);
+		$this->load->view('element/header');
+		$this->load->view('form_tambah_progress',$data);
+		$this->load->view('element/footer');
+	}
+
+
+
+	function tambah_aksi_progress(){
+		$id_gangguan = $this->input->post('id_gangguan');
+		$waktu = $this->input->post('waktu');
+		$ket_progress = $this->input->post('ket_progress');
+		$status_progress = $this->input->post('status_progress');
+
+		$data=array(
+			'id_gangguan' => $id_gangguan,
+			'ket_progress' => $ket_progress,
+			'waktu' => $waktu,
+			'status_progress' => $status_progress
+		);
+		$this->m_data_gangguan->input_gangguan($data, 'tb_progress');
+		redirect('c_gangguan/progress');
 	}
 }
