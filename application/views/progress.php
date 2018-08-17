@@ -17,6 +17,7 @@
                                             <th>Waktu</th>
                                             <th>Keterangan</th>
                                             <th></th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -29,10 +30,14 @@
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $p->waktu ?></td>
                                             <td><?php echo $p->ket_progress ?></td>
-                                            <td><center>
-                <a class="btn btn-default" href="<?php echo base_url();?>c_form/editprogress">Edit</a>
-       <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $p->id_progress?>)" class="btn btn-danger">Hapus</button>
-            </td>
+                                            <td>
+                                                <form method='' action="<?php echo base_url('c_gangguan/edit_progress/'.$p->id_progress) ?>">
+                                                    <button class='btn btn-default' type='submit'>Edit</button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $p->id_progress?>)" class="btn btn-danger">Hapus</button>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
@@ -89,7 +94,6 @@
                 });
 
                 var p_id;
-                var id_gangguan;
                 function set_id(id) {
                     p_id = id;
                 }

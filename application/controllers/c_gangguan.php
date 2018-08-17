@@ -258,9 +258,43 @@ class c_gangguan extends CI_Controller{
 
 	function hapus_progress($id){
 		$where = array('id_progress' => $id);
+		$id_gangguan = $this->db->get_where('tb_progress', $where)->row_array()['id_gangguan'];
 		$this->m_data_gangguan->hapus_data($where,'tb_progress');
-		redirect('c_gangguan/progress');
+		redirect('c_gangguan/progress/'.$id_gangguan);
 	}
+
+	function edit_progress($id){
+		$where = array('id_progress' => $id);
+		$data=array (
+        	'progress' => $this->m_data_gangguan->edit_data($where,'tb_progress')->result(),
+        	);
+		$this->load->view('element/header');
+		$this->load->view('form_edit_progress',$data);
+		$this->load->view('element/footer');
+	}
+
+	function update_progress(){
+		$id_gangguan = $this->input->post('id_gangguan');
+		$waktu = $this->input->post('waktu');
+		$ket_progress = $this->input->post('ket_progress');
+		$status_progress = $this->input->post('status_progress');
+		$id_progress = $this->input->post('id_progress');
+		
+		$data = array(
+			'id_gangguan' => $id_gangguan,
+			'ket_progress' => $ket_progress,
+			'waktu' => $waktu,
+			'status_progress' => $status_progress
+		);
+
+		$where = array(
+			'id_progress' => $id_progress
+		);
+
+		$this->m_data_gangguan->update_data($where,$data,'tb_progress');
+		redirect('c_gangguan/progress/'.$id_gangguan);
+	}
+
 
 
 }
