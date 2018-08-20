@@ -8,7 +8,7 @@
                 </div>
                 <div class="row">
                 <div class="col-md-12">
-                  <!--   Kitchen Sink -->
+                  <!--   Table -->
 
                   <a href="<?php echo base_url();?>c_gangguan/form_data_gangguan" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-chevron-left"></span> <b>KEMBALI</b> </a>
 
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                     <!-- End  Kitchen Sink -->
+                     <!-- Table -->
                 </div>
             </div>
         </div>
