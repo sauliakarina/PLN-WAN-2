@@ -13,7 +13,7 @@
                     <form action="<?php echo base_url();?>c_layanan/update_layanan" method="post">
                         <div class="form-group">
                           <label for="ID">SID <font color="red">*</font></label>
-                          <input style="width:500px" class="form-control" id="ID" type="text" name="sid" value="<?php echo $l->sid ?>">
+                          <input style="width:500px" class="form-control" id="ID" type="text" name="sid" value="<?php echo $l->sid ?>" disabled>
                         </div>
                         <div class="form-group">
                           <label for="nama">Lokasi<font color="red">*</font></label>

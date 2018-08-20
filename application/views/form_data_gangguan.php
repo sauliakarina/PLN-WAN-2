@@ -14,7 +14,6 @@
                                 <table id="example" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
                                             <th>Area</th>
                                             <th>Jenis Gangguan</th>
                                             <th>Lokasi Gangguan</th>
@@ -33,9 +32,8 @@
 
                                         ?>
                                         <tr>
-                                            <td><?php echo $no++ ?></td>
                                             <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
-                                            <td><?php echo anchor('c_gangguan/tampil_ket/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td>
+                                            <td><?php echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td>
                                             <!-- <td><button class="btn btn-primary" data-toggle="modal" data-target="#detailModal" onclick='showDetails(<?php // echo $g->id_gangguan ?>)'><?php //echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button></td> -->
                                             <td><?php echo $g->lokasi_gangguan ?></td>
                                             <td><?php echo $g->penyebab_gangguan ?></td>
@@ -119,6 +117,7 @@
         $('#example').DataTable();
     } );
         $('#example').dataTable({
+           "order": [[ 5, "asc" ]]
       });
     </script>
 
@@ -138,15 +137,15 @@
             window.location.href =  "<?php echo base_url();?>c_gangguan/hapus_gangguan/"+p_id;
         }
 
-        function showDetails(id) {
+        /*function showDetails(id) {
 
           $.ajax({
-            url: "<?php echo base_url('c_gangguan/tampil_ket/') ?>/" + id,
+            url: "<?php //echo base_url('c_gangguan/tampil_ket/') ?>/" + id,
             type: "GET",
             dataType: "JSON",
             success: function(data) {
-             /* var coba = JSON.parse(data);
-              $("#ket_gangguan").text(coba.ket_gangguan); */
+              var coba = JSON.parse(data);
+              $("#ket_gangguan").text(coba.ket_gangguan); 
               $('[name="deskripsi_jenisgangguan"]').val(data.deskripsi_jenisgangguan);
               
               $('#detailModal').modal('show');
@@ -155,7 +154,7 @@
               console.log('gagal mengambil data');
             }
           });
-      }
+      }*/
 
     </script>
 

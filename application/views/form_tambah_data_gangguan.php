@@ -110,7 +110,7 @@
         <div class="row">
         <div class='col-md-12'>
             <div class="form-group">
-              <label for="date">Keterangan :  </label>
+              <label for="date">Deskripsi Jenis gangguan :  </label>
                     <textarea rows="3" class="form-control" name="deskripsi_jenisgangguan"></textarea>
                 
                 </div>
