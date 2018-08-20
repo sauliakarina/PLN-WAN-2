@@ -45,7 +45,13 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('element/header');
 	  $this->load->view('form_tambah_data_gangguan', $data);
 	  $this->load->view('element/footer');
-	 } 
+	 }
+
+	public function form_jenis_gangguan() {
+	$this->load->view('element/header');
+	$this->load->view('form_jenis_gangguan');
+	$this->load->view('element/footer');
+	} 
 
 	 function tambah_aksi_gangguan(){
 		$sid = $this->input->post('sid');

@@ -43,15 +43,7 @@
             </div>
         </div>
 
-    <div class="row">
-        <div class='col-md-12'>
-            <div class="form-group">
-              <label for="date">Keterangan :  </label>
-                    <textarea rows="3" class="form-control" name="deskripsi_jenisgangguan"></textarea>
-                
-                </div>
-            </div>
-        </div>
+    
 
 
 
@@ -115,7 +107,15 @@
                 </div>
             </div>
 
-
+        <div class="row">
+        <div class='col-md-12'>
+            <div class="form-group">
+              <label for="date">Keterangan :  </label>
+                    <textarea rows="3" class="form-control" name="deskripsi_jenisgangguan"></textarea>
+                
+                </div>
+            </div>
+        </div>
       
 
         </div>
