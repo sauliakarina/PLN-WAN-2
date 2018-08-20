@@ -4,6 +4,7 @@ class M_data_user extends CI_Model{
 
 	function tampil_user(){
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_user');
 		if($query->num_rows()>0)
 		{

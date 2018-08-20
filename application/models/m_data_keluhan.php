@@ -37,6 +37,7 @@ class M_data_keluhan extends CI_Model{
 	function get_layanan() {
     	$this->db->distinct();
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_layanan');
 		if($query->num_rows()>0)
 		{
@@ -49,6 +50,7 @@ class M_data_keluhan extends CI_Model{
     function get_jeniskeluhan() {
     	$this->db->distinct();
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_jeniskeluhan');
 		if($query->num_rows()>0)
 		{
@@ -75,6 +77,7 @@ class M_data_keluhan extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->where('sid',$id);
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_layanan');
 		return $query->row();
 	}
@@ -82,6 +85,7 @@ class M_data_keluhan extends CI_Model{
 	public function tampil_jenislayanan($id)
 	{
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$this->db->where('id_jenislayanan',$id);
 		$query = $this->db->get('tb_jenislayanan');
 		return $query->row();
@@ -98,6 +102,7 @@ class M_data_keluhan extends CI_Model{
 	public function tampil_area()
 	{
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_layanan');
 		return $query->row();
 	}
