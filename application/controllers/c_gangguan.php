@@ -303,5 +303,17 @@ class c_gangguan extends CI_Controller{
 		echo json_encode($data);
 	}
 
+	public function tampil_searchgangguan() {
+	  $data = array(
+	  	'get_layanan' => $this->m_data_gangguan->get_layanan(),
+	  	'get_jenisgangguan' => $this->m_data_gangguan->get_jenisgangguan()
+	  	
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('searchgangguan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
+
 
 }
