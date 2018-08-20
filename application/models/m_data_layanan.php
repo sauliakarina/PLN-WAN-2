@@ -49,6 +49,7 @@ class M_data_layanan extends CI_Model{
     function get_jenislayanan() {
     	$this->db->distinct();
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_jenislayanan');
 		if($query->num_rows()>0)
 		{

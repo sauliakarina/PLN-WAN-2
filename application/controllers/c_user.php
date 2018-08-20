@@ -44,10 +44,20 @@ class c_user extends CI_Controller{
 	}
 
 	function hapus_user($id){
-		$where = array('id_karyawan' => $id);
-		$this->m_data_user->hapus_user($where,'tb_user');
+		$data = array(
+		'isDelete' => 'yes'
+		);
+		$where = array(
+		'id_karyawan' => $id);
+		$this->m_data_user->update_data($where,$data,'tb_user');
 		redirect('c_user/user');
 	}
+
+	// function hapus_user($id){
+	// 	$where = array('id_karyawan' => $id);
+	// 	$this->m_data_user->hapus_user($where,'tb_user');
+	// 	redirect('c_user/user');
+	// }
 
 	function edit_user($id){
 		$where = array('id_karyawan' => $id);

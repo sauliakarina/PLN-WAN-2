@@ -90,6 +90,7 @@ class M_data_gangguan extends CI_Model{
 	function get_layanan() {
     	$this->db->distinct();
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_layanan');
 		if($query->num_rows()>0)
 		{
@@ -102,6 +103,7 @@ class M_data_gangguan extends CI_Model{
     function get_jenisgangguan() {
     	$this->db->distinct();
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_jenisgangguan');
 		if($query->num_rows()>0)
 		{
@@ -114,6 +116,7 @@ class M_data_gangguan extends CI_Model{
      public function get_id($id)
 	{
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$this->db->where('id_gangguan',$id);
 		$query = $this->db->get('tb_gangguan');
 		return $query->row();
