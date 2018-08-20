@@ -35,12 +35,12 @@
                                         <tr>
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
-                                            <!-- <td> <a class="" href="<?php //echo base_url();?>c_main/area">AJ Jatinegara</a></td> -->
-                                            <td><?php echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></td>
+                                            <td><?php echo anchor('c_gangguan/tampil_ket/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td>
+                                            <!-- <td><button class="btn btn-primary" data-toggle="modal" data-target="#detailModal" onclick='showDetails(<?php // echo $g->id_gangguan ?>)'><?php //echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button></td> -->
                                             <td><?php echo $g->lokasi_gangguan ?></td>
                                             <td><?php echo $g->penyebab_gangguan ?></td>
                                             <td><?php echo $g->solusi_gangguan ?></td>
-                                            <td><!-- <a class="" href="<?php //echo base_url();?>c_form/progress">Penanganan</a> -->
+                                            <td>
                                               <?php if($this->m_data_gangguan->get_last_progress($g->id_gangguan)== false):  ?>
                                               <form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
                                                      <button class='btn btn-default' type='submit'>Isi</button>
@@ -83,7 +83,7 @@
     </div>
 
     <!-- Modal Keterangan-->
-    <div id="myModal" class="modal fade" role="dialog">
+    <div id="detailModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -93,7 +93,8 @@
             <h4 class="modal-title" align="center">Keterangan Jenis Gangguan</h4>
           </div>
           <div class="modal-body">
-            <p align="center">CABLE : PUTUS KABEL FO tipe F8</p>
+            <!-- <p align="center"><span id="ket_gangguan"></span></p> -->
+            <p align="center"><?php echo $g->deskripsi_jenisgangguan ?></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
@@ -152,6 +153,26 @@
         function deletep(){
             window.location.href =  "<?php echo base_url();?>c_gangguan/hapus_gangguan/"+p_id;
         }
+
+        function showDetails(id) {
+
+          $.ajax({
+            url: "<?php echo base_url('c_gangguan/tampil_ket/') ?>/" + id,
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+             /* var coba = JSON.parse(data);
+              $("#ket_gangguan").text(coba.ket_gangguan); */
+              $('[name="deskripsi_jenisgangguan"]').val(data.deskripsi_jenisgangguan);
+              
+              $('#detailModal').modal('show');
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log('gagal mengambil data');
+            }
+          });
+      }
+
     </script>
 
 

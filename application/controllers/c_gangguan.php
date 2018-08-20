@@ -296,5 +296,12 @@ class c_gangguan extends CI_Controller{
 	}
 
 
+	public function tampil_ket($id)
+	{
+		$data =  $this->m_data_gangguan->tampil_gangguan_byid($id);
+
+		echo json_encode($data);
+	}
+
 
 }

@@ -20,6 +20,7 @@
                                             <th>Kapasitas</th>
                                             <th>Nama PIC</th>
                                             <th>Nomer Telpon</th>
+                                            <th>Email</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -31,6 +32,7 @@
                                             <td><?php echo $tl->kapasitas ?></td>
                                             <td><?php echo $tl->nama_pic ?></td>
                                             <td><?php echo $tl->no_hp_pic ?></td>
+                                            <td><?php echo $tl->email ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
