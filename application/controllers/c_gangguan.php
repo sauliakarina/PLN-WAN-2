@@ -10,6 +10,7 @@ class c_gangguan extends CI_Controller{
 
 	public function form_data_gangguan() {
 		$data=array (
+		'status_user' => $this->session->userdata('status_user'),
 	   	'gangguan' => $this->m_data_gangguan->tampil_gangguan()
 	   	);
 	  $this->load->view('element/header');

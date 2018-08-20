@@ -49,11 +49,11 @@ class c_login extends CI_Controller{
                 $this->session->set_userdata($sess_data); 
                  redirect(base_url("c_main/home"));
                /*
-               if($this->session->userdata('status')=='admin') 
+               if($this->session->userdata('status')=='Admin') 
                {
-                    redirect(base_url("beranda"));
+                    redirect(base_url("c_main/home"));
                 }else {
-                   redirect(base_url("beranda"));
+                   redirect(base_url("c_main/home_user"));
                 }
                 */
                 

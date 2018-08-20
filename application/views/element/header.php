@@ -57,30 +57,39 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a  href="<?php echo base_url();?>c_main/home">Beranda</a></li>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Data <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="<?php echo base_url();?>c_gangguan/form_data_gangguan" style="color: black">Gangguan</a></li>
-                                  <li><a href="<?php echo base_url();?>c_keluhan/form_data_keluhan" style="color: black">Keluhan</a></li>
-                                </ul>
-                            </li>  
-                            <!-- wey -->
+                            <?php 
+                            if($status_user == 'Admin') {
+                                echo"
+                                <li><a  href=".base_url('c_main/home').">Beranda</a></li>
+                                <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Data <span class='caret'></span></a>
+                                        <ul class='dropdown-menu'>
+                                          <li><a href=".base_url('c_gangguan/form_data_gangguan')." style='color: black'>Gangguan</a></li>
+                                            <li><a href=".base_url('c_gangguan/form_data_keluhan')." style='color: black'>Keluhan</a></li>
+                                        </ul>
+                                    </li>    
+                                ";
+                            }
+                            ?>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pencarian <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="<?php echo base_url();?>c_gangguan/tampil_searchgangguan" style="color: black">Data Gangguan</a></li>
                                   <li><a href="<?php echo base_url();?>c_keluhan/tampil_searchkeluhan" style="color: black">Data Keluhan</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Kelola <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="<?php echo base_url();?>c_gangguan/jenisgangguan" style="color: black">Jenis Gangguan</a></li>
-                                  <li><a href="<?php echo base_url();?>c_keluhan/jeniskeluhan" style="color: black">Jenis Keluhan</a></li>
-                                  <li><a href="<?php echo base_url();?>c_layanan/jenislayanan" style="color: black">Jenis Layanan</a></li>
-                                  <li><a href="<?php echo base_url();?>c_layanan/form_layanan" style="color: black">Layanan</a></li>
-                                  <li class="divider"></li>
-                                  <li><a href="<?php echo base_url();?>c_user/user" style="color: black">Akun</a></li>
+                            <?php 
+                            if ($status_user == 'Admin') {
+                                echo " <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Kelola <span class='caret'></span></a>
+                                <ul class='dropdown-menu'>
+                                  <li><a href=".base_url('c_gangguan/jenisgangguan')." style='color: black'>Jenis Gangguan</a></li>
+                                  <li><a href=".base_url('c_keluhan/jeniskeluhan')." style='color: black'>Jenis Keluhan</a></li>
+                                  <li><a href=".base_url('c_layanan/jenislayanan')." style='color: black'>Jenis Layanan</a></li>
+                                  <li><a href=".base_url('c_layanan/form_layanan')." style='color: black'>Layanan</a></li>
+                                  <li class='divider'></li>
+                                  <li><a href=".base_url('c_user/user')." style='color: black'>Akun</a></li>
                                 </ul>
-                            </li>
+                            </li>";
+                            }   
+                             ?>
                             <li><a href="<?php echo base_url();?>c_main/logout">Keluar</a></li>
                         </ul>
                     </div>

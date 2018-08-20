@@ -13,7 +13,10 @@ class c_main extends CI_Controller {
 
 
 public function home() {
-  $this->load->view('element/header');
+  $data=array (
+    'status_user' => $this->session->userdata('status_user')
+      );
+  $this->load->view('element/header',$data);
   $this->load->view('home');
   $this->load->view('element/footer');
  }
