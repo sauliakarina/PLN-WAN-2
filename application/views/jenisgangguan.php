@@ -44,9 +44,8 @@
                                                </center>
                                              </td>
                                              <td>
-                                              <center>
-                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jg->id_jenisgangguan ?>)" class="btn btn-danger">Hapus</button></center>
-                                              </td>
+                                                <center> <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jg->id_jenisgangguan ?>)" class="btn btn-danger">Hapus</button></center>
+                                            </td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>

@@ -27,9 +27,14 @@ class c_layanan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 }
 
-	 function hapus_layanan($id){
-		$where = array('sid' => $id);
-		$this->m_data_layanan->hapus_data($where,'tb_layanan');
+	function hapus_layanan($id){
+		$data = array(
+		'isDelete' => 'yes'
+		);
+		$where = array(
+		'sid' => $id
+		);
+		$this->m_data_layanan->update_data($where,$data,'tb_layanan');
 		redirect('c_layanan/form_layanan');
 	}
 
@@ -127,10 +132,15 @@ class c_layanan extends CI_Controller{
 		$this->m_data_layanan->update_data($where,$data,'tb_jenislayanan');
 		redirect('c_layanan/jenislayanan');
 	}
-
+	
 	function hapus_jenislayanan($id){
-		$where = array('id_jenislayanan' => $id);
-		$this->m_data_layanan->hapus_data($where,'tb_jenislayanan');
+		$data = array(
+		'isDelete' => 'yes'
+		);
+		$where = array(
+		'id_jenislayanan' => $id
+		);
+		$this->m_data_layanan->update_data($where,$data,'tb_jenislayanan');
 		redirect('c_layanan/jenislayanan');
 	}
 

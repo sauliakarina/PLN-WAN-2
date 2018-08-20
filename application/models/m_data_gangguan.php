@@ -4,6 +4,7 @@ class M_data_gangguan extends CI_Model{
 
 	function tampil_jenisgangguan(){
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_jenisgangguan');
 		if($query->num_rows()>0)
 		{
@@ -134,6 +135,7 @@ class M_data_gangguan extends CI_Model{
 	public function tampil_jenisgangguan_byid($id)
 	{
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$this->db->where('id_jenisgangguan',$id);
 		$query = $this->db->get('tb_jenisgangguan');
 		return $query->row();

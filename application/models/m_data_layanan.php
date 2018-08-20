@@ -4,6 +4,7 @@ class M_data_layanan extends CI_Model{
 
 	function tampil_jenislayanan(){
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_jenislayanan');
 		if($query->num_rows()>0)
 		{
@@ -16,6 +17,7 @@ class M_data_layanan extends CI_Model{
 
 	function tampil_layanan(){
 		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
 		$query = $this->db->get('tb_layanan');
 		if($query->num_rows()>0)
 		{

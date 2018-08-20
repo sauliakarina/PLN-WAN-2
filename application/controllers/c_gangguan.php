@@ -190,10 +190,16 @@ class c_gangguan extends CI_Controller{
 	}
 
 	function hapus_jenisgangguan($id){
-		$where = array('id_jenisgangguan' => $id);
-		$this->m_data_gangguan->hapus_data($where,'tb_jenisgangguan');
+		$data = array(
+		'isDelete' => 'yes'
+		);
+		$where = array(
+		'id_jenisgangguan' => $id
+		);
+		$this->m_data_gangguan->update_data($where,$data,'tb_jenisgangguan');
 		redirect('c_gangguan/jenisgangguan');
 	}
+
 
 	function edit_jenisgangguan($id){
 		$where = array('id_jenisgangguan' => $id);
