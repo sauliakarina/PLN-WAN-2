@@ -18,24 +18,26 @@
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <tbody>
+                                       <?php foreach($tampil_ket as $tk){ ?>
                                       <tr>
                                         <td><strong>Jenis Gangguan</strong></td>
-                                        <td style="width:700px">aaaa</td>
-                                      </tr>
-                                      <tr>
-                                        <td><strong>Deskripsi Jenis Gangguan</strong></td>
-                                        <td style="width:700px">aaaa</td>
+                                        <td style="width:700px"><?php echo  $this->m_data_gangguan->tampil_jenisgangguan_byid($tk->id_jenisgangguan)->jenis_gangguan ?></td>
                                       </tr>
                                       <tr>
                                         <td style="height:100px"><strong>Keterangan</strong></td>
-                                        <td style="width:700px height:100px">aaaa</td>
+                                        <td style="width:700px height:100px"><?php echo  $this->m_data_gangguan->tampil_jenisgangguan_byid($tk->id_jenisgangguan)->ket_gangguan ?></td>
                                       </tr>
+                                      <tr>
+                                        <td><strong>Deskripsi Jenis Gangguan</strong></td>
+                                        <td style="width:700px;height:100px"><?php echo $tk->deskripsi_jenisgangguan ?></td>
+                                      </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                     <!-- Table -->
+                     <!-- Table  -->
                 </div>
             </div>
         </div>
