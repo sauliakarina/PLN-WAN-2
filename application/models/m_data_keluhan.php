@@ -94,6 +94,13 @@ class M_data_keluhan extends CI_Model{
 		return $query->row();
 	}
 
+	public function tampil_area()
+	{
+		$this->db->select('*');
+		$query = $this->db->get('tb_layanan');
+		return $query->row();
+	}
+
 	/* public function tambah_lokasi($id)
 	{
 		$this->db->select('*');

@@ -205,6 +205,16 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/form_data_keluhan');
 	}
 
+	public function tampil_search() {
+	  $data = array(
+	  	'tampil_area' => $this->m_data_keluhan->tampil_area()
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('searchkeluhan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
+
 
 
 }
