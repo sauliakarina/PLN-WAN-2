@@ -37,9 +37,9 @@
    <div class="row">
         <div class='col-md-12'>
             <div class="form-group">
-              <label for="date">Keterangan :  </label>
+              <label for="date">Deskripsi Keluhan :  </label>
                     
-                    <textarea rows="5" class="form-control" name="deskripsi_jeniskeluhan"><?php echo $k->deskripsi_jeniskeluhan ?></textarea>
+                    <textarea rows="4" class="form-control" name="deskripsi_jeniskeluhan"><?php echo $k->deskripsi_jeniskeluhan ?></textarea>
                 </div>
             </div>
         </div>
