@@ -69,10 +69,17 @@ class c_gangguan extends CI_Controller{
 		$close_date = $this->input->post('close_date');
 		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
 
-		$start_date = new DateTime($open_date.' '.$open_time);
-		$end_date = new DateTime($close_date.' '.$close_time);
-		$durasi = date_diff($end_date, $start_date);
-		$durasi_jam = $durasi->d*24;
+		if ($close_date != "0000-00-00" && $close_time !="00:00:00") {
+			$start_date = new DateTime($open_date.' '.$open_time);
+			$end_date = new DateTime($close_date.' '.$close_time);
+			$durasi = date_diff($end_date, $start_date);
+			$durasi_jam = $durasi->d*24;
+			$input_durasi = ($durasi->h+$durasi_jam).':'.$durasi->i;
+		} else {
+			$input_durasi = '0:00';
+		}
+		
+
 
 		$data=array(
 			'sid' => $sid,
@@ -85,7 +92,7 @@ class c_gangguan extends CI_Controller{
 			'open_date' => $open_date,
 			'close_date' => $close_date,
 			'lokasi_gangguan' => $lokasi_gangguan,
-			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
+			'durasi' => $input_durasi
 			
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_gangguan');
@@ -282,9 +289,7 @@ class c_gangguan extends CI_Controller{
 			'id_gangguan' => $id_gangguan,
 			'ket_progress' => $ket_progress,
 			'waktu' => $waktu,
-			'status_progress' => $status_progress,
-			'coba_date' => $coba_date,
-			'coba_jam' => $coba_jam
+			'status_progress' => $status_progress
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_progress');
 		redirect('c_gangguan/progress/'.$id_gangguan);
