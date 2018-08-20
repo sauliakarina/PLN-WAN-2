@@ -45,13 +45,8 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('element/header');
 	  $this->load->view('form_tambah_data_gangguan', $data);
 	  $this->load->view('element/footer');
-	 }
-
-	public function form_jenis_gangguan() {
-	$this->load->view('element/header');
-	$this->load->view('form_jenis_gangguan');
-	$this->load->view('element/footer');
-	} 
+	 } 
+	 /*ss*/
 
 	 function tambah_aksi_gangguan(){
 		$sid = $this->input->post('sid');
@@ -308,18 +303,6 @@ class c_gangguan extends CI_Controller{
 
 		echo json_encode($data);
 	}
-
-	public function tampil_searchgangguan() {
-	  $data = array(
-	  	'get_layanan' => $this->m_data_gangguan->get_layanan(),
-	  	'get_jenisgangguan' => $this->m_data_gangguan->get_jenisgangguan()
-	  	
-	  );
-	  $this->load->view('element/header');
-	  $this->load->view('searchgangguan',$data);
-	  $this->load->view('element/footer');
-	 } 
-
 
 
 }
