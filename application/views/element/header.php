@@ -63,7 +63,8 @@
                                   <li><a href="<?php echo base_url();?>c_gangguan/form_data_gangguan" style="color: black">Gangguan</a></li>
                                   <li><a href="<?php echo base_url();?>c_keluhan/form_data_keluhan" style="color: black">Keluhan</a></li>
                                 </ul>
-                            </li>
+                            </li>  
+                            <!-- oy -->
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pencarian <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="<?php echo base_url();?>c_gangguan/tampil_searchgangguan" style="color: black">Data Gangguan</a></li>
