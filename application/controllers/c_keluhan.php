@@ -207,7 +207,7 @@ class c_keluhan extends CI_Controller{
 
 	public function tampil_search() {
 	  $data = array(
-	  	'tampil_area' => $this->m_data_keluhan->tampil_area()
+	  	'get_layanan' => $this->m_data_keluhan->get_layanan()
 	  );
 	  $this->load->view('element/header');
 	  $this->load->view('searchkeluhan',$data);

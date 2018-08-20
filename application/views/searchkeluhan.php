@@ -16,10 +16,10 @@
                         <select id="area" name="area" class="form-control">
      <option value="_">_____Pilih Area_____</option>
       <?php 
-        foreach($tampil_area as $ta ) {
-          echo "<option value='$ta->sid'> $ta->lokasi</option>";
+        foreach($get_layanan as $gl ) {
+          echo "<option value='$gl->sid'> $gl->lokasi</option>";
+        }
       ?>
-      <?php } ?>
     </select>
 
   <div class="form-group">
