@@ -256,11 +256,29 @@ class c_gangguan extends CI_Controller{
 		$ket_progress = $this->input->post('ket_progress');
 		$status_progress = $this->input->post('status_progress');
 
+		if ($status_progress == 2) {
+			$close_date = date("Y-m-d");
+			date_default_timezone_set("Asia/Jakarta");
+			$close_time = date("h:i a");
+
+			$data=array(
+			'close_date' => $close_date,
+			'close_time' =>$close_time
+			);
+			$where = array(
+				'id_gangguan' => $id_gangguan
+			);
+
+			$this->m_data_gangguan->update_data($where,$data,'tb_gangguan');
+		}		
+
 		$data=array(
 			'id_gangguan' => $id_gangguan,
 			'ket_progress' => $ket_progress,
 			'waktu' => $waktu,
-			'status_progress' => $status_progress
+			'status_progress' => $status_progress,
+			'coba_date' => $coba_date,
+			'coba_jam' => $coba_jam
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_progress');
 		redirect('c_gangguan/progress/'.$id_gangguan);
@@ -289,6 +307,22 @@ class c_gangguan extends CI_Controller{
 		$ket_progress = $this->input->post('ket_progress');
 		$status_progress = $this->input->post('status_progress');
 		$id_progress = $this->input->post('id_progress');
+
+		if ($status_progress == 2) {
+			$close_date = date("Y-m-d");
+			date_default_timezone_set("Asia/Jakarta");
+			$close_time = date("h:i a");
+
+			$data=array(
+				'close_date' => $close_date,
+				'close_time' =>$close_time
+			);
+			$where = array(
+				'id_gangguan' => $id_gangguan
+			);
+
+			$this->m_data_gangguan->update_data($where,$data,'tb_gangguan');
+		}
 		
 		$data = array(
 			'id_gangguan' => $id_gangguan,
