@@ -1,8 +1,9 @@
+<main>
     <div class="content-wrapper">
         <div class="container" >
             <div class="row">
                 <div class="col-md-12">
-                    <h4  class="page-head-line">Pencarian </h4>
+                    <h4  class="page-head-line">Pencarian Gangguan</h4>
                 </div>
             </div>
             <center>
@@ -14,27 +15,25 @@
                    <div class="alert alert-info">
                      <label>Area: </label>
                         <select id="area" name="area" class="form-control">
-     <option value="_">_____Pilih Area_____</option>
-      <?php 
-        foreach($get_layanan as $gl ) {
-          echo "<option value='$gl->sid'> $gl->lokasi</option>";
-        }
-      ?>
-    </select>
+                         <option value="_">_____Pilih Area_____</option>
+                          <?php 
+                            foreach($get_layanan as $gl ) {
+                            echo "<option value='$gl->sid'> $gl->lokasi</option>";
+                            }
+                          ?>
+                        </select>
 
-  <div class="form-group">
-                          <label for="prodi">Jenis Keluhan :</label>
-                          <select class="form-control" id="jenis keluan" name="jenis keluhan">
-                            <option value="_">_____Pilih Jenis Keluhan_____</option>
+<div class="form-group">
+                          <label for="prodi">Jenis Gangguan :</label>
+                          <select class="form-control"  id="jenis gangguan" name="jenis gangguan">
+                            <option value="_">_____Pilih Jenis Gangguan_____</option>
                             <?php 
-                              foreach($get_jeniskeluhan as $gjk ) {
-                                echo "<option value='$gjk->id_jeniskeluhan'> $gjk->jenis_keluhan</option>";
+                              foreach($get_jenisgangguan as $gjg ) {
+                                echo "<option value='$gjg->id_jenisgangguan'> $gjg->jenis_gangguan</option>";
                               }
-                            ?>                          
+                            ?>
                           </select>
-                        </div>
-
-                        
+</div>
 <div class="form-group">
                           <label for="prodi">Bulan :</label>
                           <select class="form-control" id="jenis gangguan" name="jenis gangguan">
@@ -82,4 +81,4 @@
             </div>
         </div>
     </div>
-    <!-- CONTENT-WRAPPER SECTION END-->
+</main>

@@ -205,6 +205,18 @@ class c_keluhan extends CI_Controller{
 		redirect('c_keluhan/form_data_keluhan');
 	}
 
+	public function tampil_searchkeluhan() {
+	  $data = array(
+	  	'get_layanan' => $this->m_data_keluhan->get_layanan(),
+	  	'get_jeniskeluhan' => $this->m_data_keluhan->get_jeniskeluhan()
+	  	
+	  );
+	  $this->load->view('element/header');
+	  $this->load->view('searchkeluhan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
+
 
 
 }
