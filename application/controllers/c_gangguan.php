@@ -13,7 +13,7 @@ class c_gangguan extends CI_Controller{
 		'status_user' => $this->session->userdata('status_user'),
 	   	'gangguan' => $this->m_data_gangguan->tampil_gangguan()
 	   	);
-	  $this->load->view('element/header');
+	  $this->load->view('element/header',$data);
 	  $this->load->view('form_data_gangguan',$data);
 	  $this->load->view('element/footer');
 	 } 
@@ -40,10 +40,11 @@ class c_gangguan extends CI_Controller{
 // 
 	public function form_tambah_gangguan() {
 		$data = array(
+		'status_user' => $this->session->userdata('status_user'),
 	  	'get_layanan' => $this->m_data_gangguan->get_layanan(),
 	  	'get_jenisgangguan' => $this->m_data_gangguan->get_jenisgangguan()
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header',$data);
 	  $this->load->view('form_tambah_data_gangguan', $data);
 	  $this->load->view('element/footer');
 	 }

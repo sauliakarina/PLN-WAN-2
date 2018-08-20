@@ -21,6 +21,15 @@ public function home() {
   $this->load->view('element/footer');
  }
 
+ public function home_user() {
+  $data=array (
+    'status_user' => $this->session->userdata('status_user')
+      );
+  $this->load->view('element/header',$data);
+  $this->load->view('home_user');
+  $this->load->view('element/footer');
+ }
+
 
 /*public function waktu() {
   $this->load->view('element/header');

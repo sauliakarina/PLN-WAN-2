@@ -30,10 +30,11 @@ class c_keluhan extends CI_Controller{
 
 	public function form_data_keluhan() {
 	$data=array (
-   	'keluhan' => $this->m_data_keluhan->tampil_keluhan()
+   	'keluhan' => $this->m_data_keluhan->tampil_keluhan(),
+   	'status_user' => $this->session->userdata('status_user')
    	);
 
-	  $this->load->view('element/header');
+	  $this->load->view('element/header',$data);
 	  $this->load->view('form_data_keluhan', $data);
 	  $this->load->view('element/footer');
 	 } 
