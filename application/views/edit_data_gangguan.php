@@ -31,7 +31,17 @@
                                }
                             ?>
                           </select>
-                        </div>
+  </div>
+
+  <div class="row">
+        <div class='col-md-12'>
+            <div class="form-group">
+              <label for="date">Deskripsi Gangguan </label>
+                    
+                    <textarea type="text" name="deskripsi_jenisgangguan" class="form-control" rows="4"><?php echo $g->deskripsi_jenisgangguan ?></textarea>
+                </div>
+            </div>
+        </div>  
 
 
   <div class="row">
@@ -72,7 +82,7 @@
                 </div>
             </div>
         </div>
- 
+ <!-- s -->
 
     <div class="row">
         <div class='col-md-6'>
