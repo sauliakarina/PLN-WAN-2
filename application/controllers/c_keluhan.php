@@ -21,9 +21,10 @@ class c_keluhan extends CI_Controller{
 	 public function tampil_waktu($id) {
 	  $where = array('id_keluhan' => $id);
 	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
 	  	'tampil_waktu' => $this->m_data_keluhan->edit_data($where, 'tb_keluhan')->result()
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('waktu_keluhan',$data);
 	  $this->load->view('element/footer');
 	 } 
@@ -42,10 +43,11 @@ class c_keluhan extends CI_Controller{
 
 	public function form_tambah_keluhan() {
 		$data = array(
+		'status_user' => $this->session->userdata('status_user'),
 	  	'get_layanan' => $this->m_data_keluhan->get_layanan(),
 	  	'get_jeniskeluhan' => $this->m_data_keluhan->get_jeniskeluhan()
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('form_tambah_keluhan', $data);
 	  $this->load->view('element/footer');
 	 } 
@@ -87,9 +89,10 @@ class c_keluhan extends CI_Controller{
 
 	function jeniskeluhan(){
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'jeniskeluhan' => $this->m_data_keluhan->tampil_jeniskeluhan()
 		);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
   		$this->load->view('jeniskeluhan',$data);
  		$this->load->view('element/footer');
 	}
@@ -110,9 +113,10 @@ class c_keluhan extends CI_Controller{
 	function edit_jeniskeluhan($id){
 		$where = array('id_jeniskeluhan' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'jeniskeluhan' => $this->m_data_keluhan->edit_data($where,'tb_jeniskeluhan')->result()
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('editkeluhan',$data);
 		$this->load->view('element/footer');
 	}
@@ -160,11 +164,12 @@ class c_keluhan extends CI_Controller{
 	function edit_keluhan($id){
 		$where = array('id_keluhan' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'keluhan' => $this->m_data_keluhan->edit_data($where,'tb_keluhan')->result(),
         	'get_layanan' => $this->m_data_keluhan->get_layanan(),
 	  		'get_jeniskeluhan' => $this->m_data_keluhan->get_jeniskeluhan()
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('edit_data_keluhan',$data);
 		$this->load->view('element/footer');
 	}
@@ -212,11 +217,12 @@ class c_keluhan extends CI_Controller{
 
 	public function tampil_searchkeluhan() {
 	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
 	  	'get_layanan' => $this->m_data_keluhan->get_layanan(),
 	  	'get_jeniskeluhan' => $this->m_data_keluhan->get_jeniskeluhan()
 	  	
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('searchkeluhan',$data);
 	  $this->load->view('element/footer');
 	 } 

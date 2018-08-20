@@ -31,9 +31,10 @@ class c_gangguan extends CI_Controller{
 	 public function tampil_waktu($id) {
 	  $where = array('id_gangguan' => $id);
 	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
 	  	'tampil_waktu' => $this->m_data_gangguan->edit_data($where, 'tb_gangguan')->result()
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('waktu_gangguan',$data);
 	  $this->load->view('element/footer');
 	 } 
@@ -120,11 +121,12 @@ class c_gangguan extends CI_Controller{
 	function edit_gangguan($id){
 		$where = array('id_gangguan' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'gangguan' => $this->m_data_gangguan->edit_data($where,'tb_gangguan')->result(),
         	'get_layanan' => $this->m_data_gangguan->get_layanan(),
 	  		'get_jenisgangguan' => $this->m_data_gangguan->get_jenisgangguan()
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('edit_data_gangguan',$data);
 		$this->load->view('element/footer');
 	}
@@ -177,15 +179,19 @@ class c_gangguan extends CI_Controller{
 
 	function jenisgangguan(){
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'jenisgangguan' => $this->m_data_gangguan->tampil_jenisgangguan()
 		);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
   		$this->load->view('jenisgangguan',$data);
  		$this->load->view('element/footer');
 	}
 
 	function tambah_jenisgangguan(){
-		$this->load->view('element/header');
+		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
+		);
+		$this->load->view('element/header', $data);
   		$this->load->view('tambahgangguan');
  		$this->load->view('element/footer');
 	}
@@ -217,9 +223,10 @@ class c_gangguan extends CI_Controller{
 	function edit_jenisgangguan($id){
 		$where = array('id_jenisgangguan' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'jenisgangguan' => $this->m_data_gangguan->edit_data($where,'tb_jenisgangguan')->result()
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('editgangguan',$data);
 		$this->load->view('element/footer');
 	}
@@ -362,11 +369,12 @@ class c_gangguan extends CI_Controller{
 
 	public function tampil_searchgangguan() {
 	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
 	  	'get_layanan' => $this->m_data_gangguan->get_layanan(),
 	  	'get_jenisgangguan' => $this->m_data_gangguan->get_jenisgangguan()
 	  	
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('searchgangguan',$data);
 	  $this->load->view('element/footer');
 	 } 

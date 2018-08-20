@@ -10,9 +10,10 @@ class c_layanan extends CI_Controller{
 
 	 public function form_layanan(){
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'layanan' => $this->m_data_layanan->tampil_layanan()
 		);
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('form_layanan', $data);
 	  $this->load->view('element/footer');
 	 }
@@ -20,9 +21,10 @@ class c_layanan extends CI_Controller{
 
 	public function form_tambah_layanan(){
 	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
 	  	'get_jenislayanan' => $this->m_data_layanan->get_jenislayanan()
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('form_tambah_layanan', $data);
 	  $this->load->view('element/footer');
 	 }
@@ -42,10 +44,11 @@ class c_layanan extends CI_Controller{
 	 function edit_layanan($id){
 		$where = array('sid' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'layanan' => $this->m_data_layanan->edit_data($where,'tb_layanan')->result(),
         	'get_jenislayanan' => $this->m_data_layanan->get_jenislayanan()
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('form_edit_layanan',$data);
 		$this->load->view('element/footer');
 	}
@@ -81,18 +84,20 @@ class c_layanan extends CI_Controller{
 
 	function jenislayanan(){
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'jenislayanan' => $this->m_data_layanan->tampil_jenislayanan()
 		);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
   		$this->load->view('jenislayanan',$data);
  		$this->load->view('element/footer');
 	}
 
 	function tambah_jenislayanan(){
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'jenislayanan' => $this->m_data_layanan->tampil_jenislayanan()
 		);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
   		$this->load->view('tambahlayanan',$data);
  		$this->load->view('element/footer');
 	}
@@ -110,9 +115,10 @@ class c_layanan extends CI_Controller{
 	function edit_jenislayanan($id){
 		$where = array('id_jenislayanan' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'jenislayanan' => $this->m_data_layanan->edit_data($where,'tb_jenislayanan')->result()
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('form_edit_jenis_layanan',$data);
 		$this->load->view('element/footer');
 	}

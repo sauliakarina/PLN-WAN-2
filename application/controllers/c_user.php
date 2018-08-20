@@ -10,18 +10,20 @@ class c_user extends CI_Controller{
 
 	function user(){
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'user' => $this->m_data_user->tampil_user()
 		);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
   		$this->load->view('formuser',$data);
  		$this->load->view('element/footer');
 	}
 
 	function tambah_user(){
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'user' => $this->m_data_user->tampil_user()
 		);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
   		$this->load->view('registerpage',$data);
  		$this->load->view('element/footer');
 	}
@@ -62,9 +64,10 @@ class c_user extends CI_Controller{
 	function edit_user($id){
 		$where = array('id_karyawan' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'user' => $this->m_data_user->edit_data($where,'tb_user')->result()
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('form_edit_user',$data);
 		$this->load->view('element/footer');
 	}

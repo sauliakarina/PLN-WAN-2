@@ -94,7 +94,10 @@ class c_form extends CI_Controller {
 
 
   public function tambahkeluhan() {
-  $this->load->view('element/header');
+    $data=array(
+      'status_user' => $this->session->userdata('status_user'),
+    );
+  $this->load->view('element/header', $data);
   $this->load->view('tambahkeluhan');
   $this->load->view('element/footer');
  }
