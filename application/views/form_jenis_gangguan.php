@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                     <!-- Table -->
+                     <!-- Table  -->
                 </div>
             </div>
         </div>
