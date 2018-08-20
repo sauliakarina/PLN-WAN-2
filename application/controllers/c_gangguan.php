@@ -36,7 +36,7 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('waktu_gangguan',$data);
 	  $this->load->view('element/footer');
 	 } 
-
+// 
 	public function form_tambah_gangguan() {
 		$data = array(
 	  	'get_layanan' => $this->m_data_gangguan->get_layanan(),
