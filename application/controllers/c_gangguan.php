@@ -252,10 +252,11 @@ class c_gangguan extends CI_Controller{
 	//tampil progress by id
 	public function progress($id) {
 		$data=array(
+			'status_user' => $this->session->userdata('status_user'),
 			'progress' => $this->m_data_gangguan->tampil_progress($id),
 			'id' => $id
 		);
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('progress',$data);
 	  $this->load->view('element/footer');
 	 }
@@ -263,9 +264,10 @@ class c_gangguan extends CI_Controller{
 	function tambah_progress($id){
 		$where = array('id_gangguan' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'gangguan' => $this->m_data_gangguan->edit_data($where,'tb_gangguan')->result(),
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('form_tambah_progress',$data);
 		$this->load->view('element/footer');
 	}
@@ -312,6 +314,9 @@ class c_gangguan extends CI_Controller{
 	}
 
 	function edit_progress($id){
+		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
+        	);
 		$where = array('id_progress' => $id);
 		$data=array (
         	'progress' => $this->m_data_gangguan->edit_data($where,'tb_progress')->result(),
