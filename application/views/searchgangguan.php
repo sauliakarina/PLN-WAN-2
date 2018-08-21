@@ -35,42 +35,41 @@
                             ?>
                           </select>
 </div>
-<!-- <div class="form-group">
+<div class="form-group">
                           <label for="prodi">Bulan :</label>
                           <select class="form-control" id="jenis gangguan" name="bulan">
                             <option value="_">_____Pilih Bulan_____</option>
-                            <option value="Januari">Januari</option>
-                            <option value="Februari">Februari</option>
-                            <option value="Maret">Maret</option>
-                            <option value="April">April</option>
-                            <option value="Mei">Mei</option>
-                            <option value="Juni">Juni</option>
-                            <option value="Juli">Juli</option>
-                            <option value="Agustus">Agustus</option>
-                            <option value="September">September</option>
-                            <option value="Oktober">Oktober</option>
-                            <option value="November">November</option>
-                            <option value="Desember">Desember</option>
+                            <option value="01">Januari</option>
+                            <option value="02">Februari</option>
+                            <option value="03">Maret</option>
+                            <option value="04">April</option>
+                            <option value="05">Mei</option>
+                            <option value="06">Juni</option>
+                            <option value="07">Juli</option>
+                            <option value="08">Agustus</option>
+                            <option value="09">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Desember</option>
                           </select>
-</div> -->
-<div class="row">
-<!-- <div class='col-md-12'>
+</div>
+<div class="row"> <div class='col-md-12'>
             <div class="form-group">
               <label for="date">Tahun :  </label>
                     <input type='text' class="form-control" name="tahun" />
                 
                 </div>
             </div>
-        </div>
-<div class="form-group">
-                          <label for="prodi">Durasi :</label>
-                          <select class="form-control"  id="Durasi " name="durasi">
-                            <option value="_">_____Pilih Rentan Waktu_____</option>
-                            <option value="<?php  ?>">< 4 Jam</option>
-                            <option value="Perangkat">4 Jam- 7 Jam </option>
-                            <option value="Modul"> > 7 Jam </option>
-                          </select>
-</div> -->
+</div>
+<!-- <div class="form-group">
+                           <label for="prodi">Durasi :</label>
+                           <select class="form-control"  id="Durasi " name="durasi">
+                             <option value="_">_____Pilih Rentan Waktu_____</option>
+                             <option value="<?php  ?>">< 4 Jam</option>
+                             <option value="Perangkat">4 Jam- 7 Jam </option>
+                             <option value="Modul"> > 7 Jam </option>
+                           </select>
+ </div> --> 
                         <hr />
                         <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Cek </button>&nbsp;
                         </div>

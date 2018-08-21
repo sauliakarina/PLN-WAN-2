@@ -12,6 +12,7 @@ class c_layanan extends CI_Controller{
 		$data=array(
 			'status_user' => $this->session->userdata('status_user'),
 			'layanan' => $this->m_data_layanan->tampil_layanan()
+
 		);
 	  $this->load->view('element/header', $data);
 	  $this->load->view('form_layanan', $data);

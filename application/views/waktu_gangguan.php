@@ -19,7 +19,6 @@
                                             <th>Close Date</th>
                                             <th>Close Time</th>
                                             <th>Durasi</th>
-                                        </tr>
                                     </thead>
                                     <tbody>
                                         <tr>

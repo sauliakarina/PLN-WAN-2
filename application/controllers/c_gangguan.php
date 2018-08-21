@@ -72,6 +72,10 @@ class c_gangguan extends CI_Controller{
 		$close_date = $this->input->post('close_date');
 		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
 
+		$bulan = date("m", strtotime($open_date)); 
+		$tahun = date("Y", strtotime($open_date)); 
+
+
 		if ($close_date != "" && $close_time !="") {
 			$start_date = new DateTime($open_date.' '.$open_time);
 			$end_date = new DateTime($close_date.' '.$close_time);
@@ -93,7 +97,9 @@ class c_gangguan extends CI_Controller{
 			'open_date' => $open_date,
 			'close_date' => $close_date,
 			'lokasi_gangguan' => $lokasi_gangguan,
-			'durasi' => $input_durasi
+			'durasi' => $input_durasi,
+			'bulan' => $bulan,
+			'tahun' => $tahun
 			
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_gangguan');
@@ -401,16 +407,24 @@ class c_gangguan extends CI_Controller{
 	 function filter(){
 	  $sid = $this->input->post('sid');
 	  $id_jenisgangguan = $this->input->post('id_jenisgangguan');
-	 /* $bulan = $this->input->post('bulan');
+	 $bulan = $this->input->post('bulan');
 	  $tahun = $this->input->post('tahun');
-	  $durasi = $this->input->post('durasi');
-	*/
+	  //$durasi = $this->input->post('durasi');
+	
 	  if($sid != ""){
 	   $kondisi['sid'] = $sid;
 	  }
 
 	  if($id_jenisgangguan != ""){
 	   $kondisi['id_jenisgangguan'] = $id_jenisgangguan;
+	  }
+
+	  if($bulan != ""){
+	   $kondisi['bulan'] = $bulan;
+	  }
+
+	  if($tahun != ""){
+	   $kondisi['tahun'] = $tahun;
 	  }
 
 	  /*$filter = $this->model->get_data($kondisi);

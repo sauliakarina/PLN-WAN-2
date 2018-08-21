@@ -62,12 +62,18 @@ class c_keluhan extends CI_Controller{
 		$close_time = $this->input->post('close_time');
 		$open_date = $this->input->post('open_date');
 		$close_date = $this->input->post('close_date');
+		$bulan = date("m", strtotime($open_date)); 
+		$tahun = date("Y", strtotime($open_date)); 
 
-		$start_date = new DateTime($open_date.' '.$open_time);
-		$end_date = new DateTime($close_date.' '.$close_time);
-
-		$durasi = date_diff($end_date, $start_date);
-		$durasi_jam = $durasi->d*24;
+		if ($close_date != "" && $close_time !="") {
+			$start_date = new DateTime($open_date.' '.$open_time);
+			$end_date = new DateTime($close_date.' '.$close_time);
+			$durasi = date_diff($end_date, $start_date);
+			$durasi_jam = $durasi->d*24;
+			$input_durasi = ($durasi->h+$durasi_jam).':'.$durasi->i;
+		} else {
+			$input_durasi = '0:00';
+		}
 
 
 		$data=array(
@@ -80,7 +86,9 @@ class c_keluhan extends CI_Controller{
 			'close_time' => $close_time,
 			'open_date' => $open_date,
 			'close_date' => $close_date,
-			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
+			'bulan' => $bulan,
+			'tahun' => $tahun,
+			'durasi' => $input_durasi
 
 		);
 		$this->m_data_keluhan->input_keluhan($data, 'tb_keluhan');
