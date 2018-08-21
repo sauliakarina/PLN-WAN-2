@@ -400,6 +400,36 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 } 
 
+	 function filter(){
+	  $sid = $this->input->post('sid');
+	  $id_jenisgangguan = $this->input->post('id_jenisgangguan');
+	 /* $bulan = $this->input->post('bulan');
+	  $tahun = $this->input->post('tahun');
+	  $durasi = $this->input->post('durasi');
+	*/
+	  if($sid != ""){
+	   $kondisi['sid'] = $sid;
+	  }
+
+	  if($id_jenisgangguan != ""){
+	   $kondisi['id_jenisgangguan'] = $id_jenisgangguan;
+	  }
+
+	  /*$filter = $this->model->get_data($kondisi);
+	 $this->load->view('layout/wrapper',$filter);*/
+
+	 $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
+	  	'gangguan' => $this->m_data_gangguan->get_data($kondisi)
+	  	
+	  );
+	  $this->load->view('element/header', $data);
+	  $this->load->view('form_data_gangguan',$data);
+	  $this->load->view('element/footer');
+
+	}
+
+
 
 
 

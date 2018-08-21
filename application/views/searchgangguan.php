@@ -13,8 +13,9 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6" style="margin-right:200 ; margin-left:200">
                    <div class="alert alert-info">
+                    <form class="" action="<?php echo base_url().'c_gangguan/filter'; ?>" method="post">
                      <label>Area: </label>
-                        <select id="area" name="area" class="form-control">
+                        <select id="area" name="sid" class="form-control">
                          <option value="_">_____Pilih Area_____</option>
                           <?php 
                             foreach($get_layanan as $gl ) {
@@ -25,7 +26,7 @@
 
 <div class="form-group">
                           <label for="prodi">Jenis Gangguan :</label>
-                          <select class="form-control"  id="jenis gangguan" name="jenis gangguan">
+                          <select class="form-control"  id="jenis gangguan" name="id_jenisgangguan">
                             <option value="_">_____Pilih Jenis Gangguan_____</option>
                             <?php 
                               foreach($get_jenisgangguan as $gjg ) {
@@ -34,9 +35,9 @@
                             ?>
                           </select>
 </div>
-<div class="form-group">
+<!-- <div class="form-group">
                           <label for="prodi">Bulan :</label>
-                          <select class="form-control" id="jenis gangguan" name="jenis gangguan">
+                          <select class="form-control" id="jenis gangguan" name="bulan">
                             <option value="_">_____Pilih Bulan_____</option>
                             <option value="Januari">Januari</option>
                             <option value="Februari">Februari</option>
@@ -51,25 +52,25 @@
                             <option value="November">November</option>
                             <option value="Desember">Desember</option>
                           </select>
-</div>
+</div> -->
 <div class="row">
-<div class='col-md-12'>
+<!-- <div class='col-md-12'>
             <div class="form-group">
               <label for="date">Tahun :  </label>
-                    <input type='date' class="form-control" />
+                    <input type='text' class="form-control" name="tahun" />
                 
                 </div>
             </div>
         </div>
 <div class="form-group">
                           <label for="prodi">Durasi :</label>
-                          <select class="form-control"  id="Durasi " name="Durasi ">
+                          <select class="form-control"  id="Durasi " name="durasi">
                             <option value="_">_____Pilih Rentan Waktu_____</option>
-                            <option value="Putus Kabel">< 4 Jam</option>
+                            <option value="<?php  ?>">< 4 Jam</option>
                             <option value="Perangkat">4 Jam- 7 Jam </option>
                             <option value="Modul"> > 7 Jam </option>
                           </select>
-</div>
+</div> -->
                         <hr />
                         <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Cek </button>&nbsp;
                         </div>

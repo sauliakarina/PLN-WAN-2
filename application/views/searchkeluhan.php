@@ -13,7 +13,7 @@
                 <div class="col-md-6" style="margin-right:200 ; margin-left:200">
                    <div class="alert alert-info">
                      <label>Area: </label>
-                        <select id="area" name="area" class="form-control">
+                        <select id="area" name="sid" class="form-control">
      <option value="_">_____Pilih Area_____</option>
       <?php 
         foreach($get_layanan as $gl ) {
@@ -24,7 +24,7 @@
 
   <div class="form-group">
                           <label for="prodi">Jenis Keluhan :</label>
-                          <select class="form-control" id="jenis keluan" name="jenis keluhan">
+                          <select class="form-control" id="jenis keluan" name="id_jeniskeluhan">
                             <option value="_">_____Pilih Jenis Keluhan_____</option>
                             <?php 
                               foreach($get_jeniskeluhan as $gjk ) {
@@ -37,7 +37,7 @@
                         
 <div class="form-group">
                           <label for="prodi">Bulan :</label>
-                          <select class="form-control" id="jenis gangguan" name="jenis gangguan">
+                          <select class="form-control" id="jenis gangguan" name="bulan">
                             <option value="_">_____Pilih Bulan_____</option>
                             <option value="Januari">Januari</option>
                             <option value="Februari">Februari</option>
@@ -64,7 +64,7 @@
         </div>
 <div class="form-group">
                           <label for="prodi">Durasi :</label>
-                          <select class="form-control"  id="Durasi " name="Durasi ">
+                          <select class="form-control"  id="Durasi " name="durasi ">
                             <option value="_">_____Pilih Rentan Waktu_____</option>
                             <option value="Putus Kabel">< 4 Jam</option>
                             <option value="Perangkat">4 Jam- 7 Jam </option>

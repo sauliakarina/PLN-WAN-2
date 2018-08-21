@@ -168,5 +168,9 @@ class M_data_gangguan extends CI_Model{
 		return $this->db->get_where('tb_gangguan', array('id_gangguan' => $id))->row();
 	}
 
+	function get_data($kondisi){
+  	return $this->db->get_where('tb_gangguan',$kondisi)->result();
+ 	}
+
 
 }
