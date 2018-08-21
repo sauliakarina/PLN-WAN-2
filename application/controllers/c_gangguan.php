@@ -443,6 +443,44 @@ class c_gangguan extends CI_Controller{
 	}
 
 
+	public function filter_manual() 
+	{
+      	
+		$sid = $this->input->post('sid');
+		$id_jenisgangguan = $this->input->post('id_jenisgangguan');
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$durasi = $this->input->post('durasi');
+		
+		if(isset($sid,$id_jenisgangguan,$bulan,$tahun,$durasi))
+		{
+			if ($id_jenisgangguan=='' && $bulan=='' && $tahun=='' && $durasi=='') {
+				$hasil = $this->m_data_gangguan->cari_sid($sid);
+			} elseif ($bulan=='' && $tahun=='' && $durasi=='' && $sid='') {
+				$hasil = $this->m_data_gangguan->cari_jg($id_jenisgangguan);
+			}
+			elseif($id_jenisgangguan=='' && $sid=='' && $tahun=='' && $durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_bulan($bulan);
+			} elseif ($id_jenisgangguan=='' && $sid=='' && $bulan=='' && $durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_tahun($tahun);
+			} elseif ($id_jenisgangguan=='' && $sid=='' && $bulan=='' && $tahun=='') {
+				$hasil= $this->m_data_gangguan->cari_durasi($durasi);
+			} elseif ($bulan =='' && $tahun=='' && $durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_sid_jg($sid,$id_jenisgangguan);
+			}
+		}	
+
+			$data=array(
+            'status_user' => $this->session->userdata('status_user'),
+        	'gangguan' => $hasil
+        	);
+        	$this->load->view('element/header', $data);
+			$this->load->view('form_data_gangguan', $data);
+			$this->load->view('element/footer');
+			
+	}
+
+
 
 
 
