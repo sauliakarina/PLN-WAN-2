@@ -168,9 +168,22 @@ class M_data_gangguan extends CI_Model{
 		return $this->db->get_where('tb_gangguan', array('id_gangguan' => $id))->row();
 	}
 
-	function get_data($kondisi){
-  	return $this->db->get_where('tb_gangguan',$kondisi)->result();
+	
+ function get_data($kondisi){
+ 	if (isset($kondisi['sid'])) {
+ 		$this->db->or_where('sid', $kondisi['sid']);
+ 	} 
+ 	if ($kondisi['id_jenisgangguan']) {
+ 		$this->db->or_where('id_jenisgangguan', $kondisi['id_jenisgangguan']);
  	}
+ 	if (isset($kondisi['bulan'])) {
+ 		$this->db->or_where('bulan', $kondisi['bulan']);
+ 	} 
+ 	if (isset($kondisi['tahun'])) {
+ 		$this->db->or_where('tahun', $kondisi['tahun']);
+ 	} 
+    return $this->db->get('tb_gangguan')->result();
+  }
 
 
 }

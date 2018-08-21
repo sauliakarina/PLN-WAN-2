@@ -419,14 +419,14 @@ class c_gangguan extends CI_Controller{
 	   $kondisi['id_jenisgangguan'] = $id_jenisgangguan;
 	  }
 
-	  /*if($bulan != ""){
+	  if($bulan != ""){
 	   $kondisi['bulan'] = $bulan;
 	  }
 
 	  if($tahun != ""){
 	   $kondisi['tahun'] = $tahun;
 	  }
-*/
+
 	  /*$filter = $this->model->get_data($kondisi);
 	 $this->load->view('layout/wrapper',$filter);*/
 
