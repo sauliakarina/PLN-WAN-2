@@ -315,14 +315,12 @@ class c_gangguan extends CI_Controller{
 	}
 
 	function edit_progress($id){
-		$data=array (
-			'status_user' => $this->session->userdata('status_user'),
-        	);
 		$where = array('id_progress' => $id);
 		$data=array (
+			'status_user' => $this->session->userdata('status_user'),
         	'progress' => $this->m_data_gangguan->edit_data($where,'tb_progress')->result(),
         	);
-		$this->load->view('element/header');
+		$this->load->view('element/header', $data);
 		$this->load->view('form_edit_progress',$data);
 		$this->load->view('element/footer');
 	}
