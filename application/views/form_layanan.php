@@ -69,7 +69,7 @@
                   <div class="modal-dialog" role="document">
                       <div class="modal-content">
                           <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Hapus Jenis Gangguan</h5>
+                              <h5 class="modal-title" id="exampleModalLabel">Hapus Area</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                               </button>
@@ -77,7 +77,7 @@
                           <div class="modal-body">
                             <div class="text-center">
                               <i class="fa fa-trash fa-4x mb-3 animated bounce"></i>
-                              <p style="font-size: 15px">Apakah anda yakin ingin menghapus jenis gangguan ini?</p>
+                              <p style="font-size: 15px">Apakah anda yakin ingin menghapus area ini?</p>
                             </div>
 
                           </div> <!-- modal body -->
