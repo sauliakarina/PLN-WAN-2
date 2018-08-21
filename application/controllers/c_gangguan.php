@@ -418,11 +418,10 @@ class c_gangguan extends CI_Controller{
 
 	 $data = array(
 	  	'status_user' => $this->session->userdata('status_user'),
-	  	'gangguan' => $this->m_data_gangguan->get_data($kondisi)
-	  	
 	  );
+		$gangguan = $this->m_data_gangguan->get_data($kondisi);
 	  $this->load->view('element/header', $data);
-	  $this->load->view('form_data_gangguan',$data);
+	  $this->load->view('form_data_gangguan',$gangguan);
 	  $this->load->view('element/footer');
 
 	}

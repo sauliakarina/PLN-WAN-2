@@ -14,10 +14,12 @@
                         <div class="form-group">
                           <label for="ID">SID <font color="red">*</font></label>
                           <input style="width:500px" class="form-control" id="ID" type="text" name="sid" value="<?php echo $l->sid ?>" disabled>
+                          <input style="width:500px" class="form-control" id="ID" type="hidden" name="sid" value="<?php echo $l->sid ?>">
                         </div>
                         <div class="form-group">
                           <label for="nama">Lokasi<font color="red">*</font></label>
                           <input id="nama" type="text"  class="form-control" name="lokasi" value="<?php echo $l->lokasi ?>">
+                          <input id="nama" type="hidden"  class="form-control" name="isDelete" value="<?php echo $l->isDelete ?>">
                         </div>
                         <div class="form-group">
                            <label><b>Jenis Layanan</b></label>

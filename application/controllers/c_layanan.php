@@ -61,6 +61,7 @@ class c_layanan extends CI_Controller{
 		$no_hp_pic = $this->input->post('no_hp_pic');
 		$email = $this->input->post('email');
 		$id_jenislayanan = $this->input->post('id_jenislayanan');
+		$isDelete = $this->input->post('isDelete');
 
 
 		$data=array(
@@ -70,6 +71,7 @@ class c_layanan extends CI_Controller{
 			'no_hp_pic' => $no_hp_pic,
 			'email' => $email,
 			'id_jenislayanan' => $id_jenislayanan,
+			'isDelete' => $isDelete
 
 		);
 

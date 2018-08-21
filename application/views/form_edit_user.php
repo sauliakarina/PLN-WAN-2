@@ -14,6 +14,7 @@
                         <div class="form-group">
                           <label for="ID">ID Karyawan<font color="red">*</font></label>
                           <input  class="form-control" type="text" name="id_karyawan" value="<?php echo $u->id_karyawan ?>" disabled>
+                           <input  class="form-control" type="hidden" name="id_karyawan" value="<?php echo $u->id_karyawan ?>">
                         </div>
                         <div class="form-group">
                           <label for="nama">Nama:<font color="red">*</font></label>
