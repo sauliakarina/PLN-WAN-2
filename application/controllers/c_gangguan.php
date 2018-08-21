@@ -419,23 +419,25 @@ class c_gangguan extends CI_Controller{
 	   $kondisi['id_jenisgangguan'] = $id_jenisgangguan;
 	  }
 
-	  if($bulan != ""){
+	  /*if($bulan != ""){
 	   $kondisi['bulan'] = $bulan;
 	  }
 
 	  if($tahun != ""){
 	   $kondisi['tahun'] = $tahun;
 	  }
-
+*/
 	  /*$filter = $this->model->get_data($kondisi);
 	 $this->load->view('layout/wrapper',$filter);*/
 
 	 $data = array(
 	  	'status_user' => $this->session->userdata('status_user'),
+	  	'gangguan' => $this->m_data_gangguan->get_data($kondisi)
 	  );
-		$gangguan = $this->m_data_gangguan->get_data($kondisi);
+		//$gangguan = $this->m_data_gangguan->get_data($kondisi);
+
 	  $this->load->view('element/header', $data);
-	  $this->load->view('form_data_gangguan',$gangguan);
+	  $this->load->view('form_data_gangguan',$data);
 	  $this->load->view('element/footer');
 
 	}

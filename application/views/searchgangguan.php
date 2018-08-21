@@ -26,7 +26,7 @@
 
 <div class="form-group">
                           <label for="prodi">Jenis Gangguan :</label>
-                          <select class="form-control"  id="jenis gangguan" name="id_jenisgangguan">
+                          <select class="form-control"   name="id_jenisgangguan">
                             <option value="_">_____Pilih Jenis Gangguan_____</option>
                             <?php 
                               foreach($get_jenisgangguan as $gjg ) {
@@ -37,7 +37,7 @@
 </div>
 <div class="form-group">
                           <label for="prodi">Bulan :</label>
-                          <select class="form-control" id="jenis gangguan" name="bulan">
+                          <select class="form-control" name="bulan">
                             <option value="_">_____Pilih Bulan_____</option>
                             <option value="01">Januari</option>
                             <option value="02">Februari</option>
@@ -65,11 +65,11 @@
                            <label for="prodi">Durasi :</label>
                            <select class="form-control"  id="Durasi " name="durasi">
                              <option value="_">_____Pilih Rentan Waktu_____</option>
-                             <option value="<?php  ?>">< 4 Jam</option>
+                             <option value="<?php ?>">< 4 Jam</option>
                              <option value="Perangkat">4 Jam- 7 Jam </option>
                              <option value="Modul"> > 7 Jam </option>
                            </select>
- </div> --> 
+ </div> -->
                         <hr />
                         <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Cek </button>&nbsp;
                         </div>
