@@ -147,6 +147,14 @@ class M_data_gangguan extends CI_Model{
 		return $query->row();
 	}
 
+	public function get_gangguan_byid($id)
+	{
+		$this->db->select('*');
+		$this->db->where('id_gangguan',$id);
+		$query = $this->db->get('tb_gangguan');
+		return $query->row();
+	}
+
 	/*public function tampil_gangguan_byid($id)
 	{
 		$this->db->select('*');

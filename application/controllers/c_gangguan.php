@@ -82,8 +82,6 @@ class c_gangguan extends CI_Controller{
 			$input_durasi = '0:00';
 		}
 		
-
-
 		$data=array(
 			'sid' => $sid,
 			'id_jenisgangguan' => $id_jenisgangguan,
@@ -99,11 +97,6 @@ class c_gangguan extends CI_Controller{
 			
 		);
 		$this->m_data_gangguan->input_gangguan($data, 'tb_gangguan');
-		/*$id_gangguan = $this->m_data_gangguan->get_id($id_gangguan)->id_gangguan;
-		$data=array(
-			'id_gangguan' => $id_gangguan
-		);
-		$this->m_data_gangguan->input_progress($data, 'tb_progress');*/
 		redirect('c_gangguan/form_data_gangguan');
 	}
 
@@ -274,7 +267,8 @@ class c_gangguan extends CI_Controller{
 
 	function tambah_aksi_progress(){
 		$id_gangguan = $this->input->post('id_gangguan');
-		$waktu = $this->input->post('waktu');
+		$open_date = $this->input->post('open_date');
+		$open_time = $this->input->post('open_time');
 		$ket_progress = $this->input->post('ket_progress');
 		$status_progress = $this->input->post('status_progress');
 
@@ -283,9 +277,16 @@ class c_gangguan extends CI_Controller{
 			date_default_timezone_set("Asia/Jakarta");
 			$close_time = date("h:i a");
 
+			$start_date = new DateTime($open_date.' '.$open_time);
+			$end_date = new DateTime($close_date.' '.$close_time);
+			$durasi = date_diff($end_date, $start_date);
+			$durasi_jam = $durasi->d*24;
+			$input_durasi = ($durasi->h+$durasi_jam).':'.$durasi->i;
+
 			$data=array(
 			'close_date' => $close_date,
-			'close_time' =>$close_time
+			'close_time' =>$close_time,
+			'durasi' => $input_durasi
 			);
 			$where = array(
 				'id_gangguan' => $id_gangguan
@@ -327,15 +328,24 @@ class c_gangguan extends CI_Controller{
 		$ket_progress = $this->input->post('ket_progress');
 		$status_progress = $this->input->post('status_progress');
 		$id_progress = $this->input->post('id_progress');
+		$open_date = $this->input->post('open_date');
+		$open_time = $this->input->post('open_time');
 
-		if ($status_progress == 2) {
+		if ($status_progress == "2") {
 			$close_date = date("Y-m-d");
 			date_default_timezone_set("Asia/Jakarta");
 			$close_time = date("h:i a");
 
+			$start_date = new DateTime($open_date.' '.$open_time);
+			$end_date = new DateTime($close_date.' '.$close_time);
+			$durasi = date_diff($end_date, $start_date);
+			$durasi_jam = $durasi->d*24;
+			$input_durasi = ($durasi->h+$durasi_jam).':'.$durasi->i;
+
 			$data=array(
 				'close_date' => $close_date,
-				'close_time' =>$close_time
+				'close_time' =>$close_time,
+				'durasi' => $input_durasi
 			);
 			$where = array(
 				'id_gangguan' => $id_gangguan

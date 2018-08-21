@@ -17,6 +17,8 @@
                              <label for="date"> Waktu :  </label>
                              <input type='time' class="form-control" name="waktu" value="<?php echo $p->waktu ?>" />
                              <input type='hidden' class="form-control" name="id_gangguan" value="<?php echo $p->id_gangguan ?>" />
+                             <input type='hidden' name="open_date" class="form-control" value="<?php echo $this->m_data_gangguan->get_gangguan_byid($p->id_gangguan)->open_date?>" />
+                             <input type='hidden' name="open_time" class="form-control" value="<?php echo $this->m_data_gangguan->get_gangguan_byid($p->id_gangguan)->open_time?>" />
                              <input type='hidden' class="form-control" name="id_progress" value="<?php echo $p->id_progress ?>" />
 
 
