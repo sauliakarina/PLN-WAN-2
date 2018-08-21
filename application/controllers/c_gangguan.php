@@ -72,7 +72,7 @@ class c_gangguan extends CI_Controller{
 		$close_date = $this->input->post('close_date');
 		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
 
-		if ($close_date != "0000-00-00" && $close_time !="00:00:00") {
+		if ($close_date != "" && $close_time !="") {
 			$start_date = new DateTime($open_date.' '.$open_time);
 			$end_date = new DateTime($close_date.' '.$close_time);
 			$durasi = date_diff($end_date, $start_date);
@@ -278,7 +278,7 @@ class c_gangguan extends CI_Controller{
 		$ket_progress = $this->input->post('ket_progress');
 		$status_progress = $this->input->post('status_progress');
 
-		if ($status_progress == 2) {
+		if ($status_progress == "2") {
 			$close_date = date("Y-m-d");
 			date_default_timezone_set("Asia/Jakarta");
 			$close_time = date("h:i a");
