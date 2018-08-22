@@ -1,0 +1,27 @@
+mockup  
+progress bentuk hyperlink saat di klik muncul modal semua progress yang pernah diinput, inputnya waktu dan keterangan 
+contoh jam 7 tim menuju lokasi, jam 8 tim sedang mengerjakan, dll
+klik tambah di modal lalu muncul box untuk input progress
+data keluhan/gangguan ada paging, search, records
+
+
+
+erd
+tabel progress gangguan -> waktu dan keterangan 
+
+
+14/8
+khusus gangguan dan keluhan kalo dihapus datanya jangan hilang
+di erd dikasih status "is delete"
+di database masih ada untuk tracing 
+tabel layanan tambah email
+
+20/08 
+error edit jenis keluhan v
+sid pada layanan disable v
+tampilan user
+pencarian yang kombinasi concutinit
+pada saat selesai close time dan close date otomatis v
+sorting paling atas penanganan yang terakhir berdasarkan tanggal gangguan open date v
+semua tabel master hapus nya di flek v
+nyicil buku manual v

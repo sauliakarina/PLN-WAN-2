@@ -57,6 +57,14 @@
             <div class="form-group">
               <label for="date">Tahun :  </label>
                     <input type='text' class="form-control" name="tahun" />
+                
+                </div>
+            </div>
+</div>
+
+<div class="row"> <div class='col-md-12'>
+            <div class="form-group">
+              <label for="date">Durasi :  </label>
                     <input type='text' class="form-control" name="durasi" />
                 
                 </div>

@@ -235,8 +235,93 @@ class c_keluhan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 } 
 
+	public function filter_manual() 
+	{
+      	
+		$sid = $this->input->post('sid');
+		$id_jeniskeluhan = $this->input->post('id_jeniskeluhan');
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$durasi = $this->input->post('durasi');
+		
+		if(isset($sid,$id_jeniskeluhan,$bulan,$tahun,$durasi))
+		{
+			if ($id_jeniskeluhan=='' && $bulan=='' && $tahun=='' && $durasi=='') {
+				$hasil = $this->m_data_keluhan->cari_sid($sid);
+			} elseif ($bulan=='' && $tahun=='' && $durasi=='' && $sid=='') {
+				$hasil = $this->m_data_keluhan->cari_jg($id_jeniskeluhan);
+			}
+			elseif($id_jeniskeluhan=='' && $sid=='' && $tahun=='' && $durasi=='') {
+				$hasil= $this->m_data_keluhan->cari_bulan($bulan);
+			} elseif ($id_jeniskeluhan=='' && $sid=='' && $bulan=='' && $durasi=='') {
+				$hasil= $this->m_data_keluhan->cari_tahun($tahun);
+			} elseif ($id_jeniskeluhan=='' && $sid=='' && $bulan=='' && $tahun=='') {
+				$hasil= $this->m_data_keluhan->cari_durasi($durasi);
+			} elseif ($bulan =='' && $tahun =='' && $durasi =='') {
+				$hasil= $this->m_data_keluhan->cari_sid_jg($sid,$id_jeniskeluhan);
+			}
+			/*=====START CODING BAGAI QUDA BY SAULIA===*/
+			elseif ($id_jeniskeluhan=='' && $tahun == '' && $durasi=='') {
+				$hasil= $this->m_data_keluhan->cari_sid_b($sid,$bulan);
+			}elseif ($id_jeniskeluhan=='' && $bulan == '' && $durasi=='') {
+				$hasil= $this->m_data_keluhan->cari_sid_t($sid,$tahun);
+			}elseif ($id_jeniskeluhan=='' && $bulan == '' && $tahun=='') {
+				$hasil= $this->m_data_keluhan->cari_sid_d($sid,$durasi);
+			}elseif ($sid=='' && $durasi == '' && $tahun=='') {
+				$hasil= $this->m_data_keluhan->cari_jg_b($id_jeniskeluhan,$bulan);
+			}elseif ($bulan =='' && $durasi =='' && $sid =='') {
+				$hasil= $this->m_data_keluhan->cari_jg_t($id_jeniskeluhan,$tahun);
+			}elseif ($bulan =='' && $tahun =='' && $sid =='') {
+				$hasil= $this->m_data_keluhan->cari_jg_d($id_jeniskeluhan,$durasi);
+			}elseif ($sid =='' && $id_jeniskeluhan =='' && $durasi =='') {
+				$hasil= $this->m_data_keluhan->cari_b_t($bulan,$tahun);
+			} elseif ($sid =='' && $id_jeniskeluhan =='' && $tahun =='') {
+				$hasil= $this->m_data_keluhan->cari_b_d($bulan,$durasi);
+			} elseif ($sid =='' && $id_jeniskeluhan =='' && $bulan =='') {
+				$hasil= $this->m_data_keluhan->cari_t_d($tahun,$durasi);
+			} elseif ($tahun =='' && $durasi =='') {
+				$hasil= $this->m_data_keluhan->cari_sid_jg_b($sid,$id_jeniskeluhan,$bulan);
+			} elseif ($bulan =='' && $durasi =='') {
+				$hasil= $this->m_data_keluhan->cari_sid_jg_t($sid,$id_jeniskeluhan,$tahun);
+			} elseif ($bulan =='' && $tahun =='') {
+				$hasil= $this->m_data_keluhan->cari_sid_jg_d($sid,$id_jeniskeluhan,$durasi);
+			} elseif ($sid =='' && $durasi =='') {
+				$hasil= $this->m_data_keluhan->cari_jg_b_t($id_jeniskeluhan,$bulan,$tahun);
+			} elseif ($sid =='' && $tahun =='') {
+				$hasil= $this->m_data_keluhan->cari_jg_b_d($id_jeniskeluhan,$bulan,$durasi);
+			} elseif ($sid=='' && $bulan == '') {
+				$hasil= $this->m_data_keluhan->cari_jg_t_d($id_jeniskeluhan,$tahun,$durasi);
+			}elseif ($sid=='' && $id_jeniskeluhan== '') {
+				$hasil= $this->m_data_keluhan->cari_b_t_d($bulan,$tahun,$durasi);
+			}elseif ($durasi=='' && $id_jeniskeluhan== '') {
+				$hasil= $this->m_data_keluhan->cari_sid_b_t($sid,$bulan,$tahun);
+			}elseif ($tahun=='' && $id_jeniskeluhan== '') {
+				$hasil= $this->m_data_keluhan->cari_sid_b_d($sid,$bulan,$durasi);
+			}elseif ($bulan=='' && $id_jeniskeluhan== '') {
+				$hasil= $this->m_data_keluhan->cari_sid_t_d($sid,$tahun,$durasi);
+			}elseif ($durasi=='') {
+				$hasil= $this->m_data_keluhan->cari_sid_jg_b_t($sid,$id_jeniskeluhan,$bulan,$tahun);
+			}elseif ($tahun=='') {
+				$hasil= $this->m_data_keluhan->cari_sid_jg_b_d($sid,$id_jeniskeluhan,$bulan,$durasi);
+			}elseif ($id_jeniskeluhan =='') {
+				$hasil= $this->m_data_keluhan->cari_sid_b_t_d($sid,$bulan,$tahun,$durasi);
+			} elseif ($sid =='') {
+				$hasil= $this->m_data_keluhan->cari_jg_b_t_d($id_jeniskeluhan,$bulan,$tahun,$durasi);
+			} 
+			else{
+				$hasil= $this->m_data_keluhan->cari_sid_jg_b_t_d($sid,$id_jeniskeluhan,$bulan,$tahun,$durasi);
+			}
+		}	
 
-
+			$data=array(
+            'status_user' => $this->session->userdata('status_user'),
+        	'keluhan' => $hasil
+        	);
+        	$this->load->view('element/header', $data);
+			$this->load->view('pencarian_keluhan', $data);
+			$this->load->view('element/footer');
+			
+	}
 
 }
 ?>

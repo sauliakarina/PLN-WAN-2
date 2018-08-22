@@ -114,5 +114,450 @@ class M_data_keluhan extends CI_Model{
 		$query = $this->db->get('tb_layanan');
 		return $query->row();
 	}*/
+  public function cari_sid($input)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	public function cari_jg($input)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_bulan($input)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_tahun($input)
+	{
+		$this->db->select('*');
+		$this->db->where('tahun',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	  public function cari_durasi($input)
+	{
+		$this->db->select('*');
+		$this->db->where('durasi',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	public function cari_sid_jg($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jeniskeluhan',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+/*========START CODING BAGAI QUDA BY SAULIA===========*/
+	public function cari_sid_b($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_t($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+		public function cari_jg_t($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	
+	public function cari_b_t($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_b_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_t_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('tahun',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_b($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jeniskeluhan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_t($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jeniskeluhan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jeniskeluhan',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b_t($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	public function cari_jg_t_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_b_t_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_b_t($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_b_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_t_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_b_t($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jeniskeluhan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('tahun',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_b_d($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jeniskeluhan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('durasi',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b_t_d($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jeniskeluhan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('durasi',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_b_t_d($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('durasi',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}	
+	public function cari_sid_jg_b_t_d($input1,$input2,$input3,$input4,$input5)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jeniskeluhan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('tahun',$input4);
+		$this->db->where('durasi',$input5);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_keluhan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+
 
 }
