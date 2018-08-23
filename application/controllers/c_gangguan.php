@@ -294,6 +294,7 @@ class c_gangguan extends CI_Controller{
 		$waktu =  $this->input->post('waktu');
 
 		if ($status_progress == "2") {
+			$isSolved = 'yes';
 			$close_date = date("Y-m-d");
 			date_default_timezone_set("Asia/Jakarta");
 			$close_time = date("h:i a");
@@ -307,7 +308,8 @@ class c_gangguan extends CI_Controller{
 			$data=array(
 			'close_date' => $close_date,
 			'close_time' =>$close_time,
-			'durasi' => $input_durasi
+			'durasi' => $input_durasi,
+			'isSolved' => $isSolved
 			);
 			$where = array(
 				'id_gangguan' => $id_gangguan
@@ -354,6 +356,7 @@ class c_gangguan extends CI_Controller{
 		$open_time = $this->input->post('open_time');
 
 		if ($status_progress == "2") {
+			$isSolved = 'yes';
 			$close_date = date("Y-m-d");
 			date_default_timezone_set("Asia/Jakarta");
 			$close_time = date("h:i a");
@@ -367,7 +370,8 @@ class c_gangguan extends CI_Controller{
 			$data=array(
 				'close_date' => $close_date,
 				'close_time' =>$close_time,
-				'durasi' => $input_durasi
+				'durasi' => $input_durasi,
+				'isSolved' =>$isSolved
 			);
 			$where = array(
 				'id_gangguan' => $id_gangguan

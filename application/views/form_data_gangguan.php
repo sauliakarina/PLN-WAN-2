@@ -129,7 +129,7 @@
         $('#example').DataTable();
     } );
         $('#example').dataTable({
-           "order": [[ 5, "asc" ]]
+           "order": [[ 7, "asc" ]]
       });
     </script>
 

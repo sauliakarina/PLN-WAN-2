@@ -19,6 +19,7 @@ class M_data_gangguan extends CI_Model{
 	function tampil_gangguan(){
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->where('isSolved', 'no');
 		$this->db->order_by('id_gangguan', 'DESC');
 		//$this->db->order_by('open_date', 'DESC');
 		//$this->db->order_by('name', 'ASC');
@@ -92,6 +93,7 @@ class M_data_gangguan extends CI_Model{
     	$this->db->distinct();
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->order_by('lokasi', 'ASC');
 		$query = $this->db->get('tb_layanan');
 		if($query->num_rows()>0)
 		{
@@ -105,6 +107,8 @@ class M_data_gangguan extends CI_Model{
     	$this->db->distinct();
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->where('isShow', 'yes');
+		$this->db->order_by('jenis_gangguan', 'ASC');
 		$query = $this->db->get('tb_jenisgangguan');
 		if($query->num_rows()>0)
 		{
