@@ -52,7 +52,10 @@
                                                 </form>
                                               <?php else: ?>
                                                 <?php if ($this->m_data_gangguan->get_last_progress($g->id_gangguan)['status_progress'] == 1): ?>
-                                                    <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Penanganan</a>
+                                                    <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Penanganan</a><br>
+                                                   <center><form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
+                                                     <button class="btn btn-default btn-sm" type='submit'><span class="glyphicon glyphicon-plus-sign"></span> </button>
+                                                  </form></center>
                                                     <?php else: ?>
                                                       <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Selesai</a>
                                                 <?php endif ?>
