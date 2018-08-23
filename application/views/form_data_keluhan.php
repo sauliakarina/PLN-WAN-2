@@ -15,6 +15,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Tanggal</th>
+                                            <th>Open Date</th>
                                             <th>Area</th>
                                             <th>Jenis Keluhan</th>
                                             <th>Penyebab</th>
@@ -40,7 +41,7 @@
                                             <!-- <td><a class="btn btn-primary" href="<?php //echo base_url();?>c_main/waktu">Lihat</button></a></td> -->
                                             <td>
                                                  <form method='' action="<?php echo base_url('c_keluhan/tampil_waktu/'.$k->id_keluhan)?>">
-                                                     <button class='btn btn-primary' type='submit'>Lihat</button>
+                                                     <button class='btn btn-primary' type='submit'>Detail</button>
                                                 </form>
                                             </td>
                                             <td><center>
