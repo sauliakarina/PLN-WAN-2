@@ -144,10 +144,19 @@ class c_gangguan extends CI_Controller{
 		$isDelete = $this->input->post('isDelete');
 		$lokasi_gangguan = $this->input->post('lokasi_gangguan');
 
-		$start_date = new DateTime($open_date.' '.$open_time);
-		$end_date = new DateTime($close_date.' '.$close_time);
-		$durasi = date_diff($end_date, $start_date);
-		$durasi_jam = $durasi->d*24;
+		$bulan = date("m", strtotime($open_date)); 
+		$tahun = date("Y", strtotime($open_date)); 
+
+		if ($close_date != "" && $close_time !="") {
+			$start_date = new DateTime($open_date.' '.$open_time);
+			$end_date = new DateTime($close_date.' '.$close_time);
+			$durasi = date_diff($end_date, $start_date);
+			$durasi_jam = $durasi->d*24;
+			$input_durasi = ($durasi->h+$durasi_jam).':'.$durasi->i;
+		} else {
+			$input_durasi = '0:00';
+		}
+
 		
 		$data=array(
 			'sid' => $sid,
@@ -162,7 +171,9 @@ class c_gangguan extends CI_Controller{
 			'lokasi_gangguan' => $lokasi_gangguan,
 			'isDelete' => $isDelete,
 			'lokasi_gangguan' => $lokasi_gangguan,
-			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
+			'durasi' => $input_durasi,
+			'bulan' => $bulan,
+			'tahun' => $tahun
 			
 		);
 
