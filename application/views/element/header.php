@@ -81,14 +81,16 @@
                             </li>
                             <?php 
                             if ($status_user == 'Admin') {
-                                echo " <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Kelola <span class='caret'></span></a>
+                                echo " <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>DATA MASTER <span class='caret'></span></a>
                                 <ul class='dropdown-menu'>
-                                  <li><a href=".base_url('c_gangguan/jenisgangguan')." style='color: black'>Jenis Gangguan</a></li>
-                                  <li><a href=".base_url('c_keluhan/jeniskeluhan')." style='color: black'>Jenis Keluhan</a></li>
-                                  <li><a href=".base_url('c_layanan/jenislayanan')." style='color: black'>Jenis Layanan</a></li>
+                                  <li><a href=".base_url('c_gangguan/jenisgangguan')." style='color: black'>Kategori Gangguan</a></li>
+                                  <li><a href=".base_url('c_keluhan/jeniskeluhan')." style='color: black'>Kategori Keluhan</a></li>
+                                  <li><a href=".base_url('c_layanan/jenislayanan')." style='color: black'>Kategori Layanan</a></li>
                                   <li><a href=".base_url('c_layanan/form_layanan')." style='color: black'>Layanan</a></li>
                                   <li class='divider'></li>
-                                  <li><a href=".base_url('c_user/user')." style='color: black'>Akun</a></li>
+                                  <li><a style='color: black'>User Manual</a></li>
+                                  <li class='divider'></li>
+                                  <li><a href=".base_url('c_user/user')." style='color: black'>Pengguna</a></li>
                                 </ul>
                             </li>";
                             }   
