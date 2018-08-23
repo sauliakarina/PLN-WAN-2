@@ -19,9 +19,7 @@
                                             <th>Jenis Keluhan</th>
                                             <th>Penyebab</th>
                                             <th>Solusi</th>
-                                            <th>Waktu Keluhan</th>
-                                            <th style="width:50px"></th>
-                                            <th style="width:50px"></th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -39,18 +37,14 @@
                                             <td><?php echo $k ->solusi_keluhan ?></td>
                                             <!-- <td><a class="btn btn-primary" href="<?php //echo base_url();?>c_main/waktu">Lihat</button></a></td> -->
                                             <td>
+                                              <div class="btn-group">
                                                  <form method='' action="<?php echo base_url('c_keluhan/tampil_waktu/'.$k->id_keluhan)?>">
                                                      <button class='btn btn-primary' type='submit'>Detail</button>
                                                 </form>
-                                            </td>
-                                            <td><center>
-                                                 <form method='' action="<?php echo base_url('c_keluhan/edit_keluhan/'.$k->id_keluhan) ?>">
+                                                <form method='' action="<?php echo base_url('c_keluhan/edit_keluhan/'.$k->id_keluhan) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
-                                                </form>
-                                            </center>
-                                        </td>
-                                        <td><center>
-                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $k->id_keluhan ?>)" class="btn btn-danger">Hapus</button></center>
+                                                </form><button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $k->id_keluhan ?>)" class="btn btn-danger">Hapus</button>
+                                              </div>
                                             </td>
                                         </tr>
                                         <?php } ?>

@@ -65,6 +65,9 @@
                                         <ul class='dropdown-menu'>
                                           <li><a href=".base_url('c_gangguan/form_data_gangguan')." style='color: black'>Gangguan</a></li>
                                             <li><a href=".base_url('c_keluhan/form_data_keluhan')." style='color: black'>Keluhan</a></li>
+                                            <li class='divider'></li>
+                                  			<li><a style='color: black'>History Gangguan</a></li>
+                                  
                                         </ul>
                                     </li>    
                                 ";
