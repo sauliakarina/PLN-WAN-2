@@ -15,7 +15,6 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Tanggal</th>
-                                            <th>Open Date</th>
                                             <th>Area</th>
                                             <th>Jenis Keluhan</th>
                                             <th>Penyebab</th>
