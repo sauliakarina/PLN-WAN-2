@@ -21,8 +21,11 @@
                                             <th>Solusi</th>
                                             <th>Progress</th>
                                             <th>Waktu Gangguan</th>
-                                            <th style="width:50px"></th>
-                                            <th style="width:50px"></th>
+                                            <?php if ($status_user == 'Admin') {
+                                              echo "<th style='width:50px'></th>
+                                            <th style='width:50px'></th>";
+                                            } ?>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,7 +59,10 @@
                                                 <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">
                                                      <button class='btn btn-primary' type='submit'>Lihat</button>
                                                 </form>
-                                            <td>
+                                            </td>
+                                              <?php if ($status_user == 'Admin') {
+                                                 ?>
+                                                 <td>
                                                 <center>
                                                  <form method='' action="<?php echo base_url('c_gangguan/edit_gangguan/'.$g->id_gangguan) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
@@ -66,6 +72,7 @@
                                             <td>
                                                 <center> <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $g->id_gangguan ?>)" class="btn btn-danger">Hapus</button></center>
                                             </td>
+                                        <?php }?>
                                         </tr>
                                         <?php }?>
                                     </tbody>

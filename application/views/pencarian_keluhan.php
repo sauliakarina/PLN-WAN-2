@@ -19,8 +19,10 @@
                                             <th>Penyebab</th>
                                             <th>Solusi</th>
                                             <th>Waktu Keluhan</th>
-                                            <th style="width:50px"></th>
-                                            <th style="width:50px"></th>
+                                            <?php if ($status_user == 'Admin') {
+                                              echo "<th style='width:50px'></th>
+                                            <th style='width:50px'></th>";
+                                            } ?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,6 +43,8 @@
                                                      <button class='btn btn-primary' type='submit'>Lihat</button>
                                                 </form>
                                             </td>
+                                            <?php if ($status_user == 'Admin') {
+                                             ?>
                                             <td><center>
                                                  <form method='' action="<?php echo base_url('c_keluhan/edit_keluhan/'.$k->id_keluhan) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
@@ -51,6 +55,7 @@
                                                 <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $k->id_keluhan ?>)" class="btn btn-danger">Hapus</button></center>
                                             </td>
                                         </tr>
+                                        <?php } ?>
                                         <?php } ?>
                                        
                                     </tbody>
