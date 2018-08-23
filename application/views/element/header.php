@@ -68,6 +68,9 @@
                                         </ul>
                                     </li>    
                                 ";
+                            } else{
+                                echo"
+                                <li><a  href=".base_url('c_main/home_user').">Beranda</a></li>";
                             }
                             ?>
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pencarian <span class="caret"></span></a>
