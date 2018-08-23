@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">History Data Gangguan</h1>
+                        <h1 class="page-head-line">Histori Data Gangguan</h1>
                     </div>
                 </div>
                 <div class="row">
