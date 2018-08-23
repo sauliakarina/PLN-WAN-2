@@ -18,6 +18,16 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 } 
 
+	 public function history_gangguan() {
+		$data=array (
+		'status_user' => $this->session->userdata('status_user'),
+	   	'gangguan' => $this->m_data_gangguan->tampil_history_gangguan()
+	   	);
+	  $this->load->view('element/header',$data);
+	  $this->load->view('history_gangguan',$data);
+	  $this->load->view('element/footer');
+	 } 
+
 	 public function tampil_lokasi($id) {
 	  $where = array('sid' => $id);
 	  $data = array(

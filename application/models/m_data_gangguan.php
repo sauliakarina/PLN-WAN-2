@@ -34,6 +34,24 @@ class M_data_gangguan extends CI_Model{
 
 	}
 
+	function tampil_history_gangguan(){
+		$this->db->select('*');
+		$this->db->where('isDelete', 'no');
+		$this->db->where('isSolved', 'yes');
+		$this->db->order_by('id_gangguan', 'DESC');
+		//$this->db->order_by('open_date', 'DESC');
+		//$this->db->order_by('name', 'ASC');
+		//tambah sort by open date and open time
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+
+	}
+
 	function tampil_progress($id=null){
 		if (isset($id)) {
 			$this->db->select('*');
