@@ -14,7 +14,6 @@
                                 <table id="example" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
                                             <th>Tanggal</th>
                                             <th>Area</th>
                                             <th>Jenis Gangguan</th>
@@ -34,7 +33,6 @@
 
                                         ?>
                                         <tr>
-                                            <td><?php echo $no++ ?></td>
                                             <td><?php echo $g->open_date ?></td>
                                             <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
                                            <!--  <td><?php //echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td> -->
