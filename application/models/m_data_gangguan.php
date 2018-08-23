@@ -18,7 +18,7 @@ class M_data_gangguan extends CI_Model{
 	function tampil_gangguan(){
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
-		$this->db->order_by('id_gangguan', 'DESC');
+		/*$this->db->order_by('id_gangguan', 'DESC');*/
 		$this->db->order_by('open_date', 'DESC');
 		//$this->db->order_by('name', 'ASC');
 		//tambah sort by open date and open time
