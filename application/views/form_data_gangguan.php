@@ -14,6 +14,7 @@
                                 <table id="example" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
+                                            <th>Open Date</th>
                                             <th>Area</th>
                                             <th>Jenis Gangguan</th>
                                             <th>Lokasi Gangguan</th>
@@ -32,6 +33,7 @@
 
                                         ?>
                                         <tr>
+                                            <td></td>
                                             <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
                                             <td><?php echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td>
                                             <!-- <td><button class="btn btn-primary" data-toggle="modal" data-target="#detailModal" onclick='showDetails(<?php // echo $g->id_gangguan ?>)'><?php //echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button></td> -->
@@ -41,7 +43,7 @@
                                             <td>
                                               <?php if($this->m_data_gangguan->get_last_progress($g->id_gangguan)== false):  ?>
                                               <form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
-                                                     <button class='btn btn-default' type='submit'>Isi</button>
+                                                     <button class='btn btn-default' type='submit'>Input</button>
                                                 </form>
                                               <?php else: ?>
                                                 <?php if ($this->m_data_gangguan->get_last_progress($g->id_gangguan)['status_progress'] == 1): ?>
@@ -54,7 +56,7 @@
                                             </td>
                                             <td> 
                                                 <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">
-                                                     <button class='btn btn-primary' type='submit'>Lihat</button>
+                                                     <button class='btn btn-primary' type='submit'>Detail</button>
                                                 </form>
                                             <td>
                                                 <center>
