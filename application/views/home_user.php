@@ -13,14 +13,14 @@
 
 <div class="row">
     <div class="col-md-6" align="center">
-        <a href="<?php echo base_url();?>c_gangguan/form_tambah_gangguan">
+        <a href="<?php echo base_url();?>c_gangguan/tampil_searchgangguan">
             <img style="" src="<?php echo base_url();?>/assets/img/light-bulb.png ?>"  width="300" height="300">
             <h4>Cari Data Gangguan</h4>
         </a> 
     </div>
     
     <div class="col-md-6" align="center">
-        <a href="<?php echo base_url();?>c_keluhan/form_tambah_keluhan">
+        <a href="<?php echo base_url();?>c_keluhan/tampil_searchkeluhan">
         <img style="" src="<?php echo base_url();?>/assets/img/wifi-signal.png ?>"  width="300" height="300">
         <h4>Cari Data Keluhan</h4>
     </a>
