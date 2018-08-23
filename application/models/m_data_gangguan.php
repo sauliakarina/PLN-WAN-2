@@ -5,6 +5,7 @@ class M_data_gangguan extends CI_Model{
 	function tampil_jenisgangguan(){
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->where('isShow', 'yes');
 		$query = $this->db->get('tb_jenisgangguan');
 		if($query->num_rows()>0)
 		{
@@ -18,8 +19,8 @@ class M_data_gangguan extends CI_Model{
 	function tampil_gangguan(){
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
-		/*$this->db->order_by('id_gangguan', 'DESC');*/
-		$this->db->order_by('open_date', 'DESC');
+		$this->db->order_by('id_gangguan', 'DESC');
+		//$this->db->order_by('open_date', 'DESC');
 		//$this->db->order_by('name', 'ASC');
 		//tambah sort by open date and open time
 		$query = $this->db->get('tb_gangguan');
@@ -142,6 +143,7 @@ class M_data_gangguan extends CI_Model{
 	{
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		/*$this->db->where('isShow', 'yes');*/
 		$this->db->where('id_jenisgangguan',$id);
 		$query = $this->db->get('tb_jenisgangguan');
 		return $query->row();

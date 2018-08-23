@@ -25,7 +25,7 @@
   <div class="form-group">
                           <label for="prodi">Jenis Gangguan :</label>
                           <select class="form-control" id="jenis gangguan" name="id_jenisgangguan">
-                            <option value="_">_____Pilih Jenis Gangguan_____</option>
+                            <option value="12">_____Pilih Jenis Gangguan_____</option>
                             <?php 
                                foreach($get_jenisgangguan as $jg){ 
                                echo "<option  value='$jg->id_jenisgangguan'>$jg->jenis_gangguan</option>";

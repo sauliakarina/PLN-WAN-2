@@ -33,8 +33,13 @@
                                         ?>
                                         <tr>
                                             <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
-                                            <td><?php echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td>
-                                            <!-- <td><button class="btn btn-primary" data-toggle="modal" data-target="#detailModal" onclick='showDetails(<?php // echo $g->id_gangguan ?>)'><?php //echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button></td> -->
+                                           <!--  <td><?php //echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td> -->
+                                            <td><?php if ($g->id_jenisgangguan=="12") {
+                                              echo "<p style='color:'>Belum Diketahui</p>";
+                                              } else {
+                                                echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); 
+                                                } ?>
+                                              </td>
                                             <td><?php echo $g->lokasi_gangguan ?></td>
                                             <td><?php echo $g->penyebab_gangguan ?></td>
                                             <td><?php echo $g->solusi_gangguan ?></td>
