@@ -68,7 +68,7 @@
                                         </ul>
                                     </li>    
                                 ";
-                            } else{
+                            } elseif($status_user=='User'){
                                 echo"
                                 <li><a  href=".base_url('c_main/home_user').">Beranda</a></li>";
                             }
