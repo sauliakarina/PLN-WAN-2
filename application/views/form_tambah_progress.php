@@ -31,7 +31,7 @@
                        <div class="form-group">
                           <label for="prodi"> Status :</label>
                           <select class="form-control" id="jenis status" name="status_progress">
-                            <option value="_">_____Pilih Status_____</option>
+                            <option value="1">_____Pilih Status_____</option>
                             <option value="1">Penanganan </option>
                             <option value="2">Selesai </option>
                           </select>
