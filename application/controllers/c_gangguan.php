@@ -290,6 +290,7 @@ class c_gangguan extends CI_Controller{
 		$open_time = $this->input->post('open_time');
 		$ket_progress = $this->input->post('ket_progress');
 		$status_progress = $this->input->post('status_progress');
+		$waktu =  $this->input->post('waktu');
 
 		if ($status_progress == "2") {
 			$close_date = date("Y-m-d");
