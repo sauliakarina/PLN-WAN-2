@@ -53,9 +53,10 @@ class c_gangguan extends CI_Controller{
 	public function form_jenis_gangguan($id) {
 	 $where = array('id_gangguan' => $id);
 	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
 	  	'tampil_ket' => $this->m_data_gangguan->edit_data($where, 'tb_gangguan')->result()
 	  );
-	$this->load->view('element/header');
+	$this->load->view('element/header',$data);
 	$this->load->view('form_jenis_gangguan',$data);
 	$this->load->view('element/footer');
 	} 
