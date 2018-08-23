@@ -14,6 +14,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Tanggal</th>
                                             <th>Area</th>
                                             <th>Jenis Keluhan</th>
                                             <th>Penyebab</th>
@@ -31,6 +32,7 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $no++ ?></td>
+                                            <td><?php echo $k->open_date ?></td> <!-- tanggal -->
                                             <td><?php echo anchor('c_keluhan/tampil_lokasi/'.$k->sid,'Area '.$this->m_data_keluhan->tampil_layanan($k->sid)->lokasi); ?> </td>
                                             <td><?php echo $this->m_data_keluhan->tampil_jeniskeluhan_byid($k->id_jeniskeluhan)->jenis_keluhan ?></td>
                                             <td><?php echo $k->penyebab_keluhan ?></td>
