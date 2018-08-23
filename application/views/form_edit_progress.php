@@ -33,8 +33,8 @@
 
                        <div class="form-group">
                           <label for="prodi"> Status :</label>
-                          <select class="form-control" id="jenis status" name="status_progress">
-                            <?php if ($p->status_progress == 1) {
+                          <select class="form-control" id="status_progress" name="status_progress">
+                            <?php if ($p->status_progress == "1") {
                               echo "<option value='1'>--Penanganan--</option>";
                             } else {
                               echo "<option value='2'>--Selesai--</option>";
@@ -44,6 +44,35 @@
                             <option value="2">Selesai </option>
                           </select>
                         </div>
+
+                         <div class="row" id="penyebab_gangguan" style="display: none;">
+                      <div class='col-md-12'>
+                          <div class="form-group">
+                            <label for="date">Penyebab :  </label>
+                                  
+                                  <textarea rows="5" class="form-control" name="penyebab_gangguan"><?php echo $this->m_data_gangguan->tampil_gangguan_byid($p->id_gangguan)->penyebab_gangguan ?></textarea>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row" id="solusi_gangguan" style="display: none;">
+                      <div class='col-md-12'>
+                          <div class="form-group">
+                            <label for="date">Solusi :  </label>
+                                  <textarea rows="5" class="form-control" name="solusi_gangguan"><?php echo $this->m_data_gangguan->tampil_gangguan_byid($p->id_gangguan)->solusi_gangguan ?></textarea>
+                              
+                              </div>
+                          </div>
+                      </div>
+                    <div class="row"  id="lokasi_gangguan" style="display: none;">
+                    <div class='col-md-12'>
+                        <div class="form-group">
+                          <label for="date">Lokasi Gangguan :  </label>
+                                <input type="text" name="lokasi_gangguan" class="form-control" value="<?php echo $this->m_data_gangguan->tampil_gangguan_byid($p->id_gangguan)->lokasi_gangguan?>">
+                            
+                            </div>
+                        </div>
+                    </div>
                         
                         <br>
 
@@ -56,4 +85,19 @@
                       </div>
                     </div>
                   </div>
+
+                    <script>
+      $('#status_progress').on('change', function(){
+        var val = this.value;
+        if(val == "2"){
+          $('#penyebab_gangguan').attr('style','display:block !important');
+          $('#lokasi_gangguan').attr('style','display:block !important');
+          $('#solusi_gangguan').attr('style','display:block !important');
+        }else if(val =="1"){
+           $('#penyebab_gangguan').attr('style','display:none !important');
+          $('#lokasi_gangguan').attr('style','display:none !important');
+          $('#solusi_gangguan').attr('style','display:none !important');
+        }
+      });
+    </script>
     <!-- CONTENT-WRAPPER SECTION END-->
