@@ -14,6 +14,8 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Tanggal</th>
+                                            <th>Open Date</th>
                                             <th>Area</th>
                                             <th>Jenis Keluhan</th>
                                             <th>Penyebab</th>
@@ -31,6 +33,7 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $no++ ?></td>
+                                            <td><?php echo $k->open_date ?></td> <!-- tanggal -->
                                             <td><?php echo anchor('c_keluhan/tampil_lokasi/'.$k->sid,'Area '.$this->m_data_keluhan->tampil_layanan($k->sid)->lokasi); ?> </td>
                                             <td><?php echo $this->m_data_keluhan->tampil_jeniskeluhan_byid($k->id_jeniskeluhan)->jenis_keluhan ?></td>
                                             <td><?php echo $k->penyebab_keluhan ?></td>
@@ -38,7 +41,7 @@
                                             <!-- <td><a class="btn btn-primary" href="<?php //echo base_url();?>c_main/waktu">Lihat</button></a></td> -->
                                             <td>
                                                  <form method='' action="<?php echo base_url('c_keluhan/tampil_waktu/'.$k->id_keluhan)?>">
-                                                     <button class='btn btn-primary' type='submit'>Lihat</button>
+                                                     <button class='btn btn-primary' type='submit'>Detail</button>
                                                 </form>
                                             </td>
                                             <td><center>
