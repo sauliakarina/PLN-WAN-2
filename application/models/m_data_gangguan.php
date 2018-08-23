@@ -168,9 +168,467 @@ class M_data_gangguan extends CI_Model{
 		return $this->db->get_where('tb_gangguan', array('id_gangguan' => $id))->row();
 	}
 
-	function get_data($kondisi){
-  	return $this->db->get_where('tb_gangguan',$kondisi)->result();
+	
+ function get_data($kondisi){
+ 	if (isset($kondisi['sid'])) {
+ 		$this->db->or_where('sid', $kondisi['sid']);
+ 	} 
+ 	if ($kondisi['id_jenisgangguan']) {
+ 		$this->db->or_where('id_jenisgangguan', $kondisi['id_jenisgangguan']);
  	}
+ 	if (isset($kondisi['bulan'])) {
+ 		$this->db->or_where('bulan', $kondisi['bulan']);
+ 	} 
+ 	if (isset($kondisi['tahun'])) {
+ 		$this->db->or_where('tahun', $kondisi['tahun']);
+ 	} 
+    return $this->db->get('tb_gangguan')->result();
+  }
+
+//start cari
+  public function cari_sid($input)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	public function cari_jg($input)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_bulan($input)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_tahun($input)
+	{
+		$this->db->select('*');
+		$this->db->where('tahun',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	  public function cari_durasi($input)
+	{
+		$this->db->select('*');
+		$this->db->where('durasi',$input);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	public function cari_sid_jg($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jenisgangguan',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+/*========START CODING BAGAI QUDA BY SAULIA===========*/
+	public function cari_sid_b($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_t($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+		public function cari_jg_t($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	
+	public function cari_b_t($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_b_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_t_d($input1,$input2)
+	{
+		$this->db->select('*');
+		$this->db->where('tahun',$input1);
+		$this->db->where('durasi',$input2);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_b($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jenisgangguan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_t($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jenisgangguan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jenisgangguan',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b_t($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
+	public function cari_jg_t_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_b_t_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('bulan',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_b_t($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_b_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_t_d($input1,$input2,$input3)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('tahun',$input2);
+		$this->db->where('durasi',$input3);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_b_t($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jenisgangguan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('tahun',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_jg_b_d($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jenisgangguan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('durasi',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_jg_b_t_d($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('id_jenisgangguan',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('durasi',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+	public function cari_sid_b_t_d($input1,$input2,$input3,$input4)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('bulan',$input2);
+		$this->db->where('tahun',$input3);
+		$this->db->where('durasi',$input4);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}	
+	public function cari_sid_jg_b_t_d($input1,$input2,$input3,$input4,$input5)
+	{
+		$this->db->select('*');
+		$this->db->where('sid',$input1);
+		$this->db->where('id_jenisgangguan',$input2);
+		$this->db->where('bulan',$input3);
+		$this->db->where('tahun',$input4);
+		$this->db->where('durasi',$input5);
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
 
 
 }

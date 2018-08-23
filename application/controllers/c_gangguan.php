@@ -432,12 +432,103 @@ class c_gangguan extends CI_Controller{
 
 	 $data = array(
 	  	'status_user' => $this->session->userdata('status_user'),
+	  	'gangguan' => $this->m_data_gangguan->get_data($kondisi)
 	  );
-		$gangguan = $this->m_data_gangguan->get_data($kondisi);
+		//$gangguan = $this->m_data_gangguan->get_data($kondisi);
+
 	  $this->load->view('element/header', $data);
-	  $this->load->view('form_data_gangguan',$gangguan);
+	  $this->load->view('form_data_gangguan',$data);
 	  $this->load->view('element/footer');
 
+	}
+
+
+	public function filter_manual() 
+	{
+      	
+		$sid = $this->input->post('sid');
+		$id_jenisgangguan = $this->input->post('id_jenisgangguan');
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$durasi = $this->input->post('durasi');
+		
+		if(isset($sid,$id_jenisgangguan,$bulan,$tahun,$durasi))
+		{
+			if ($id_jenisgangguan=='' && $bulan=='' && $tahun=='' && $durasi=='') {
+				$hasil = $this->m_data_gangguan->cari_sid($sid);
+			} elseif ($bulan=='' && $tahun=='' && $durasi=='' && $sid=='') {
+				$hasil = $this->m_data_gangguan->cari_jg($id_jenisgangguan);
+			}
+			elseif($id_jenisgangguan=='' && $sid=='' && $tahun=='' && $durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_bulan($bulan);
+			} elseif ($id_jenisgangguan=='' && $sid=='' && $bulan=='' && $durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_tahun($tahun);
+			} elseif ($id_jenisgangguan=='' && $sid=='' && $bulan=='' && $tahun=='') {
+				$hasil= $this->m_data_gangguan->cari_durasi($durasi);
+			} elseif ($bulan =='' && $tahun =='' && $durasi =='') {
+				$hasil= $this->m_data_gangguan->cari_sid_jg($sid,$id_jenisgangguan);
+			}
+			/*=====START CODING BAGAI QUDA BY SAULIA===*/
+			elseif ($id_jenisgangguan=='' && $tahun == '' && $durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_sid_b($sid,$bulan);
+			}elseif ($id_jenisgangguan=='' && $bulan == '' && $durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_sid_t($sid,$tahun);
+			}elseif ($id_jenisgangguan=='' && $bulan == '' && $tahun=='') {
+				$hasil= $this->m_data_gangguan->cari_sid_d($sid,$durasi);
+			}elseif ($sid=='' && $durasi == '' && $tahun=='') {
+				$hasil= $this->m_data_gangguan->cari_jg_b($id_jenisgangguan,$bulan);
+			}elseif ($bulan =='' && $durasi =='' && $sid =='') {
+				$hasil= $this->m_data_gangguan->cari_jg_t($id_jenisgangguan,$tahun);
+			}elseif ($bulan =='' && $tahun =='' && $sid =='') {
+				$hasil= $this->m_data_gangguan->cari_jg_d($id_jenisgangguan,$durasi);
+			}elseif ($sid =='' && $id_jenisgangguan =='' && $durasi =='') {
+				$hasil= $this->m_data_gangguan->cari_b_t($bulan,$tahun);
+			} elseif ($sid =='' && $id_jenisgangguan =='' && $tahun =='') {
+				$hasil= $this->m_data_gangguan->cari_b_d($bulan,$durasi);
+			} elseif ($sid =='' && $id_jenisgangguan =='' && $bulan =='') {
+				$hasil= $this->m_data_gangguan->cari_t_d($tahun,$durasi);
+			} elseif ($tahun =='' && $durasi =='') {
+				$hasil= $this->m_data_gangguan->cari_sid_jg_b($sid,$id_jenisgangguan,$bulan);
+			} elseif ($bulan =='' && $durasi =='') {
+				$hasil= $this->m_data_gangguan->cari_sid_jg_t($sid,$id_jenisgangguan,$tahun);
+			} elseif ($bulan =='' && $tahun =='') {
+				$hasil= $this->m_data_gangguan->cari_sid_jg_d($sid,$id_jenisgangguan,$durasi);
+			} elseif ($sid =='' && $durasi =='') {
+				$hasil= $this->m_data_gangguan->cari_jg_b_t($id_jenisgangguan,$bulan,$tahun);
+			} elseif ($sid =='' && $tahun =='') {
+				$hasil= $this->m_data_gangguan->cari_jg_b_d($id_jenisgangguan,$bulan,$durasi);
+			} elseif ($sid=='' && $bulan == '') {
+				$hasil= $this->m_data_gangguan->cari_jg_t_d($id_jenisgangguan,$tahun,$durasi);
+			}elseif ($sid=='' && $id_jenisgangguan== '') {
+				$hasil= $this->m_data_gangguan->cari_b_t_d($bulan,$tahun,$durasi);
+			}elseif ($durasi=='' && $id_jenisgangguan== '') {
+				$hasil= $this->m_data_gangguan->cari_sid_b_t($sid,$bulan,$tahun);
+			}elseif ($tahun=='' && $id_jenisgangguan== '') {
+				$hasil= $this->m_data_gangguan->cari_sid_b_d($sid,$bulan,$durasi);
+			}elseif ($bulan=='' && $id_jenisgangguan== '') {
+				$hasil= $this->m_data_gangguan->cari_sid_t_d($sid,$tahun,$durasi);
+			}elseif ($durasi=='') {
+				$hasil= $this->m_data_gangguan->cari_sid_jg_b_t($sid,$id_jenisgangguan,$bulan,$tahun);
+			}elseif ($tahun=='') {
+				$hasil= $this->m_data_gangguan->cari_sid_jg_b_d($sid,$id_jenisgangguan,$bulan,$durasi);
+			}elseif ($id_jenisgangguan =='') {
+				$hasil= $this->m_data_gangguan->cari_sid_b_t_d($sid,$bulan,$tahun,$durasi);
+			} elseif ($sid =='') {
+				$hasil= $this->m_data_gangguan->cari_jg_b_t_d($id_jenisgangguan,$bulan,$tahun,$durasi);
+			} 
+			else{
+				$hasil= $this->m_data_gangguan->cari_sid_jg_b_t_d($sid,$id_jenisgangguan,$bulan,$tahun,$durasi);
+			}
+		}	
+
+			$data=array(
+            'status_user' => $this->session->userdata('status_user'),
+        	'gangguan' => $hasil
+        	);
+        	$this->load->view('element/header', $data);
+			$this->load->view('pencarian_gangguan', $data);
+			$this->load->view('element/footer');
+			
 	}
 
 
