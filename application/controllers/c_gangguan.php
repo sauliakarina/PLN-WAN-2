@@ -21,9 +21,10 @@ class c_gangguan extends CI_Controller{
 	 public function tampil_lokasi($id) {
 	  $where = array('sid' => $id);
 	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user')
 	  	'tampil_layanan' => $this->m_data_gangguan->edit_data($where, 'tb_layanan')->result()
 	  );
-	  $this->load->view('element/header');
+	  $this->load->view('element/header', $data);
 	  $this->load->view('area_gangguan',$data);
 	  $this->load->view('element/footer');
 	 } 
