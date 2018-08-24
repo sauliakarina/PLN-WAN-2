@@ -41,6 +41,17 @@ class c_keluhan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 } 
 
+	public function form_jenis_keluhan($id) {
+	 $where = array('id_keluhan' => $id);
+	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
+	  	'tampil_ket' => $this->m_data_keluhan->edit_data($where, 'tb_keluhan')->result()
+	  );
+	$this->load->view('element/header',$data);
+	$this->load->view('form_jenis_keluhan',$data);
+	$this->load->view('element/footer');
+	} 
+
 
 	public function form_tambah_keluhan() {
 		$data = array(

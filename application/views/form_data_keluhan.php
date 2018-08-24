@@ -32,7 +32,13 @@
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $k->open_date ?></td> <!-- tanggal -->
                                             <td><?php echo anchor('c_keluhan/tampil_lokasi/'.$k->sid,'Area '.$this->m_data_keluhan->tampil_layanan($k->sid)->lokasi); ?> </td>
-                                            <td><?php echo $this->m_data_keluhan->tampil_jeniskeluhan_byid($k->id_jeniskeluhan)->jenis_keluhan ?></td>
+                                           <!--  <td><?php //echo $this->m_data_keluhan->tampil_jeniskeluhan_byid($k->id_jeniskeluhan)->jenis_keluhan ?></td> -->
+                                            <td><?php if ($k->id_jeniskeluhan=="12") {
+                                              echo "<p style='color:'>Belum Diketahui</p>";
+                                              } else {
+                                                echo anchor('c_keluhan/form_jenis_keluhan/'.$k->id_keluhan, $this->m_data_keluhan->tampil_jeniskeluhan_byid($k->id_jeniskeluhan)->jenis_keluhan); 
+                                                } ?>
+                                              </td>
                                             <td><?php echo $k->penyebab_keluhan ?></td>
                                             <td><?php echo $k ->solusi_keluhan ?></td>
                                             <!-- <td><a class="btn btn-primary" href="<?php //echo base_url();?>c_main/waktu">Lihat</button></a></td> -->
