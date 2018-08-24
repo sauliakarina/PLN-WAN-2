@@ -33,7 +33,7 @@
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   
 </head>
-<body style="width: auto; font-family: Trebuchet MS" ">
+<body style="width: auto; font-family: Trebuchet MS">
     <header>
         <div style="width: 900px" class="container">
             <div  class="row">
