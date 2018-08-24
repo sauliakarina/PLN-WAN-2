@@ -92,8 +92,7 @@
                         <button style="box-shadow: 8px 8px 5px #888888;" class="btn btn-info" type="submit"> <span class="glyphicon glyphicon-user"></span> &nbsp;Masuk </button>&nbsp;
                     </p>
                     <hr />
-                      <!--   <a style="box-shadow: 8px 8px 5px #888888;" href="<?php echo base_url();?>c_main/register" class="btn btn-info" ><span class="fa fa-pencil"></span> &nbsp; Daftar </a>&nbsp; -->
-                    
+                      
 
                 </div>
             </div>

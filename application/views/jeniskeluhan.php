@@ -22,9 +22,8 @@
                                             <th>No</th>
                                             <th>Jenis Keluhan</th>
                                             <th>Keterangan</th>
-                                            <th style="width:50px"></th>
-                                            <th style="width:50px"></th>
-                                        </tr>
+                                            <th style="width:50px">Aksi</th>
+                                          </tr>
                                     </thead>
                                     <tbody>
                                         <?php 
@@ -36,15 +35,12 @@
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $jk->jenis_keluhan ?></td>
                                             <td><?php echo $jk->ket_keluhan ?></td>
-                                            <td><center>
-
+                                            <td>
+                                              <div class="btn-group">
                                                 <form method='' action="<?php echo base_url('c_keluhan/edit_jeniskeluhan/'.$jk->id_jeniskeluhan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
-                                             </center>
-                                           </td>
-                                           <td><center>
-                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jk->id_jeniskeluhan ?>)" class="btn btn-danger">Hapus</button></center>
+                                             <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jk->id_jeniskeluhan ?>)" class="btn btn-danger">Hapus</button></div>
                                             </td>
                                         </tr>
                                         <?php } ?>

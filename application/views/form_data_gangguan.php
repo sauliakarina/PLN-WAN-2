@@ -21,9 +21,7 @@
                                             <th>Penyebab</th>
                                             <th>Solusi</th>
                                             <th>Progress</th>
-                                            <th>Waktu Gangguan</th>
-                                            <th style="width:50px"></th>
-                                            <th style="width:50px"></th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -63,19 +61,15 @@
                                               <?php endif; ?>
                                             </td>
                                             <td> 
+                                              <div class="btn-group">
                                               <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">
                                                    <button class='btn btn-primary' type='submit'>Detail</button>
-                                              </form>
-                                               
-                                            <td>
-                                                <center>
-                                                 <form method='' action="<?php echo base_url('c_gangguan/edit_gangguan/'.$g->id_gangguan) ?>">
+                                              </form> 
+                                              <form method='' action="<?php echo base_url('c_gangguan/edit_gangguan/'.$g->id_gangguan) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
                                                 </form>
-                                            </center>
-                                            </td>
-                                            <td>
-                                                <center> <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $g->id_gangguan ?>)" class="btn btn-danger">Hapus</button></center>
+                                              <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $g->id_gangguan ?>)" class="btn btn-danger">Hapus</button>
+                                            </div>
                                             </td>
                                         </tr>
                                         <?php }?>

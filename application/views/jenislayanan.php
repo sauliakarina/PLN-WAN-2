@@ -22,8 +22,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Jenis layanan</th>
-                                            <th style="width:50px"></th>
-                                            <th style="width:50px"></th>
+                                            <th style="width:50px">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -35,15 +34,12 @@
                                         <tr>
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $jl->nama_layanan ?></td>
-                                            <td><center>
-
-                                               <form method='' action="<?php echo base_url('c_layanan/edit_jenislayanan/'.$jl->id_jenislayanan) ?>">
+                                            <td>
+                                              <div class="btn-group">
+                                                <form method='' action="<?php echo base_url('c_layanan/edit_jenislayanan/'.$jl->id_jenislayanan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
-                                             </center>
-                                           </td>
-                                           <td><center>
-                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jl->id_jenislayanan ?>)" class="btn btn-danger">Hapus</button></center>
+                                             <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $jl->id_jenislayanan ?>)" class="btn btn-danger">Hapus</button></div>
                                             </td>
                                         </tr>
                                         <?php } ?>

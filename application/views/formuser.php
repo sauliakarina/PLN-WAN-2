@@ -24,8 +24,7 @@
                                             <th>ID Karyawan</th>
                                             <th>Password</th>
                                             <th>Status</th>
-                                            <th style="width:50px"></th>
-                                            <th style="width:50px"></th>
+                                            <th style="width:50px">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,15 +40,13 @@
                                             <td><?php echo $u->id_karyawan ?></td>
                                             <td><?php echo $u->password ?></td>
                                             <td><?php echo $u->status_user ?></td>
-                                            <td><center>
-                                                 <form method='' action="<?php echo base_url('c_user/edit_user/'.$u->id_karyawan) ?>">
+                                            <td>
+                                              <div class="btn-group">
+                                              <form method='' action="<?php echo base_url('c_user/edit_user/'.$u->id_karyawan) ?>">
                                                  <button class='btn btn-default' type='submit'>Edit</button>
                                                </form>
-                                             </center>
-                                           </td>
-                                           <td><center>
-                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $u->id_karyawan ?>)" class="btn btn-danger">Hapus</button>
-                                              </center>
+                                              <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $u->id_karyawan ?>)" class="btn btn-danger">Hapus</button>
+                                              </div>
                                             </td>
                                         </tr>
                                         <?php } ?>
