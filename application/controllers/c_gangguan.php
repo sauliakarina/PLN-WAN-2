@@ -600,8 +600,14 @@ class c_gangguan extends CI_Controller{
         	$this->load->view('element/header', $data);
 			$this->load->view('pencarian_gangguan', $data);
 			$this->load->view('element/footer');
-			
 	}
+
+	public function detail_waktu($id)
+	{
+		$data = $this->m_data_gangguan->get_gangguan_byid($id);
+		echo json_encode($data);
+	}
+
 
 
 
