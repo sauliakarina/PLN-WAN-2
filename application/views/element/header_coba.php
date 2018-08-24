@@ -9,17 +9,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
     <title>PLN</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="<?php echo base_url('assets/css/bootstrap.css')?>" rel="stylesheet" />
    <!-- FONT AWESOME ICONS  -->
     <link href="<?php echo base_url('assets/css/font-awesome.css')?>" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
@@ -33,9 +24,13 @@
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   
 </head>
+<<<<<<< HEAD
+<body style="font-family: Trebuchet MS" >
+=======
 <body style="width: auto; font-family: Trebuchet MS">
+>>>>>>> f3c3f7fa8c26d478221fd255cf64a8c2466c2c34
     <header>
-        <div style="width: 900px" class="container">
+        <div class="container">
             <div  class="row">
                 <div  class="col-md-12">
                     <strong ></strong>
@@ -45,15 +40,18 @@
         </div>
     </header>
     <!-- HEADER END-->
-    
-    <nav class="navbar navbar-inverse set-radius-zero" >
-
-  <center><img style="height: 120px;width: 120px" src="<?php echo base_url();?>/assets/img/pln.jpg"width="1350px" class="image1 mt-2"></center>
-</nav>
-</div>
-</div>
-</div>
-
+    <!-- apapa-->
+   <div class="navbar navbar-inverse set-radius-zero">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="media-left" href="http://fmipa.unj.ac.id/">
+                    <img style="padding-top: 20px; padding-bottom: 20px" src="<?php echo base_url();?>assets/img/pln.jpg" />
+                </a>
             </div>
                 </div>
             </div>
