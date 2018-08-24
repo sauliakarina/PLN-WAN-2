@@ -49,6 +49,16 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('waktu_gangguan',$data);
 	  $this->load->view('element/footer');
 	 } 
+	 public function tampil_waktu_pencarian($id) {
+	  $where = array('id_gangguan' => $id);
+	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
+	  	'tampil_waktu' => $this->m_data_gangguan->edit_data($where, 'tb_gangguan')->result()
+	  );
+	  $this->load->view('element/header', $data);
+	  $this->load->view('waktu_pencarian_gangguan',$data);
+	  $this->load->view('element/footer');
+	 } 
 	 public function tampil_waktu_histori($id) {
 	  $where = array('id_gangguan' => $id);
 	  $data = array(
