@@ -536,7 +536,7 @@ class c_gangguan extends CI_Controller{
 			} elseif ($id_jenisgangguan=='' && $sid=='' && $bulan=='' && $durasi=='') {
 				$hasil= $this->m_data_gangguan->cari_tahun($tahun);
 			} elseif ($id_jenisgangguan=='' && $sid=='' && $bulan=='' && $tahun=='') {
-				$hasil= $this->m_data_gangguan->cari_durasi($durasi);
+				$hasil= $this->m_data_gangguan->coba_cari_durasi($durasi);
 			} elseif ($bulan =='' && $tahun =='' && $durasi =='') {
 				$hasil= $this->m_data_gangguan->cari_sid_jg($sid,$id_jenisgangguan);
 			}

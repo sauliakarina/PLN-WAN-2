@@ -62,23 +62,23 @@
             </div>
 </div>
 
-<div class="row"> <div class='col-md-12'>
+<!-- <div class="row"> <div class='col-md-12'>
             <div class="form-group">
               <label for="date">Durasi :  </label>
                     <input type='text' class="form-control" name="durasi" />
                 
                 </div>
             </div>
-</div>
- <!-- <div class="form-group">
+</div> -->
+ <div class="form-group">
                            <label for="prodi">Durasi :</label>
                            <select class="form-control"  id="Durasi " name="durasi">
-                             <option value="_">_____Pilih Rentan Waktu_____</option>
-                             <option value="<?php ?>">< 4 Jam</option>
-                             <option value="Perangkat">4 Jam- 7 Jam </option>
-                             <option value="Modul"> > 7 Jam </option>
+                             <option value="">_____Pilih Rentan Waktu_____</option>
+                             <option value="1">< 4 Jam</option>
+                             <option value="2">4 Jam- 7 Jam </option>
+                             <option value="3"> > 7 Jam </option>
                            </select>
- </div>  -->
+ </div>  
                         <hr />
                         <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Cek </button>&nbsp;
                         </div>

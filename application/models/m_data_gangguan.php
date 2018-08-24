@@ -278,6 +278,27 @@ class M_data_gangguan extends CI_Model{
 		}
 	}
 
+	 public function coba_cari_durasi($input)
+	{
+		$this->db->select('*');
+		if ($input=='1') {
+			$this->db->where('durasi <','04:00');
+		} elseif ($input=='2') {
+			$this->db->where('durasi >','04:00');
+			$this->db->where('durasi <','07:00');
+		} elseif ($input=='3') {
+			$this->db->where('durasi >','07:00');
+		}
+		$this->db->where('isDelete','no');
+		$query = $this->db->get('tb_gangguan');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return $query->result();
+		}
+	}
+
 	public function cari_sid_jg($input1,$input2)
 	{
 		$this->db->select('*');
