@@ -41,6 +41,17 @@ class c_keluhan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 } 
 
+	public function form_jenis_keluhan($id) {
+	 $where = array('id_keluhan' => $id);
+	  $data = array(
+	  	'status_user' => $this->session->userdata('status_user'),
+	  	'tampil_ket' => $this->m_data_keluhan->edit_data($where, 'tb_keluhan')->result()
+	  );
+	$this->load->view('element/header',$data);
+	$this->load->view('form_jenis_keluhan',$data);
+	$this->load->view('element/footer');
+	} 
+
 
 	public function form_tambah_keluhan() {
 		$data = array(
@@ -196,10 +207,20 @@ class c_keluhan extends CI_Controller{
 		$id_keluhan = $this->input->post('id_keluhan');
 		$isDelete = $this->input->post('isDelete');
 
-		$start_date = new DateTime($open_date.' '.$open_time);
-		$end_date = new DateTime($close_date.' '.$close_time);
-		$durasi = date_diff($end_date, $start_date);
-		$durasi_jam = $durasi->d*24;
+
+		$bulan = date("m", strtotime($open_date)); 
+		$tahun = date("Y", strtotime($open_date)); 
+
+		if ($close_date != "" && $close_time !="") {
+			$start_date = new DateTime($open_date.' '.$open_time);
+			$end_date = new DateTime($close_date.' '.$close_time);
+			$durasi = date_diff($end_date, $start_date);
+			$durasi_jam = $durasi->d*24;
+			$input_durasi = ($durasi->h+$durasi_jam).':'.$durasi->i;
+		} else {
+			$input_durasi = '0:00';
+		}
+
 		
 		$data=array(
 			'sid' => $sid,
@@ -212,7 +233,9 @@ class c_keluhan extends CI_Controller{
 			'open_date' => $open_date,
 			'close_date' => $close_date,
 			'isDelete' => $isDelete,
-			'durasi' => ($durasi->h+$durasi_jam).':'.$durasi->i
+			'durasi' => $input_durasi,
+			'bulan' => $bulan,
+			'tahun' => $tahun
 			
 		);
 

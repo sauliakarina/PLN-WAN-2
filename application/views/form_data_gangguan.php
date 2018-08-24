@@ -63,9 +63,10 @@
                                               <?php endif; ?>
                                             </td>
                                             <td> 
-                                                <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">
-                                                     <button class='btn btn-primary' type='submit'>Detail</button>
-                                                </form>
+                                              <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">
+                                                   <button class='btn btn-primary' type='submit'>Detail</button>
+                                              </form>
+                                               
                                             <td>
                                                 <center>
                                                  <form method='' action="<?php echo base_url('c_gangguan/edit_gangguan/'.$g->id_gangguan) ?>">
@@ -121,7 +122,7 @@
                   </div>
               </div><!-- modal -->
 
-
+             
     <script type="text/javascript">
         $(document).ready( function () {
         $('#example').DataTable();

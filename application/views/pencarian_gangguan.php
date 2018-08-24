@@ -58,9 +58,10 @@
                                               <?php endif; ?>
                                             </td>
                                             <td> 
-                                                <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu_pencarian/'.$g->id_gangguan)?>">
+                                                <!-- <form method='' action="<?php //echo base_url('c_gangguan/tampil_waktu_pencarian/'.$g->id_gangguan)?>">
                                                      <button class='btn btn-primary' type='submit'>Detail</button>
-                                                </form>
+                                                </form> -->
+                                                 <button onclick='detail_waktu(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary" data-toggle="modal" data-target="#ModalX">Detail</button>
                                             </td>
                                               <?php if ($status_user == 'Admin') {
                                                  ?>
@@ -120,6 +121,56 @@
                   </div>
               </div><!-- modal -->
 
+                <!-- Modal Detail Waktu -->
+              <div class="modal fade" id="ModalX" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Waktu Gangguan</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                  <tbody>
+                                     <tr>
+                                        <td><strong>Open Date</strong></td>
+                                        <td style="" id="open_date"><?php echo $g->open_date ?></td>
+                                    </tr>
+                                    <tr>
+                                       <td style=""><strong>Open Time</strong></td>
+                                      <td style="" id="open_time"><?php echo $g->open_time ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Close Date</strong></td>
+                                       <td style="" id="close_date"><?php echo $g->close_date ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Close Time</strong></td>
+                                       <td style="" id="close_time"><?php echo $g->close_time ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Durasi</strong></td>
+                                       <td style="" id="durasi"><?php echo $g->durasi ?></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                          </div>
+                          </div> <!-- modal body -->
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- modal -->
+
+
+
 
     <script type="text/javascript">
         $(document).ready( function () {
@@ -164,6 +215,29 @@
             }
           });
       }*/
+
+       function detail_waktu(id) {
+
+      $.ajax({
+        url: "<?php echo base_url('c_gangguan/detail_waktu/') ?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+          $('[name="id_gangguan"]').val(data.id_gangguan);
+          $('[name="open_date"]').val(data.open_date);
+          $('[name="open_time"]').val(data.open_time);
+          $('[name="close_date"]').val(data.close_date);
+          $('[name="close_time"]').val(data.close_time);
+          $('[name="durasi"]').val(data.durasi);
+          
+          $('#ModalX').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('gagal mengambil data');
+        }
+      });
+    }
+
 
     </script>
 
