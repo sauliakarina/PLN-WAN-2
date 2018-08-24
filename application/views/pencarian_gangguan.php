@@ -58,8 +58,8 @@
                                               <?php endif; ?>
                                             </td>
                                             <td> 
-                                                <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">
-                                                     <button class='btn btn-primary' type='submit'>Lihat</button>
+                                                <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu_pencarian/'.$g->id_gangguan)?>">
+                                                     <button class='btn btn-primary' type='submit'>Detail</button>
                                                 </form>
                                             </td>
                                               <?php if ($status_user == 'Admin') {
