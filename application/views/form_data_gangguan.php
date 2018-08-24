@@ -36,8 +36,8 @@
                                             <td><?php echo $g->open_date ?></td>
                                             <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
                                            <!--  <td><?php //echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td> -->
-                                            <td><?php if ($g->id_jenisgangguan=="12") {
-                                              echo "<p style='color:'>Belum Diketahui</p>";
+                                            <td><?php if ($g->id_jenisgangguan=="16") {
+                                              echo "<p style='color:'>Belum Teridentifikasi</p>";
                                               } else {
                                                 echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); 
                                                 } ?>
