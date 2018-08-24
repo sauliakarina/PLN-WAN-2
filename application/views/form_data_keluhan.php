@@ -37,7 +37,7 @@
                                             <td><?php echo $k ->solusi_keluhan ?></td>
                                             <!-- <td><a class="btn btn-primary" href="<?php //echo base_url();?>c_main/waktu">Lihat</button></a></td> -->
                                             <td>
-                                              <div class="btn-group">
+                                                <div class="btn-group"
                                                  <form method='' action="<?php echo base_url('c_keluhan/tampil_waktu/'.$k->id_keluhan)?>">
                                                      <button class='btn btn-primary' type='submit'>Detail</button>
                                                 </form>

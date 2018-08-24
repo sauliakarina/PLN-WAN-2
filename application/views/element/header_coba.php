@@ -34,23 +34,12 @@
   
 </head>
 <body style="width: auto; font-family: Trebuchet MS">
-    <header>
-        <div class="container">
-            <div  class="row">
-                <div  class="col-md-12">
-                    <strong ></strong>
-                </div>
-
-            </div>
-        </div>
-    </header>
-    <!-- HEADER END-->
-    <!-- apapa-->
+    <!-- LOGO HEADER-->
    <div class="navbar navbar-inverse set-radius-zero">
         <div class="container">
             <div class="navbar-header">
-                <a class="media-left" href="http://fmipa.unj.ac.id/">
-                    <img style="padding-top: 20px; padding-bottom: 20px" src="<?php echo base_url();?>assets/img/pln.jpg" />
+                <a class="media-left" href="http://pln.co.id/">
+                    <img style="padding-top: 20px; padding-bottom: 20px" src="<?php echo base_url();?>assets/img/pln3.png" />
                 </a>
             </div>
                 </div>
@@ -58,63 +47,63 @@
         </div>
     </div>
     <!-- LOGO HEADER END-->
-    <section class="menu-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="navbar navbar-expand-lg">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul id="menu-top" class="nav navbar-nav ml-auto">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
                                 <?php 
                                 if($status_user == 'Admin') {
                                     echo"
-                                    <li><a  href=".base_url('c_main/home').">Beranda</a></li>
-                                    <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Data <span class='caret'></span></a>
-                                            <ul class='dropdown-menu'>
-                                              <li><a href=".base_url('c_gangguan/form_data_gangguan')." style='color: black'>Gangguan</a></li>
-                                                <li><a href=".base_url('c_keluhan/form_data_keluhan')." style='color: black'>Keluhan</a></li>
-                                                <li class='divider'></li>
-                                      			<li><a  href=".base_url('c_gangguan/history_gangguan')." style='color: black'>Histori Gangguan</a></li>
+                                    <li class='nav-item'> 
+                                    <a  class='nav-link' href=".base_url('c_main/home')." style='color:white' >BERANDA</a>
+                                    </li>
+                                    <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' style='color:white'>DATA</a>
+                                            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                                            <a class='dropdown-item' href=".base_url('c_gangguan/form_data_gangguan')." style='color: black'>GANGGUAN</a>
+                                            <a class='dropdown-item' href=".base_url('c_keluhan/form_data_keluhan')." style='color: black'>KELUHAN</a>
+                                            <div class='dropdown-divider'></div>
+                                      		<a  class='dropdown-item' href=".base_url('c_gangguan/history_gangguan')." style='color: black'>HISTORI GANGGUAN</a>
                                       
-                                            </ul>
+                                            </div>
                                         </li>    
                                     ";
                                 } elseif($status_user=='User'){
                                     echo"
-                                    <li><a  href=".base_url('c_main/home_user').">Beranda</a></li>";
+                                    <li class='nav-item'>
+                                    <a class='nav-link' href=".base_url('c_main/home_user').">BERANDA</a></li>";
                                 }
                                 ?>
-                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pencarian <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                      <li><a href="<?php echo base_url();?>c_gangguan/tampil_searchgangguan" style="color: black">Data Gangguan</a></li>
-                                      <li><a href="<?php echo base_url();?>c_keluhan/tampil_searchkeluhan" style="color: black">Data Keluhan</a></li>
-                                    </ul>
+                                <li class='nav-item dropdown'>
+                                    <a class="nav-link dropdown-toggle" href="#"id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='color:white'>PENCARIAN</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="<?php echo base_url();?>c_gangguan/tampil_searchgangguan" style="color: black">DATA GANGGUAN</a>
+                                      <a class="dropdown-item" href="<?php echo base_url();?>c_keluhan/tampil_searchkeluhan" style="color: black">DATA KELUHAN</a>
+                                  </div>
                                 </li>
                                 <?php 
                                 if ($status_user == 'Admin') {
-                                    echo " <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>DATA MASTER <span class='caret'></span></a>
-                                    <ul class='dropdown-menu'>
-                                      <li><a href=".base_url('c_gangguan/jenisgangguan')." style='color: black'>Kategori Gangguan</a></li>
-                                      <li><a href=".base_url('c_keluhan/jeniskeluhan')." style='color: black'>Kategori Keluhan</a></li>
-                                      <li><a href=".base_url('c_layanan/jenislayanan')." style='color: black'>Kategori Layanan</a></li>
-                                      <li><a href=".base_url('c_layanan/form_layanan')." style='color: black'>Layanan</a></li>
-                                      <li class='divider'></li>
-                                      <li><a style='color: black'>User Manual</a></li>
-                                      <li class='divider'></li>
-                                      <li><a href=".base_url('c_user/user')." style='color: black'>Pengguna</a></li>
-                                    </ul>
+                                    echo " <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' style='color:white' >MASTER DATA</a>
+                                    <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                                    <a class='dropdown-item' href=".base_url('c_gangguan/jenisgangguan')." style='color: black'>KATAGORI GANGGUAN</a>
+                                    <a class='dropdown-item' href=".base_url('c_keluhan/jeniskeluhan')." style='color: black'>KATAGORI KELUHAN</a>
+                                    <a class='dropdown-item' href=".base_url('c_layanan/jenislayanan')." style='color: black'>KATAGORI LAYANAN</a>
+                                    <a class='dropdown-item' href=".base_url('c_layanan/form_layanan')." style='color: black'>LAYANAN</a>
+                                    <div class='dropdown-divider'></div>
+                                    <a class='dropdown-item' style='color: black'>USER MANUAL</a>
+                                    <div class='dropdown-divider'></div>
+                                    <a class='dropdown-item' href=".base_url('c_user/user')." style='color: black'>PENGGUNA</a>
+                                    </div>
                                 </li>";
                                 }   
                                  ?>
-                                <li><a href="<?php echo base_url();?>c_main/logout">Keluar</a></li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="<?php echo base_url();?>c_main/logout" style='color:white' >KELUAR</a></li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </nav>
+                </body>
     <!-- MENU SECTION END-->
