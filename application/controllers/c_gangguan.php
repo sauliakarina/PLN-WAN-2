@@ -323,6 +323,10 @@ class c_gangguan extends CI_Controller{
 		$ket_progress = $this->input->post('ket_progress');
 		$status_progress = $this->input->post('status_progress');
 		$waktu =  $this->input->post('waktu');
+		$penyebab_gangguan =  $this->input->post('penyebab_gangguan');
+		$lokasi_gangguan =  $this->input->post('lokasi_gangguan');
+		$solusi_gangguan =  $this->input->post('solusi_gangguan');
+
 
 		if ($status_progress == "2") {
 			$isSolved = 'yes';
@@ -340,7 +344,10 @@ class c_gangguan extends CI_Controller{
 			'close_date' => $close_date,
 			'close_time' =>$close_time,
 			'durasi' => $input_durasi,
-			'isSolved' => $isSolved
+			'isSolved' => $isSolved,
+			'solusi_gangguan' => $solusi_gangguan,
+			'penyebab_gangguan' => $penyebab_gangguan,
+			'lokasi_gangguan' => $lokasi_gangguan
 			);
 			$where = array(
 				'id_gangguan' => $id_gangguan
@@ -385,6 +392,9 @@ class c_gangguan extends CI_Controller{
 		$id_progress = $this->input->post('id_progress');
 		$open_date = $this->input->post('open_date');
 		$open_time = $this->input->post('open_time');
+		$penyebab_gangguan =  $this->input->post('penyebab_gangguan');
+		$lokasi_gangguan =  $this->input->post('lokasi_gangguan');
+		$solusi_gangguan =  $this->input->post('solusi_gangguan');
 
 		if ($status_progress == "2") {
 			$isSolved = 'yes';
@@ -402,7 +412,21 @@ class c_gangguan extends CI_Controller{
 				'close_date' => $close_date,
 				'close_time' =>$close_time,
 				'durasi' => $input_durasi,
-				'isSolved' =>$isSolved
+				'isSolved' =>$isSolved,
+				'solusi_gangguan' => $solusi_gangguan,
+				'penyebab_gangguan' => $penyebab_gangguan,
+				'lokasi_gangguan' => $lokasi_gangguan
+			);
+			$where = array(
+				'id_gangguan' => $id_gangguan
+			);
+
+			$this->m_data_gangguan->update_data($where,$data,'tb_gangguan');
+		} elseif($status_progress == '1') {
+			$isSolved = 'no';
+
+			$data=array(
+				'isSolved' => $isSolved
 			);
 			$where = array(
 				'id_gangguan' => $id_gangguan
