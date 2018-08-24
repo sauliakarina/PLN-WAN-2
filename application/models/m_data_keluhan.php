@@ -38,6 +38,7 @@ class M_data_keluhan extends CI_Model{
     	$this->db->distinct();
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->order_by('lokasi', 'ASC');
 		$query = $this->db->get('tb_layanan');
 		if($query->num_rows()>0)
 		{
@@ -51,6 +52,7 @@ class M_data_keluhan extends CI_Model{
     	$this->db->distinct();
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->order_by('jenis_keluhan', 'ASC');
 		$query = $this->db->get('tb_jeniskeluhan');
 		if($query->num_rows()>0)
 		{
