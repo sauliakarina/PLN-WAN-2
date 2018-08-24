@@ -90,10 +90,9 @@
                                   <li><a href=".base_url('c_keluhan/jeniskeluhan')." style='color: black'>Kategori Keluhan</a></li>
                                   <li><a href=".base_url('c_layanan/jenislayanan')." style='color: black'>Kategori Layanan</a></li>
                                   <li><a href=".base_url('c_layanan/form_layanan')." style='color: black'>Layanan</a></li>
+                                  <li><a href=".base_url('c_user/user')." style='color: black'>Pengguna</a></li>
                                   <li class='divider'></li>
                                   <li><a style='color: black'>User Manual</a></li>
-                                  <li class='divider'></li>
-                                  <li><a href=".base_url('c_user/user')." style='color: black'>Pengguna</a></li>
                                 </ul>
                             </li>";
                             }   

@@ -6,9 +6,9 @@ class c_login extends CI_Controller{
         parent::__construct();      
         $this->load->model('m_login');
          $this->load->library(array('form_validation'));
-    if (isset($_SESSION['id_karyawan'])){
-        redirect ('c_main/home');
-    }
+        if (isset($_SESSION['id_karyawan'])){
+            redirect ('c_main/home');
+        }
 
     }
 

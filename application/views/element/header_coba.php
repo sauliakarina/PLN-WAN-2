@@ -24,7 +24,11 @@
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   
 </head>
+<<<<<<< HEAD
 <body style="font-family: Trebuchet MS" >
+=======
+<body style="width: auto; font-family: Trebuchet MS">
+>>>>>>> f3c3f7fa8c26d478221fd255cf64a8c2466c2c34
     <header>
         <div class="container">
             <div  class="row">
