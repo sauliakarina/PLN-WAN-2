@@ -45,14 +45,13 @@
                                             </td>
                                             <?php if ($status_user == 'Admin') {
                                              ?>
-                                            <td><center>
+                                            <td>
+                                              <div class="btn-group">
                                                  <form method='' action="<?php echo base_url('c_keluhan/edit_keluhan/'.$k->id_keluhan) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
                                                 </form>
-                                            </center>
-                                        </td>
-                                        <td><center>
-                                                <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $k->id_keluhan ?>)" class="btn btn-danger">Hapus</button></center>
+                                            <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $k->id_keluhan ?>)" class="btn btn-danger">Hapus</button>
+                                          </div>
                                             </td>
                                         </tr>
                                         <?php } ?>

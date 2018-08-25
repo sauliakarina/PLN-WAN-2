@@ -2,16 +2,16 @@
     <div class="content-wrapper">
         <div class="container" >
             <div class="row">
-                <div class="col-md-12">
+                <div class="col">
                     <h4  class="page-head-line">Pencarian Gangguan</h4>
                 </div>
             </div>
             <center>
-            <div class="row">
             
-            <div>
-                <div class="col-md-3"></div>
-                <div class="col-md-6" style="margin-right:200 ; margin-left:200">
+            
+            <div class="container">
+             <div class="row justify-content-md-center">
+                <div class="col col-lg-6">
                    <div class="alert alert-info">
                     <form class="" action="<?php echo base_url().'c_gangguan/filter_manual'; ?>" method="post">
                      <label>Area: </label>
@@ -53,7 +53,7 @@
                             <option value="12">Desember</option>
                           </select>
 </div>
-<div class="row"> <div class='col-md-12'>
+<div class="row"> <div class='col'>
             <div class="form-group">
               <label for="date">Tahun :  </label>
                     <input type='text' class="form-control" name="tahun" />
@@ -80,14 +80,16 @@
                            </select>
  </div>  
                         <hr />
-                        <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Cek </button>&nbsp;
+                        <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Search </button>&nbsp;
                         </div>
                         </div>
               </form>
                 </div>
-            <center/>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-    </div>
-</main>
+      </center>
+            </div>
+          </div>
+        </main>
