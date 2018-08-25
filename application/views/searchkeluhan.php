@@ -1,16 +1,17 @@
+<main>
     <div class="content-wrapper">
         <div class="container" >
             <div class="row">
-                <div class="col-md-12">
-                    <h4  class="page-head-line">Pencarian Keluhan</h4>
+                <div class="col">
+                    <h4  class="page-head-line">Pencarian Gangguan</h4>
                 </div>
             </div>
             <center>
-            <div class="row">
             
-            <div>
-                <div class="col-md-3"></div>
-                <div class="col-md-6" style="margin-right:200 ; margin-left:200">
+            
+            <div class="container">
+             <div class="row justify-content-md-center">
+                <div class="col col-lg-6">
                    <div class="alert alert-info">
                   <form class="" action="<?php echo base_url().'c_keluhan/filter_manual'; ?>" method="post">
                      <label>Area: </label>
@@ -54,42 +55,43 @@
                             <option value="Desember">Desember</option>
                           </select>
 </div>
-<div class="row">
-<div class='col-md-12'>
+<div class="row"> <div class='col'>
             <div class="form-group">
               <label for="date">Tahun :  </label>
                     <input type='text' class="form-control" name="tahun" />
                 
                 </div>
             </div>
-        </div>
-        <div class="row">
-<div class='col-md-12'>
+</div>
+
+<!-- <div class="row"> <div class='col-md-12'>
             <div class="form-group">
               <label for="date">Durasi :  </label>
                     <input type='text' class="form-control" name="durasi" />
                 
                 </div>
             </div>
-        </div>
-<!-- <div class="form-group">
-                          <label for="prodi">Durasi :</label>
-                          <select class="form-control"  id="Durasi " name="durasi ">
-                            <option value="_">_____Pilih Rentan Waktu_____</option>
-                            <option value="Putus Kabel">< 4 Jam</option>
-                            <option value="Perangkat">4 Jam- 7 Jam </option>
-                            <option value="Modul"> > 7 Jam </option>
-                          </select>
 </div> -->
+ <div class="form-group">
+                           <label for="prodi">Durasi :</label>
+                           <select class="form-control"  id="Durasi " name="durasi">
+                             <option value="">_____Pilih Rentan Waktu_____</option>
+                             <option value="1">< 4 Jam</option>
+                             <option value="2">4 Jam- 7 Jam </option>
+                             <option value="3"> > 7 Jam </option>
+                           </select>
+ </div>  
                         <hr />
-                        <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Cek </button>&nbsp;
+                        <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> &nbsp;Search </button>&nbsp;
                         </div>
                         </div>
               </form>
                 </div>
-            <center/>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-    </div>
-    <!-- CONTENT-WRAPPER SECTION END-->
+      </center>
+            </div>
+          </div>
+        </main>
