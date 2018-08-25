@@ -138,23 +138,23 @@
                                   <tbody>
                                      <tr>
                                         <td><strong>Open Date</strong></td>
-                                        <td style="" id="open_date"><?php echo $g->open_date ?></td>
+                                        <td style="" id="open_date"></td>
                                     </tr>
                                     <tr>
                                        <td style=""><strong>Open Time</strong></td>
-                                      <td style="" id="open_time"><?php echo $g->open_time ?></td>
+                                      <td style="" id="open_time"></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Close Date</strong></td>
-                                       <td style="" id="close_date"><?php echo $g->close_date ?></td>
+                                       <td style="" id="close_date"></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Close Time</strong></td>
-                                       <td style="" id="close_time"><?php echo $g->close_time ?></td>
+                                       <td style="" id="close_time"></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Durasi</strong></td>
-                                       <td style="" id="durasi"><?php echo $g->durasi ?></td>
+                                       <td style="" id="durasi"></td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -223,8 +223,9 @@
         type: "GET",
         dataType: "JSON",
         success: function(data) {
+          console.table(data);
           $('[name="id_gangguan"]').val(data.id_gangguan);
-          $('[name="open_date"]').val(data.open_date);
+          $('#open_date').text(data.open_date);
           $('[name="open_time"]').val(data.open_time);
           $('[name="close_date"]').val(data.close_date);
           $('[name="close_time"]').val(data.close_time);
