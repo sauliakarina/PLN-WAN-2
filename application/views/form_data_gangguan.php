@@ -37,8 +37,9 @@
                                             <td><?php if ($g->id_jenisgangguan=="16") {
                                               echo "<p style='color:'>Belum Teridentifikasi</p>";
                                               } else {
-                                                echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); 
-                                                } ?>
+                                                ?>
+                                                 <button onclick='ket_jenisgangguan(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary" data-toggle="modal" data-target="#ModalY"><?php echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button>
+                                              <?php  } ?>
                                               </td>
                                             <td><?php echo $g->lokasi_gangguan ?></td>
                                             <td><?php echo $g->penyebab_gangguan ?></td>
@@ -52,7 +53,7 @@
                                                 <?php if ($this->m_data_gangguan->get_last_progress($g->id_gangguan)['status_progress'] == 1): ?>
                                                     <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Penanganan</a><br>
                                                    <center><form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
-                                                     <button class="btn btn-default btn-sm" type='submit'><span class="glyphicon glyphicon-plus-sign"></span> </button>
+                                                     <button class="btn btn-default btn-sm" type='submit'><i class="fas fa-plus-square"></i> </button>
                                                   </form></center>
                                                     <?php else: ?>
                                                       <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Selesai</a>
@@ -62,9 +63,7 @@
                                             </td>
                                             <td> 
                                               <div class="btn-group">
-                                              <form method='' action="<?php echo base_url('c_gangguan/tampil_waktu/'.$g->id_gangguan)?>">
-                                                   <button class='btn btn-primary' type='submit'>Detail</button>
-                                              </form> 
+                                              <button onclick='detail_waktu(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary" data-toggle="modal" data-target="#ModalX">Detail</button>
                                               <form method='' action="<?php echo base_url('c_gangguan/edit_gangguan/'.$g->id_gangguan) ?>">
                                                     <button class='btn btn-default' type='submit'>Edit</button>
                                                 </form>
@@ -116,6 +115,97 @@
                   </div>
               </div><!-- modal -->
 
+               <!-- Modal Keterangan Jenis Gangguan -->
+              <div class="modal fade" id="ModalY" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Keterangan Jenis Gangguan</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                  <tbody>
+                                     <tr>
+                                        <td><strong>Jenis Gangguan</strong></td>
+                                        <td style="" id="jenis_gangguan"></td>
+                                    </tr>
+                                    <tr>
+                                       <td style=""><strong>Keterangan</strong></td>
+                                      <td style="" id="ket_gangguan"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Deskripsi Jenis Gangguan</strong></td>
+                                       <td style="" id="deskripsi_jenisgangguan"></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                          </div>
+                          </div> <!-- modal body -->
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- modal -->
+
+              <!-- Modal Detail Waktu -->
+              <div class="modal fade" id="ModalX" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Waktu Gangguan</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                  <tbody>
+                                     <tr>
+                                        <td><strong>Open Date</strong></td>
+                                        <td style="" id="open_date"></td>
+                                    </tr>
+                                    <tr>
+                                       <td style=""><strong>Open Time</strong></td>
+                                      <td style="" id="open_time"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Close Date</strong></td>
+                                       <td style="" id="close_date"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Close Time</strong></td>
+                                       <td style="" id="close_time"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Durasi</strong></td>
+                                       <td style="" id="durasi"></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                          </div>
+                          </div> <!-- modal body -->
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- modal -->
+
+
+
+
              
     <script type="text/javascript">
         $(document).ready( function () {
@@ -142,24 +232,49 @@
             window.location.href =  "<?php echo base_url();?>c_gangguan/hapus_gangguan/"+p_id;
         }
 
-        /*function showDetails(id) {
+        function detail_waktu(id) {
 
-          $.ajax({
-            url: "<?php //echo base_url('c_gangguan/tampil_ket/') ?>/" + id,
-            type: "GET",
-            dataType: "JSON",
-            success: function(data) {
-              var coba = JSON.parse(data);
-              $("#ket_gangguan").text(coba.ket_gangguan); 
-              $('[name="deskripsi_jenisgangguan"]').val(data.deskripsi_jenisgangguan);
-              
-              $('#detailModal').modal('show');
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-              console.log('gagal mengambil data');
-            }
-          });
-      }*/
+      $.ajax({
+        url: "<?php echo base_url('c_gangguan/detail_waktu/') ?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+          console.table(data);
+          $('#id_gangguan').text(data.id_gangguan);
+          $('#open_date').text(data.open_date);
+          $('#open_time').text(data.open_time);
+          $('#close_date').text(data.close_date);
+          $('#close_time').text(data.close_time);
+          $('#durasi').text(data.durasi);
+          
+          $('#ModalX').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('gagal mengambil data');
+        }
+      });
+    }
+
+      function ket_jenisgangguan(id) {
+
+      $.ajax({
+        url: "<?php echo base_url('c_gangguan/gangguan_data') ?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+          console.table(data);
+          $('#deskripsi_jenisgangguan').text(data.deskripsi_jenisgangguan);
+          $('#jenis_gangguan').text(data.jenis_gangguan);
+          $('#ket_gangguan').text(data.ket_gangguan);
+          
+          $('#ModalY').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('gagal mengambil data');
+        }
+      });
+    }
+
 
     </script>
 

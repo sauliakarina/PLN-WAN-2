@@ -102,6 +102,18 @@ class M_data_gangguan extends CI_Model{
 		return $this->db->get_where($table,$where);
 	}
 
+	public function get_jenis_gangguan($id_gangguan)
+	{
+		$this->db->join('tb_jenisgangguan', 'tb_jenisgangguan.id_jenisgangguan = tb_gangguan.id_jenisgangguan');
+		return $this->db->get_where('tb_gangguan',array('id_gangguan'=>$id_gangguan))->row_array();
+	}
+
+	/*public function get_lokasi($sid)
+	{
+		$this->db->join('tb_jenisgangguan', 'tb_jenisgangguan.id_jenisgangguan = tb_gangguan.id_jenisgangguan');
+		return $this->db->get_where('tb_gangguan',array('id_gangguan'=>$id_gangguan))->row_array();
+	}*/
+
 	function update_data($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);

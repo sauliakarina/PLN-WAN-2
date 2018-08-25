@@ -70,9 +70,9 @@
             <div class="row">
                 
             </div>
-            <form method="POST" action="<?php echo base_url('c_login/aksi_login'); ?>">
+            <?php echo form_open('c_login/aksi_login'); ?>
                 <div class="col-md-3"></div>
-            <div class="col-md-6 col-sm-6" style="margin-right:200 ; margin-left:200 ">
+                <div class="col-md-6 col-sm-6" style="margin-right:200 ; margin-left:200 ">
                     <div class="panel panel-primary" style="box-shadow: 8px 8px 5px #888888">
                         <div class="panel-heading">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -92,12 +92,10 @@
                         <button style="box-shadow: 8px 8px 5px #888888;" class="btn btn-info" type="submit"> <span class="glyphicon glyphicon-user"></span> &nbsp;Masuk </button>&nbsp;
                     </p>
                     <hr />
-                      
-
+                        </div>
                 </div>
             </div>
-        </div>
-            </form>
+        </form>
                      
                         
                     </div>

@@ -38,8 +38,15 @@
                                         <tr>
                                             <td><?php echo $g->open_date ?></td>
                                             <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
-                                            <td><?php echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td>
-                                            <!-- <td><button class="btn btn-primary" data-toggle="modal" data-target="#detailModal" onclick='showDetails(<?php // echo $g->id_gangguan ?>)'><?php //echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button></td> -->
+                                            <!-- <td><button onclick='tampil_lokasi(<?php //echo $g->sid ?>)' id="btn-edit" class="btn btn-primary" data-toggle="modal" data-target="#ModalY">Area <?php //echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button></td> -->
+                                           <!--  <td><?php //echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td> -->
+                                            <td><?php if ($g->id_jenisgangguan=="16") {
+                                              echo "<p style='color:'>Belum Teridentifikasi</p>";
+                                              } else {
+                                                ?>
+                                                 <button onclick='ket_jenisgangguan(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary" data-toggle="modal" data-target="#ModalY"><?php echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button>
+                                              <?php  } ?>
+                                              </td>
                                             <td><?php echo $g->lokasi_gangguan ?></td>
                                             <td><?php echo $g->penyebab_gangguan ?></td>
                                             <td><?php echo $g->solusi_gangguan ?></td>
@@ -51,6 +58,9 @@
                                               <?php else: ?>
                                                 <?php if ($this->m_data_gangguan->get_last_progress($g->id_gangguan)['status_progress'] == 1): ?>
                                                     <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Penanganan</a>
+                                                     <center><form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
+                                                     <button class="btn btn-default btn-sm" type='submit'><i class="fas fa-plus-square"></i> </button>
+                                                  </form></center>
                                                     <?php else: ?>
                                                       <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Selesai</a>
                                                 <?php endif ?>
@@ -170,6 +180,49 @@
               </div><!-- modal -->
 
 
+  <!-- Modal Keterangan Jenis Gangguan -->
+              <div class="modal fade" id="ModalY" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Keterangan Jenis Gangguan</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                  <tbody>
+                                     <tr>
+                                        <td><strong>Jenis Gangguan</strong></td>
+                                        <td style="" id="jenis_gangguan"></td>
+                                    </tr>
+                                    <tr>
+                                       <td style=""><strong>Keterangan</strong></td>
+                                      <td style="" id="ket_gangguan"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Deskripsi Jenis Gangguan</strong></td>
+                                       <td style="" id="deskripsi_jenisgangguan"></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                          </div>
+                          </div> <!-- modal body -->
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- modal -->
+
+
+
+
 
 
     <script type="text/javascript">
@@ -197,24 +250,7 @@
             window.location.href =  "<?php echo base_url();?>c_gangguan/hapus_gangguan/"+p_id;
         }
 
-        /*function showDetails(id) {
-
-          $.ajax({
-            url: "<?php //echo base_url('c_gangguan/tampil_ket/') ?>/" + id,
-            type: "GET",
-            dataType: "JSON",
-            success: function(data) {
-              var coba = JSON.parse(data);
-              $("#ket_gangguan").text(coba.ket_gangguan); 
-              $('[name="deskripsi_jenisgangguan"]').val(data.deskripsi_jenisgangguan);
-              
-              $('#detailModal').modal('show');
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-              console.log('gagal mengambil data');
-            }
-          });
-      }*/
+       
 
        function detail_waktu(id) {
 
@@ -232,6 +268,50 @@
           $('#durasi').text(data.durasi);
           
           $('#ModalX').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('gagal mengambil data');
+        }
+      });
+    }
+
+    function ket_jenisgangguan(id) {
+
+      $.ajax({
+        url: "<?php echo base_url('c_gangguan/gangguan_data') ?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+          console.table(data);
+          $('#deskripsi_jenisgangguan').text(data.deskripsi_jenisgangguan);
+          $('#jenis_gangguan').text(data.jenis_gangguan);
+          $('#ket_gangguan').text(data.ket_gangguan);
+          
+          $('#ModalY').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('gagal mengambil data');
+        }
+      });
+    }
+
+    function tampil_lokasi(id) {
+
+      $.ajax({
+        url: "<?php echo base_url('c_gangguan/lokasi_data') ?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+          console.table(data);
+          $('#sid').text(data.sid);
+          $('#lokasi').text(data.lokasi);
+          $('#jenis_layanan').text(data.jenis_layanan);
+          $('#kapasitas').text(data.kapasitas);
+          $('#nama_pic').text(data.nama_pic);
+          $('#no_hp_pic').text(data.no_hp_pic);
+          $('#email').text(data.email);
+
+          $('#ModalY').modal('show');
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log('gagal mengambil data');

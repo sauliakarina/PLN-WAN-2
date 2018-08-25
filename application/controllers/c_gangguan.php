@@ -92,7 +92,19 @@ class c_gangguan extends CI_Controller{
 	$this->load->view('element/footer');
 	} 
 
-	 function tambah_aksi_gangguan(){
+	public function gangguan_data($id_gangguan)
+	{
+		$data = $this->m_data_gangguan->get_jenis_gangguan($id_gangguan);
+		echo(json_encode($data));
+	}
+
+	public function lokasi_data($sid)
+	{
+		$data = $this->m_data_gangguan->get_lokasi($sid);
+		echo(json_encode($data));
+	}
+
+	function tambah_aksi_gangguan(){
 		$sid = $this->input->post('sid');
 		$id_jenisgangguan= $this->input->post('id_jenisgangguan');
 		$deskripsi_jenisgangguan = $this->input->post('deskripsi_jenisgangguan');

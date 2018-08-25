@@ -1,6 +1,7 @@
 <?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_login extends CI_Controller{
+class C_login extends CI_Controller{
 
     function __construct(){
         parent::__construct();      
