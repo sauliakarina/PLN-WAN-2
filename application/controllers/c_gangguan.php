@@ -298,10 +298,10 @@ class c_gangguan extends CI_Controller{
 			'progress' => $this->m_data_gangguan->tampil_progress($id),
 			'id' => $id
 		);
-	  $this->load->view('element/header', $data);
-	  $this->load->view('progress',$data);
-	  $this->load->view('element/footer');
-	 }
+		$this->load->view('element/header', $data);
+		$this->load->view('progress',$data);
+		$this->load->view('element/footer');
+	}
 
 	function tambah_progress($id){
 		$where = array('id_gangguan' => $id);
@@ -468,7 +468,11 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('element/header', $data);
 	  $this->load->view('searchgangguan',$data);
 	  $this->load->view('element/footer');
-	 } 
+
+	  if (isset($_SESSION['hasil_pencarian'])) {
+	  	unset($_SESSION['hasil_pencarian']);
+	  }
+	}
 
 	 public function coba_searchgangguan() {
 	  $this->load->view('element/header');
@@ -517,7 +521,7 @@ class c_gangguan extends CI_Controller{
 
 	public function filter_manual() 
 	{
-      	
+
 		$sid = $this->input->post('sid');
 		$id_jenisgangguan = $this->input->post('id_jenisgangguan');
 		$bulan = $this->input->post('bulan');
@@ -591,15 +595,27 @@ class c_gangguan extends CI_Controller{
 			else{
 				$hasil= $this->m_data_gangguan->cari_sid_jg_b_t_d($sid,$id_jenisgangguan,$bulan,$tahun,$durasi);
 			}
-		}	
+		}
 
-			$data=array(
-            'status_user' => $this->session->userdata('status_user'),
-        	'gangguan' => $hasil
-        	);
-        	$this->load->view('element/header', $data);
-			$this->load->view('pencarian_gangguan', $data);
-			$this->load->view('element/footer');
+		$this->hasil_pencarian_gangguan($hasil);
+	}
+
+	public function hasil_pencarian_gangguan($hasil=null)
+	{
+		$data=array(
+        	'status_user' => $this->session->userdata('status_user'),
+    	);
+    	
+    	if (isset($_SESSION) && !isset($hasil)) {
+    		$data['gangguan'] = $_SESSION['hasil_pencarian'];
+    	}else{
+    		$data['gangguan'] = $hasil;
+			$_SESSION['hasil_pencarian'] = $hasil;
+    	}
+
+    	$this->load->view('element/header', $data);
+		$this->load->view('pencarian_gangguan', $data);
+		$this->load->view('element/footer');
 	}
 
 	public function detail_waktu($id)

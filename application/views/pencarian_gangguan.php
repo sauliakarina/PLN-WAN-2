@@ -32,7 +32,7 @@
                                     <tbody>
                                          <?php 
                                         $no=1;
-                                        foreach($gangguan as $g ) {
+                                        foreach($gangguan as $g) {
 
                                         ?>
                                         <tr>
@@ -224,12 +224,12 @@
         dataType: "JSON",
         success: function(data) {
           console.table(data);
-          $('[name="id_gangguan"]').val(data.id_gangguan);
+          $('#id_gangguan').text(data.id_gangguan);
           $('#open_date').text(data.open_date);
-          $('[name="open_time"]').val(data.open_time);
-          $('[name="close_date"]').val(data.close_date);
-          $('[name="close_time"]').val(data.close_time);
-          $('[name="durasi"]').val(data.durasi);
+          $('#open_time').text(data.open_time);
+          $('#close_date').text(data.close_date);
+          $('#close_time').text(data.close_time);
+          $('#durasi').text(data.durasi);
           
           $('#ModalX').modal('show');
         },
