@@ -23,8 +23,7 @@
                                             <th>Progress</th>
                                             <th>Waktu Gangguan</th>
                                             <?php if ($status_user == 'Admin') {
-                                              echo "<th style='width:50px'></th>
-                                            <th style='width:50px'></th>";
+                                              echo "<th style='width:50px'></th>";
                                             } ?>
                                             
                                         </tr>
@@ -53,7 +52,7 @@
                                             <td>
                                               <?php if($this->m_data_gangguan->get_last_progress($g->id_gangguan)== false):  ?>
                                               <form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
-                                                     <button class='btn btn-default' type='submit'>Input</button>
+                                                     <center><button class="btn btn-default btn-sm" type='submit'><i class="fas fa-plus-square"></i> </button></center>
                                                 </form>
                                               <?php else: ?>
                                                 <?php if ($this->m_data_gangguan->get_last_progress($g->id_gangguan)['status_progress'] == 1): ?>
@@ -68,9 +67,6 @@
                                               <?php endif; ?>
                                             </td>
                                             <td> 
-                                                <!-- <form method='' action="<?php //echo base_url('c_gangguan/tampil_waktu_pencarian/'.$g->id_gangguan)?>">
-                                                     <button class='btn btn-primary' type='submit'>Detail</button>
-                                                </form> -->
                                                  <button onclick='detail_waktu(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalX">Detail</button>
                                             </td>
                                               <?php if ($status_user == 'Admin') {
@@ -354,30 +350,6 @@
           console.table(data);
           $('#sid').text(data.sid);
           $('#lokasi').text(data.lokasi);
-          $('#jenis_layanan').text(data.jenis_layanan);
-          $('#kapasitas').text(data.kapasitas);
-          $('#nama_pic').text(data.nama_pic);
-          $('#no_hp_pic').text(data.no_hp_pic);
-          $('#email').text(data.email);
-
-          $('#ModalY').modal('show');
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log('gagal mengambil data');
-        }
-      });
-    }
-
-      function tampil_lokasi(id) {
-
-      $.ajax({
-        url: "<?php echo base_url('c_gangguan/lokasi_data') ?>/" + id,
-        type: "GET",
-        dataType: "JSON",
-        success: function(data) {
-          console.table(data);
-          $('#sid').text(data.sid);
-          $('#lokasi').text(data.lokasi);
           $('#nama_layanan').text(data.nama_layanan);
           $('#kapasitas').text(data.kapasitas);
           $('#nama_pic').text(data.nama_pic);
@@ -391,6 +363,7 @@
         }
       });
     }
+
 
 
 

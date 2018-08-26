@@ -47,14 +47,14 @@
                                             <td><?php echo $g->solusi_gangguan ?></td>
                                             <td>
                                               <?php if($this->m_data_gangguan->get_last_progress($g->id_gangguan)== false):  ?>
-                                              <form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
-                                                     <button class='btn btn-default' type='submit'>Input</button>
-                                                </form>
+                                              <center><form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
+                                                     <button class="btn btn-outline-dark btn-sm" type='submit'><i class="fas fa-plus-square"></i> </button>
+                                                  </form></center>
                                               <?php else: ?>
                                                 <?php if ($this->m_data_gangguan->get_last_progress($g->id_gangguan)['status_progress'] == 1): ?>
-                                                    <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Penanganan</a><br>
+                                                    <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>"><b>Penanganan</b></a><br>
                                                    <center><form method='' action="<?php echo base_url('c_gangguan/tambah_progress/'.$g->id_gangguan)?>">
-                                                     <button class="btn btn-default btn-sm" type='submit'><i class="fas fa-plus-square"></i> </button>
+                                                     <button class="btn btn-outline-dark btn-sm" type='submit'><i class="fas fa-plus-square"></i> </button>
                                                   </form></center>
                                                     <?php else: ?>
                                                       <a href="<?php echo base_url('c_gangguan/progress/'.$g->id_gangguan) ?>">Selesai</a>
@@ -75,7 +75,9 @@
                                         <?php }?>
                                     </tbody>
                                 </table>
-                            
+                                <form action="<?php echo base_url();?>c_gangguan/tampil_searchgangguan">
+                                  <button class='btn btn-outline-primary' type='submit' style="margin-bottom: 15px"><i class="fas fa-search" style="margin-right: 10px"></i>Menu Pencarian</button>
+                                </form>
                             </div>
                         </div>
                     </div>

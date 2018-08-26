@@ -342,10 +342,30 @@ class c_keluhan extends CI_Controller{
         	'keluhan' => $hasil
         	);
         	$this->load->view('element/header', $data);
-			$this->load->view('pencarian_keluhan', $data);
+			//$this->load->view('pencarian_keluhan', $data);
+			$this->load->view('form_data_keluhan', $data);
 			$this->load->view('element/footer');
 			
 	}
+
+	public function detail_waktu($id)
+	{
+		$data = $this->m_data_keluhan->get_keluhan_byid($id);
+		echo json_encode($data);
+	}
+
+	public function keluhan_data($id_keluhan)
+	{
+		$data = $this->m_data_keluhan->get_jenis_keluhan($id_keluhan);
+		echo(json_encode($data));
+	}
+
+	public function lokasi_data($sid)
+	{
+		$data = $this->m_data_keluhan->get_lokasi($sid);
+		echo(json_encode($data));
+	}
+
 
 }
 ?>

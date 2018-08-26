@@ -52,6 +52,7 @@ class M_data_keluhan extends CI_Model{
     	$this->db->distinct();
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->where('isShow', 'yes');
 		$this->db->order_by('jenis_keluhan', 'ASC');
 		$query = $this->db->get('tb_jeniskeluhan');
 		if($query->num_rows()>0)
@@ -65,6 +66,8 @@ class M_data_keluhan extends CI_Model{
    	function tampil_keluhan(){
 		$this->db->select('*');
 		$this->db->where('isDelete', 'no');
+		$this->db->order_by('id_keluhan', 'DESC');
+		/*$this->db->order_by('open_date', 'DESC');*/
 		$query = $this->db->get('tb_keluhan');
 		if($query->num_rows()>0)
 		{
@@ -559,7 +562,24 @@ class M_data_keluhan extends CI_Model{
 			return $query->result();
 		}
 	}
+	/*sampai sini fungsi cari*/
 
+	function get_keluhan_byid($id)
+	{
+		return $this->db->get_where('tb_keluhan', array('id_keluhan' => $id))->row();
+	}
+
+	public function get_jenis_keluhan($id)
+	{
+		$this->db->join('tb_jeniskeluhan', 'tb_jeniskeluhan.id_jeniskeluhan = tb_keluhan.id_jeniskeluhan');
+		return $this->db->get_where('tb_gangguan',array('id_keluhan'=>$id))->row_array();
+	}
+
+	public function get_lokasi($sid)
+	{
+		$this->db->join('tb_jenislayanan', 'tb_jenislayanan.id_jenislayanan = tb_layanan.id_jenislayanan');
+		return $this->db->get_where('tb_layanan',array('sid'=>$sid))->row_array();
+	}
 
 
 }

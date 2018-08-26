@@ -42,7 +42,10 @@
                                     </tbody>
                                 </table>
                                 <br>
-                                <a href="<?php echo base_url();?>c_gangguan/hasil_pencarian_gangguan" class="btn btn-default"><span class="glyphicon glyphicon-hand-left"></span> &nbsp; KEMBALI </a>&nbsp;
+                                <form action="<?php echo base_url();?>c_gangguan/form_data_gangguan">
+                                  <button class="btn btn-outline-primary"><i class="fas fa-chevron-circle-left" style="margin-right: 3px"></i> KEMBALI </button>&nbsp;
+                                </form>
+                                
                                 <br>
                             </div>
                         </div>

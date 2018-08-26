@@ -492,7 +492,7 @@ class c_gangguan extends CI_Controller{
 	  $this->load->view('element/footer');
 	 } 
 
-	 function filter(){
+	 public function filter(){
 	  $sid = $this->input->post('sid');
 	  $id_jenisgangguan = $this->input->post('id_jenisgangguan');
 	 $bulan = $this->input->post('bulan');
@@ -626,7 +626,8 @@ class c_gangguan extends CI_Controller{
     	}
 
     	$this->load->view('element/header', $data);
-		$this->load->view('pencarian_gangguan', $data);
+		//$this->load->view('pencarian_gangguan', $data);
+		$this->load->view('form_data_gangguan', $data);
 		$this->load->view('element/footer');
 	}
 
@@ -637,7 +638,42 @@ class c_gangguan extends CI_Controller{
 	}
 
 
-
+	 public function createXLS() {
+		// create file name
+        $fileName = 'data-'.time().'.xlsx';  
+		// load excel library
+        $this->load->library('excel');
+        $gangguan = $this->m_data_gangguan->tampil_gangguan()
+        $objPHPExcel = new PHPExcel();
+        $objPHPExcel->setActiveSheetIndex(0);
+        // set Header
+        $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'Area');
+        $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'Jenis Gangguan');
+        $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Lokasi');
+        $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'Penyebab');  
+        $objPHPExcel->getActiveSheet()->SetCellValue('E1', 'Solusi'); 
+        $objPHPExcel->getActiveSheet()->SetCellValue('F1', 'Open Date');  
+        $objPHPExcel->getActiveSheet()->SetCellValue('G1', 'Open Time'); 
+        $objPHPExcel->getActiveSheet()->SetCellValue('H1', 'Close Date');
+        $objPHPExcel->getActiveSheet()->SetCellValue('I1', 'Close Time'); 
+        $objPHPExcel->getActiveSheet()->SetCellValue('J1', 'Durasi');        
+        // set Row
+        $rowCount = 2;
+        foreach ($gangguan as $element) {
+            $objPHPExcel->getActiveSheet()->SetCellValue('A' . $rowCount, $element['sid']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('B' . $rowCount, $element['last_name']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('C' . $rowCount, $element['email']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('D' . $rowCount, $element['dob']);
+            $objPHPExcel->getActiveSheet()->SetCellValue('E' . $rowCount, $element['contact_no']);
+            $rowCount++;
+        }
+        $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+        $objWriter->save(ROOT_UPLOAD_IMPORT_PATH.$fileName);
+		// download file
+        header("Content-Type: application/vnd.ms-excel");
+        redirect(HTTP_UPLOAD_IMPORT_PATH.$fileName);        
+    }
+    
 
 
 

@@ -25,7 +25,7 @@
                   <div class="form-group">
                           <label for="prodi">Jenis Keluhan </label>
                           <select class="form-control" id="jenis keluan" name="id_jeniskeluhan">
-                            <option value="_">_____Pilih Jenis Keluhan_____</option>
+                            <option value="10">_____Pilih Jenis Keluhan_____</option>
                             <?php 
                                foreach($get_jeniskeluhan as $jk){ 
                                echo "<option  value='$jk->id_jeniskeluhan'>$jk->jenis_keluhan</option>";
@@ -37,7 +37,7 @@
                          <div class="row">
         <div class='col-md-12'>
             <div class="form-group">
-              <label for="date">Keterangan :  </label>
+              <label for="date">Keterangan Jenis Keluhan :  </label>
                     <textarea rows="3" class="form-control" name="deskripsi_jeniskeluhan"></textarea>
                     <!-- <input style="width:500px" class="form-control" type="hidden" name="isDelete" value="yes"> -->
                 </div>

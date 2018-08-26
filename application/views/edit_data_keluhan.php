@@ -101,7 +101,11 @@
         <div class='col-md-6'>
             <div class="form-group">
               <label for="date">Close Time :  </label>
-                    <input type='time' class="form-control" name="close_time" value="<?php echo $k->close_time ?>" />
+                    <?php if ($k->close_time == '00:00:00') {
+                      echo "<input type='time' class='form-control' name='close_time'/>";
+                    } else{
+                      echo "<input type='time' class='form-control' name='close_time' value='$k->close_time'/>";
+                    } ?>
                 
                 </div>
             </div>
