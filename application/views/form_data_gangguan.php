@@ -32,13 +32,14 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $g->open_date ?></td>
-                                            <td><?php echo anchor('c_gangguan/tampil_lokasi/'.$g->sid,'Area '.$this->m_data_gangguan->tampil_layanan($g->sid)->lokasi); ?> </td>
+                                            <td>
+                                              <button onclick='tampil_lokasi(<?php echo $g->sid ?>)' id="btn-edit" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalZ">Area <?php echo $this->m_data_gangguan->tampil_layanan($g->sid)->lokasi ?></button></td>
                                            <!--  <td><?php //echo anchor('c_gangguan/form_jenis_gangguan/'.$g->id_gangguan, $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan); ?> </td> -->
                                             <td><?php if ($g->id_jenisgangguan=="16") {
                                               echo "<p style='color:'>Belum Teridentifikasi</p>";
                                               } else {
                                                 ?>
-                                                 <button onclick='ket_jenisgangguan(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary" data-toggle="modal" data-target="#ModalY"><?php echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button>
+                                                 <button onclick='ket_jenisgangguan(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalY"><?php echo $this->m_data_gangguan->tampil_jenisgangguan_byid($g->id_jenisgangguan)->jenis_gangguan ?></button>
                                               <?php  } ?>
                                               </td>
                                             <td><?php echo $g->lokasi_gangguan ?></td>
@@ -63,11 +64,11 @@
                                             </td>
                                             <td> 
                                               <div class="btn-group">
-                                              <button onclick='detail_waktu(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary" data-toggle="modal" data-target="#ModalX">Detail</button>
+                                              <button onclick='detail_waktu(<?php echo $g->id_gangguan ?>)' id="btn-edit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalX">Detail</button>
                                               <form method='' action="<?php echo base_url('c_gangguan/edit_gangguan/'.$g->id_gangguan) ?>">
-                                                    <button class='btn btn-default' type='submit'>Edit</button>
+                                                    <button class='btn btn-default btn-sm' type='submit'>Edit</button>
                                                 </form>
-                                              <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $g->id_gangguan ?>)" class="btn btn-danger">Hapus</button>
+                                              <button data-toggle="modal" data-target="#exampleModal" onclick="set_id(<?php echo $g->id_gangguan ?>)" class="btn btn-danger btn-sm">Hapus</button>
                                             </div>
                                             </td>
                                         </tr>
@@ -114,6 +115,63 @@
                       </div>
                   </div>
               </div><!-- modal -->
+
+              <!-- Modal tampil lokasi-->
+              <div class="modal fade" id="ModalZ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Detail Lokasi</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                  <tbody>
+                                     <tr>
+                                        <td><strong>SID</strong></td>
+                                        <td style="" id="sid"></td>
+                                    </tr>
+                                    <tr>
+                                       <td style=""><strong>Lokasi</strong></td>
+                                      <td style="" id="lokasi"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Jenis Layanan</strong></td>
+                                       <td style="" id="nama_layanan"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Kapasitas</strong></td>
+                                       <td style="" id="kapasitas"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Nama PIC</strong></td>
+                                       <td style="" id="nama_pic"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>No Telepon</strong></td>
+                                       <td style="" id="no_hp_pic"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Email</strong></td>
+                                       <td style="" id="email"></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                          </div>
+                          </div> <!-- modal body -->
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- modal -->
+
 
                <!-- Modal Keterangan Jenis Gangguan -->
               <div class="modal fade" id="ModalY" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -268,6 +326,30 @@
           $('#ket_gangguan').text(data.ket_gangguan);
           
           $('#ModalY').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('gagal mengambil data');
+        }
+      });
+    }
+
+    function tampil_lokasi(id) {
+
+      $.ajax({
+        url: "<?php echo base_url('c_gangguan/lokasi_data') ?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+          console.table(data);
+          $('#sid').text(data.sid);
+          $('#lokasi').text(data.lokasi);
+          $('#nama_layanan').text(data.nama_layanan);
+          $('#kapasitas').text(data.kapasitas);
+          $('#nama_pic').text(data.nama_pic);
+          $('#no_hp_pic').text(data.no_hp_pic);
+          $('#email').text(data.email);
+
+          $('#ModalZ').modal('show');
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log('gagal mengambil data');
